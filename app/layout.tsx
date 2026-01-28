@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/common/navbar";
 import Footer from "@/components/common/footer";
-import { google_sans } from "@/lib/font";
+import { msans } from "@/lib/font";
 
 export const metadata: Metadata = {
-  title: "Better Treks",
+  title: "Peakwise Travels",
   description: "Created by Growfore Solution",
 };
 
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${google_sans.className} sans-serif antialiased`}
+        className={`${msans.className} sans-serif antialiased`}
       >
         <Navbar/>
         {children}

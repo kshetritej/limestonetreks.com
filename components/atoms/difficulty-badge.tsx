@@ -1,12 +1,12 @@
 "use client";
 
-import {  LucideGauge } from "lucide-react";
+import { LucideGauge } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function DifficultyBadge({
   difficulty = "easy",
 }: {
-  difficulty: "easy" | "moderate" | "hard" | "extreme";
+  difficulty: "easy" | "moderate" | "hard" | "extreme" | string;
 }) {
   switch (difficulty) {
     case "easy":
@@ -30,17 +30,15 @@ function Comp({
   filledDotsCount: number;
 }) {
   return (
-    <div
-      className="text-sm flex items-center justify-center gap-1 bg-black/10 p-1 rounded-md text-black font-medium"
-    >
+    <div className="text-sm flex items-center justify-center gap-1 bg-white/10 p-1 rounded-md text-white font-medium w-fit">
       <LucideGauge className="size-5" />
       <div>{text ?? "Normal"}</div>
       <div className="flex gap-1 items-center">
         {Array.from({ length: 4 }).map((dot, index) => (
           <div
-          key={index}
+            key={index}
             className={cn(
-              filledDotsCount > index 
+              filledDotsCount > index
                 ? "bg-green-600 border-green-600"
                 : "border-green-600",
               "size-3 rounded-full border",

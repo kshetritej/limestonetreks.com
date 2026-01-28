@@ -1,10 +1,12 @@
 "use client";
 
-import { LucideClock } from "lucide-react";
+import { ArrowRight, Diff, LucideClock } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import DifficultyBadge from "../atoms/difficulty-badge";
 import { getFullImageUrl } from "@/lib/getFullUrl";
+import placeHolderImage from "../data/image";
+import { Button } from "../ui/button";
 
 export type Tour = {
   id: string;
@@ -13,6 +15,7 @@ export type Tour = {
   currency?: string;
   price: number;
   activityType: string;
+  difficultyLevel: string;
   images: string[];
   link?: string;
   canonicalPath?: string;
@@ -23,39 +26,41 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
   return (
     <Link
       href={tour.canonicalPath ?? `/activities/${tour.id}`}
-      className="relative p-0 cursor-pointer flex flex-col gap-2 shadow-sm border"
+      className="relative cursor-pointer flex flex-col gap-2 shadow-sm border"
     >
-      <div className="absolute top-2 z-99 right-2">
-        <DifficultyBadge difficulty={"extreme"} />
-      </div>
-      <div className="overflow-hidden relative h-72 object-cover">
-        {tour.images[0] && (
-          <Image
-            width={720}
-            height={420}
-            src={getFullImageUrl(tour.images[0])}
-            alt={tour.title}
-            className="object-cover"
-          />
-        )}
-      </div>
-      <div className="p-2 flex flex-col gap-4">
-        <div className="h-10">
-          <p>{"Annapurna Region"}</p>
-          <div className="flex justify-between">
-            <h4 className="font-bold text-lg">{tour.title}</h4>
-            <div className="flex items-center gap-1">
-              <LucideClock /> {tour.duration}
-            </div>
+      <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
+        {/* Background Image */}
+        <img
+          src={
+            tour.images[0] ??
+            "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=600&fit=crop"
+          }
+          alt={tour.title}
+          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+        />
+
+        {/* Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/60" />
+
+        {/* Content */}
+        <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
+          <div>
+            <DifficultyBadge difficulty={tour.difficultyLevel.toLowerCase()} />
           </div>
-        </div>
-        <div className="mt-2 flex">
-          <p>
-            <span className="text-primary text-xl font-bold">
-              USD {tour.price}
-            </span>
-            /person
-          </p>
+
+          <div>
+            <p className="text-2xl font-bold mb-2">{tour.title}</p>
+            <div className="space-y-2">
+              <p>
+                <span>{tour.duration}</span> from
+              </p>
+              <p className="text-4xl opacity-90 mb-2 text-primary/90">USD {tour.price}</p>
+            </div>
+            <button className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition">
+              View Details
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
     </Link>

@@ -1,4 +1,4 @@
-import { Varela_Round, Google_Sans } from "next/font/google";
+import { Varela_Round, Google_Sans, Merriweather_Sans } from "next/font/google";
 
 export const varela = Varela_Round({
   subsets: ["latin"],
@@ -10,3 +10,8 @@ export const google_sans = Google_Sans({
   weight: ["400", "500", "600", "700"],
   fallback: ["sans-serif"],
 });
+
+export const msans = Merriweather_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800']
+})
