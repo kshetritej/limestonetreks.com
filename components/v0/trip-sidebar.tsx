@@ -9,7 +9,7 @@ interface TripSidebarProps {
 
 export function TripSidebar({ trip }: TripSidebarProps) {
   return (
-    <Card className="p-6 sticky top-6 bg-white border-slate-200 h-fit">
+    <Card className="p-6 sticky top-42 bg-white border-slate-200 h-fit">
       {/* Price Section */}
       <div className="pb-6 border-b border-slate-200">
         <p className="text-slate-600 text-sm font-medium mb-1">
@@ -48,7 +48,7 @@ export function TripSidebar({ trip }: TripSidebarProps) {
           <div className="w-12 h-12 bg-slate-300 rounded-full" />
           <div>
             <p className="text-sm font-semibold">WhatsApp</p>
-            <p className="text-sm text-primary">+977 9851234567</p>
+            <p className="text-sm text-primary">+977 9841328947</p>
           </div>
         </div>
       </div>
