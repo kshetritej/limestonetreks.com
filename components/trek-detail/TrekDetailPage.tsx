@@ -67,9 +67,7 @@ export default function TrekDetailPage({ trip }: { trip: any }) {
             value={d.meetingPoint + " / " + d.dropOffPoint}
           />
         </div>
-        <div
-          className="mt-8"
-        >
+        <div className="mt-8">
           <div className="lg:col-span-8  max-w-3xl overflow-hidden">
             <div className="space-y-10">
               <div dangerouslySetInnerHTML={{ __html: d.shortDescription }} />
@@ -92,7 +90,7 @@ export default function TrekDetailPage({ trip }: { trip: any }) {
                 d.additionalInfo.map((item: any, index: number) => {
                   return (
                     <div key={index} className="overflow-wrap-anywhere">
-                      <AdditionalInfoRenderer item={item} />
+                      <AdditionalInfoRenderer index={index} item={item} />
                     </div>
                   );
                 })}
