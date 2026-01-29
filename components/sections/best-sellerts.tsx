@@ -1,8 +1,7 @@
 import SectionTemplate from "../templates/section-template";
-import MyLink from "../atoms/my-link";
 import TripCard from "../cards/trip-card";
 
-const LatestTrips = async () => {
+const BestSellerTrips = async () => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/activity?page=1&limit=8`,
     { method: "GET" },
@@ -12,12 +11,13 @@ const LatestTrips = async () => {
 
   return (
     <SectionTemplate
-      badgeText={<p>popular trips</p>}
-      title={<p>Popular Right Now</p>}
+      badgeText={<p>Best Sellers</p>}
+      title={<p>Our Most Loved Treks</p>}
       text={
         <p>
-          What travelers are booking this season — based on availability,
-          weather, and trail conditions.
+          These trips are chosen, booked, and recommended the most — for good
+          reason. Thoughtful itineraries, experienced guides, and routes that
+          never disappoint.
         </p>
       }
       buttonLink="/"
@@ -37,4 +37,4 @@ const LatestTrips = async () => {
   );
 };
 
-export default LatestTrips;
+export default BestSellerTrips;

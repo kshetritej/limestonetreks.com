@@ -1,5 +1,7 @@
+import { LucideArrowRight } from "lucide-react";
 import { BlogCard, TBlog } from "../cards/blog-card";
 import SectionTemplate from "../templates/section-template";
+import { Button } from "../ui/button";
 
 export default async function RecentBlogs() {
   const response = await fetch(
@@ -11,23 +13,28 @@ export default async function RecentBlogs() {
   return (
     <>
       <SectionTemplate
-        badgeText={<p>Our Recent Blogs</p>}
-        title={<p>Stories, Guides & Himalayan Insights</p>}
+        badgeText={<p>BLOGS</p>}
+        title={<p>Travel Notes & Trekking Guides</p>}
         buttonLink="/blogs"
         buttonText="See More"
         text={
           <p>
-            Explore our latest articles covering trekking guides, travel tips,
-            cultural insights, and stories from the Himalayas. Written by locals
-            and experts to help you travel better and deeper.
+            Insights from the trail — packing tips, route breakdowns, seasonal
+            advice, and stories from the mountains to help you plan better.
           </p>
         }
       >
-        <div className="grid md:grid-cols-3 gap-4 mt-6">
-          {recentBlogs?.map((blog: TBlog) => {
+        <div className="grid md:grid-cols-2 gap-4 mt-6">
+          {/* {recentBlogs?.map((blog: TBlog) => {
             return <BlogCard key={blog.slug} blog={blog} />;
-          })}
+          })} */}
+          <div className="w-full h-120 bg-secondary rounded-md"></div>
+          <div className="space-y-2">
+            <div className="w-full h-1/2 bg-secondary rounded-md" />
+            <div className="w-full h-1/2 bg-secondary rounded-md" />
+          </div>
         </div>
+        <Button className="mt-4">Explore More <LucideArrowRight/></Button>
       </SectionTemplate>
     </>
   );

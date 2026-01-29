@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative h-screen bg-gradient-to-b from-primary to-primary/5 text-primary-foreground overflow-hidden">
+    <section className="relative h-[70vh] bg-gradient-to-r from-sky-900 to-primary/5 text-primary-foreground overflow-hidden">
       {/* Background Image Overlay */}
       <div
         className="absolute inset-0 opacity-30"
         style={{
           backgroundImage:
-            "url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80)",
+          "url(https://images.unsplash.com/photo-1561355167-4eac6650cbeb?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -16,19 +16,17 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative h-full flex flex-col items-center justify-center px-4">
-        <div className="text-center ">
-          <p className="text-lg md:text-xl mb-4 opacity-90 uppercase tracking-widest font-semibold">
-            Nepal&apos;s Premier Trekking Destination
+        <div className="text-left max-w-3xl">
+          <p className="text-sm  mb-4 opacity-90 uppercase tracking-widest font-semibold">
+            Best Trekking agency in Pokhara
           </p>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance leading-tight">
-            Trek Through the Himalayas
+          <h1 className="text-4xl font-bold mb-6 text-balance leading-tight">
+            Local Experts in Himalayan Trekking
           </h1>
-          <p className="text-lg md:text-xl mb-10 opacity-95 text-balance leading-relaxed">
-            Discover authentic Nepal with experienced local guides. From
-            beginner-friendly trails to challenging summits, find your perfect
-            Himalayan adventure with breathtaking views and warm hospitality.
+          <p className="text-md mb-10 opacity-95 text-balance leading-relaxed">
+            Explore the Himalayas with a team that's guided with care for over 17 years.
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
+          <div className="flex gap-4 justify-start flex-wrap">
             <Link
               href="#"
               className="bg-accent text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"

@@ -1,172 +1,197 @@
 import Link from "next/link";
-import { ImageIcon } from "lucide-react";
+
+function generateRandomPhone(): string {
+  const area = Math.floor(Math.random() * 900) + 100;
+  const prefix = Math.floor(Math.random() * 900) + 100;
+  const line = Math.floor(Math.random() * 9000) + 1000;
+  return `+1 ${area} ${prefix} ${line}`;
+}
+
+function generateRandomEmail(): string {
+  const names = [
+    "alex",
+    "jordan",
+    "sam",
+    "casey",
+    "morgan",
+    "blair",
+    "drew",
+    "pat",
+  ];
+  const domains = ["hiking", "adventure", "trekking", "explore", "venture"];
+  const name = names[Math.floor(Math.random() * names.length)];
+  const domain = domains[Math.floor(Math.random() * domains.length)];
+  return `${name}@${domain}team.com`;
+}
+
+function generateRandomName(): string {
+  const firstNames = [
+    "Alex",
+    "Jordan",
+    "Sam",
+    "Casey",
+    "Morgan",
+    "Blair",
+    "Drew",
+    "Pat",
+  ];
+  const lastNames = [
+    "Smith",
+    "Johnson",
+    "Williams",
+    "Brown",
+    "Jones",
+    "Garcia",
+    "Miller",
+    "Davis",
+  ];
+  return `${firstNames[Math.floor(Math.random() * firstNames.length)]} ${lastNames[Math.floor(Math.random() * lastNames.length)]}`;
+}
+
+function generateRandomCity(): string {
+  const cities = [
+    "Seattle, Washington",
+    "Denver, Colorado",
+    "Portland, Oregon",
+    "Austin, Texas",
+    "Boulder, Colorado",
+    "Asheville, North Carolina",
+    "Moab, Utah",
+    "Bozeman, Montana",
+  ];
+  return cities[Math.floor(Math.random() * cities.length)];
+}
 
 export default function Footer() {
   return (
-    <footer className="bg-background text-foreground border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
-        <div className="py-16">
-          <div className="grid md:grid-cols-4 gap-12 mb-8">
-            {/* Our Address */}
-            <div>
-              <p className="text-sm font-semibold text-muted-foreground mb-2">
-                Our Address
-              </p>
-              <h3 className="text-lg font-bold mb-4">BetterTreks</h3>
-
-              <div className="space-y-2 text-sm text-muted-foreground">
-                <p>Lakeside, Pokhara</p>
-                <p>Kaski District</p>
-                <p>Pokhara 33700</p>
-                <p>Nepal</p>
-              </div>
-
-              <p className="text-sm font-semibold text-muted-foreground mt-6 mb-2">
-                Contact Number
-              </p>
-              <p className="font-semibold">+977-9841328947</p>
-
-              <p className="text-sm font-semibold text-muted-foreground mt-4 mb-2">
-                Email Address
-              </p>
-              <p className="font-semibold">info@bettertreks.com</p>
+    <footer className="bg-slate-50 border-t border-slate-200">
+      {/* Partners & Associations */}
+      <div className="border-b border-slate-200 px-4 py-6 sm:px-6 sm:py-8">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between max-w-7xl mx-auto">
+          <div className="flex items-center gap-3">
+            <h3 className="font-bold text-xs sm:text-sm">OUR PARTNERS</h3>
+            <div className="flex gap-2">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded" />
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded" />
             </div>
-
-            {/* Company */}
-            <div>
-              <p className="text-sm font-semibold text-muted-foreground mb-4">
-                Company
-              </p>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                <li>
-                  <Link href="#" className="hover:text-foreground transition">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/team" className="hover:text-foreground transition">
-                    Our Team
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="hover:text-foreground transition">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Information */}
-            <div>
-              <p className="text-sm font-semibold text-muted-foreground mb-4">
-                Information
-              </p>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                <li>
-                  <Link href="#" className="hover:text-foreground transition">
-                    FAQs
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog" className="hover:text-foreground transition">
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground transition">
-                    Travel Information
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground transition">
-                    Payment Terms
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-foreground transition">
-                    Privacy Policy
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Activities */}
-            <div>
-              <p className="text-sm font-semibold text-muted-foreground mb-4">
-                Activities
-              </p>
-              <ul className="space-y-3 text-sm text-muted-foreground">
-                <li>
-                  <Link href="/tours" className="hover:text-foreground transition">
-                    Trekking in Nepal
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tours" className="hover:text-foreground transition">
-                    Peak Climbing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tours" className="hover:text-foreground transition">
-                    Cultural Tours
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tours" className="hover:text-foreground transition">
-                    Hiking Adventures
-                  </Link>
-                </li>
-              </ul>
+          </div>
+          <div className="flex items-center gap-3 sm:gap-4">
+            <h3 className="font-bold text-xs sm:text-sm">ASSOCIATIONS</h3>
+            <div className="flex gap-2 overflow-x-auto">
+              {[...Array(5)].map((_, i) => (
+                <div
+                  key={i}
+                  className="w-10 h-6 sm:w-12 sm:h-8 bg-slate-300 rounded flex-shrink-0"
+                />
+              ))}
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-border py-12 space-y-8">
-          {/* Associated With */}
-          <div>
-            <p className="text-sm font-semibold text-muted-foreground mb-4">
-              Associated With
-            </p>
-            <div className="flex flex-wrap gap-4">
-              {Array.from({ length: 6 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="rounded-lg p-3 border border-border bg-muted/30 hover:bg-muted transition"
-                >
-                  <ImageIcon className="w-8 h-8 text-muted-foreground" />
-                </div>
-              ))}
+      {/* Contact Info Sections */}
+      <div className="border-b border-slate-200 px-4 py-8 sm:px-6 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
+          {/* Head Office */}
+          <div className="sm:border-r sm:border-slate-200 sm:pr-8">
+            <h4 className="font-bold text-sm mb-4">🏔️ HEAD OFFICE</h4>
+            <div className="space-y-3 text-sm text-slate-700">
+              <p>{generateRandomCity()}</p>
+              <p>
+                <span className="font-semibold">Phone:</span>{" "}
+                {generateRandomPhone()}
+              </p>
+              <p>
+                <span className="font-semibold">Email:</span>{" "}
+                {generateRandomEmail()}
+              </p>
+              <div className="mt-4 pt-4 border-t border-slate-200">
+                <p className="font-semibold mb-2">24 hrs Emergency Contact</p>
+                <p>{generateRandomPhone()}</p>
+                <p>{generateRandomPhone()}</p>
+              </div>
             </div>
           </div>
 
-          {/* We Accept */}
-          <div>
-            <p className="text-sm font-semibold text-muted-foreground mb-4">
-              We Accept
-            </p>
-            <div className="rounded-lg border border-border p-4 inline-flex gap-3 flex-wrap">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <div
-                  key={i}
-                  className="rounded bg-background border border-border px-2 py-1"
-                >
-                  <ImageIcon className="w-6 h-6 text-muted-foreground" />
-                </div>
-              ))}
+          {/* Region 2 */}
+          <div className="sm:border-r sm:border-slate-200 sm:pr-8 lg:border-r">
+            <h4 className="font-bold text-sm mb-4">🌍 REGION 2</h4>
+            <div className="space-y-3 text-sm text-slate-700">
+              <p>
+                <span className="font-semibold">{generateRandomName()}</span>
+              </p>
+              <p>{generateRandomCity()}</p>
+              <p>
+                <span className="font-semibold">Phone:</span>{" "}
+                {generateRandomPhone()}
+              </p>
+              <p>
+                <span className="font-semibold">Email:</span>{" "}
+                {generateRandomEmail()}
+              </p>
             </div>
           </div>
 
-          {/* Copyright */}
-          <div className="pt-6 text-sm text-muted-foreground border-t border-border">
-            <p>© 2026 BetterTreks.</p>
-            <p>
-              All rights reserved ·{" "}
-              <Link href="#" className="hover:text-foreground underline">
-                Privacy Policy
+          {/* Region 3 */}
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h4 className="font-bold text-sm mb-4">🌏 REGION 3</h4>
+            <div className="space-y-3 text-sm text-slate-700">
+              <p>
+                <span className="font-semibold">{generateRandomName()}</span>
+              </p>
+              <p>{generateRandomCity()}</p>
+              <p>
+                <span className="font-semibold">Phone:</span>{" "}
+                {generateRandomPhone()}
+              </p>
+              <p>
+                <span className="font-semibold">Email:</span>{" "}
+                {generateRandomEmail()}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Social, Reviews & Payments */}
+      <div className="border-b border-slate-200 px-4 py-6 sm:px-6 sm:py-8">
+        <div className="flex flex-col md:flex-row gap-6 sm:gap-8 max-w-7xl mx-auto justify-between">
+          {/* Social Media */}
+          <div className="flex gap-2">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className="w-8 h-8 sm:w-10 sm:h-10 bg-slate-800 rounded-full flex-shrink-0"
+              />
+            ))}
+          </div>
+
+          {/* Reviews */}
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+            <div className="w-20 h-6 sm:w-24 sm:h-8 bg-slate-300 rounded" />
+            <div className="w-20 h-6 sm:w-24 sm:h-8 bg-slate-300 rounded" />
+          </div>
+        </div>
+      </div>
+
+      {/* Copyright & Links */}
+      <div className="px-4 py-6 sm:px-6">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between max-w-7xl mx-auto text-xs text-slate-600">
+          <p className="text-balance">
+            COPYRIGHT ©{" "}
+            <span className="font-bold text-slate-900">PEAKWISE TRAVELS</span>{" "}
+            THE TOURISM LICENSE NO.1111, COMPANY REGD. NO.111
+          </p>
+          <div className="flex flex-wrap gap-3 sm:gap-4">
+            {["About Us", "Blog", "Partnership", "Trekking"].map((link) => (
+              <Link
+                key={link}
+                href="#"
+                className="hover:text-slate-900 whitespace-nowrap"
+              >
+                {link}
               </Link>
-            </p>
+            ))}
           </div>
         </div>
       </div>

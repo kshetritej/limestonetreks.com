@@ -11,7 +11,6 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import React from "react";
 
 interface MenuItem {
   id: string;
@@ -52,7 +51,7 @@ export function MegaMenu() {
 
   // Show error state
   if (error) {
-    console.error("[v0] Menu fetch error:", error);
+    console.error("Menu fetch error:", error);
     return (
       <NavigationMenu>
         <NavigationMenuList>
@@ -64,7 +63,7 @@ export function MegaMenu() {
 
   return (
     <NavigationMenu>
-      <NavigationMenuList>
+      <NavigationMenuList >
         {menuData?.map((item:any) => {
           // Simple links without children
           if (item.children.length === 0) {

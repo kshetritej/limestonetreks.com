@@ -18,8 +18,8 @@ export default function CTACard() {
   });
 
   return (
-    <section className="w-full rounded-lg bg-primary text-white p-6 md:p-8 mb-4 mt-12">
-      <div className="space-y-4 flex flex-col md:flex-row w-full gap-8 justify-between">
+    <section className="w-full rounded-lg bg-primary text-white p-6 md:p-8 mb-4">
+      <div className="space-y-4 flex flex-col md:flex-row w-full  justify-between max-w-6xl mx-auto">
         <div className="space-y-1">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
             Unlock exclusive Nepal travel deals and guides

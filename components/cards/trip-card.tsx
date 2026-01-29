@@ -54,7 +54,7 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
               <p>
                 <span>{tour.duration}</span> from
               </p>
-              <p className="text-4xl opacity-90 mb-2 text-primary/90">USD {tour.price}</p>
+              <p className="text-4xl opacity-90 mb-2 text-primary">USD {tour.price}</p>
             </div>
             <button className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition">
               View Details
