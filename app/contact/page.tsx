@@ -124,8 +124,8 @@ export default function ContactPage() {
           <div className="flex flex-col gap-8">
             <div className="space-y-2">
               <h3 className="font-semibold text-lg">Email</h3>
-              <a href="mailto:mail@bettertreks.com" className="hover:underline">
-                mail@bettertreks.com
+              <a href="mailto:mail@peakwise.com" className="hover:underline">
+                mail@peakwise.com
               </a>
             </div>
 

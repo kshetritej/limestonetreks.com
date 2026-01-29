@@ -6,7 +6,7 @@ export default function AboutPage() {
       {/* Header */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold mb-4">About BetterTreks</h1>
+          <h1 className="text-4xl font-bold mb-4">About Peakwise</h1>
           <p className="text-lg text-muted-foreground">
             Learn more about our mission and commitment to exceptional trekking experiences.
           </p>
@@ -18,7 +18,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto space-y-6">
           <h2 className="text-3xl font-bold">Our Story</h2>
           <p className="text-base text-muted-foreground leading-relaxed">
-            BetterTreks was founded with a simple mission: to provide authentic, well-organized trekking experiences in the Himalayas. With over 15 years of experience, we have guided thousands of trekkers through some of the most beautiful mountain ranges in the world.
+            Peakwise was founded with a simple mission: to provide authentic, well-organized trekking experiences in the Himalayas. With over 15 years of experience, we have guided thousands of trekkers through some of the most beautiful mountain ranges in the world.
           </p>
           <p className="text-base text-muted-foreground leading-relaxed">
             Our team of experienced guides and coordinators are passionate about sharing the beauty of the mountains while maintaining the highest standards of safety, quality, and respect for the local communities we partner with.
@@ -71,7 +71,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto space-y-8">
           <h2 className="text-3xl font-bold">Certified & Trusted</h2>
           <p className="text-base text-muted-foreground mb-8">
-            BetterTreks is a government-registered company operating with the highest standards in the trekking industry.
+            Peakwise is a government-registered company operating with the highest standards in the trekking industry.
           </p>
           
           <div className="space-y-3">
@@ -119,7 +119,7 @@ export default function AboutPage() {
           </p>
           <div className="space-y-2">
             <p className="text-sm">
-              Email: <a href="mailto:mail@bettertreks.com" className="hover:underline">mail@bettertreks.com</a>
+              Email: <a href="mailto:mail@peakwise.com" className="hover:underline">mail@peakwise.com</a>
             </p>
             <p className="text-sm">
               Phone: <a href="tel:+977984132894" className="hover:underline">+977 9841328947</a>

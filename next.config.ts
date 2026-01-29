@@ -2,6 +2,18 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  async rewrites() {
+    if (process.env.NODE_ENV === "production") {
+      return [
+        {
+          source: "/api/:path*",
+          destination: "https://api.growfore.com/api/:path*",
+        },
+      ];
+    }
+
+    return [];
+  },
   images: {
     remotePatterns: [
       {
