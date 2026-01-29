@@ -71,7 +71,7 @@ export default async function TripPage({
       />
       <div className="container mx-auto">
         <div className="grid md:grid-cols-3 gap-4">
-          <div className="col-span-2 max-w-3xl flex flex-wrap min-w-0">
+          <div className="col-span-2 max-w-3xl flex flex-wrap min-w-0 overflow-hidden">
             <TripOverview trip={trip} />
             <TripItinerary trip={trip} />
             <div
