@@ -1,13 +1,14 @@
 import { TripData } from "@/lib/dummy-trip-data";
 import Image from "next/image";
 import { TripSidebar } from "./trip-sidebar";
+import { decodeHtmlEntities } from "@/lib/html-decoder";
 
 interface TripOverviewProps {
   trip: TripData;
 }
 export function TripOverview({ trip }: TripOverviewProps) {
   return (
-    <div className="space-y-8 mt-4 max-w-4xl">
+    <div className="space-y-8 mt-4">
       <div>
         <h1 className="text-2xl md:text-4xl font-extrabold text-slate-900 mb-4">
           {trip.title}
@@ -78,8 +79,8 @@ export function TripOverview({ trip }: TripOverviewProps) {
         <TripSidebar trip={trip} />
       </div>
       <div className="space-y-4">
-        <div dangerouslySetInnerHTML={{ __html: trip.shortDescription }} />
-        <div dangerouslySetInnerHTML={{ __html: trip.highlights[0] }} />
+        <div dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(trip.shortDescription) }} />
+        <div dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(trip.highlights[0]) }} />
       </div>
     </div>
   );

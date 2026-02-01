@@ -1,6 +1,7 @@
 import { TripData } from "@/lib/dummy-trip-data";
 import { LucideMapPin } from "lucide-react";
 import { Badge } from "../ui/badge";
+import { decodeHtmlEntities } from "@/lib/html-decoder";
 
 interface TripItineraryProps {
   trip: TripData;
@@ -72,7 +73,7 @@ export function TripItinerary({ trip }: TripItineraryProps) {
                 )} */}
 
                 {/* Description */}
-                <div dangerouslySetInnerHTML={{ __html: day.description }}  className="-mt-2"/>
+                <div dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(day.description) }}  className="-mt-2"/>
               </div>
             </div>
           ))}
