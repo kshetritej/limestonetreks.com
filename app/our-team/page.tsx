@@ -1,3 +1,4 @@
+import placeHolderImage from "@/components/data/image";
 import { getFullImageUrl } from "@/lib/getFullUrl";
 
 type TeamMember = {
@@ -41,11 +42,11 @@ export default async function TeamPage() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
-            <div className="relative bg-secondary py-20 px-6">
+            <div className="relative bg-secondary py-42 px-6">
                 <div className="absolute inset-0  overflow-hidden object-cover w-full">
-                    <img src={"./macau-china.jpg"} className="w-full" />
+                    <img src={placeHolderImage.src} className="w-full" />
                 </div>
-                <div className="relative max-w-7xl mx-auto">
+                <div className="relative max-w-7xl mx-auto px-8">
                     <h1 className="text-5xl font-bold text-white">Meet Our Team</h1>
                 </div>
             </div>
@@ -57,7 +58,7 @@ export default async function TeamPage() {
                         <div key={department.id} className="space-y-8">
                             {/* Department Header */}
                             <div>
-                                <h2 className="text-4xl font-bold text-orange-600 mb-4">
+                                <h2 className="text-4xl font-bold text-primary mb-4">
                                     {department.name}
                                 </h2>
                                 <div className="h-1 bg-gradient-to-r from-gray-300 via-gray-200 to-transparent"></div>
@@ -88,7 +89,7 @@ export default async function TeamPage() {
 
                                             {/* Member Info */}
                                             <div className="flex-1 space-y-4">
-                                                <h3 className="text-3xl font-bold text-orange-600">
+                                                <h3 className="text-3xl font-bold text-primary">
                                                     {member.name}
                                                 </h3>
                                                 <p className="text-xl text-gray-700 font-semibold">

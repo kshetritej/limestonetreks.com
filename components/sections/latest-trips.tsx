@@ -28,9 +28,6 @@ const LatestTrips = async () => {
           {trips?.map((tour: any) => (
             <TripCard tour={tour} key={tour.id} />
           ))}
-          {trips?.map((tour: any) => (
-            <TripCard tour={tour} key={tour.id} />
-          ))}
         </div>
       }
     </SectionTemplate>

@@ -22,12 +22,12 @@ export const AdditionalInfoRenderer = ({
     <AccordionItem
     key={`item-${index}`}
       value={`item-${index}`}
-      className="rounded-md border border-gray-200 bg-white data-[state=open]:border-primary data-[state=open]:bg-blue-50/40 transition-colors"
+      className="rounded-md  data-[state=open]:border-primary p-0"
     >
-      <AccordionTrigger className="hover:no-underline py-4 font-bold  text-left w-full! px-4">
+      <AccordionTrigger className="hover:no-underline font-bold text-left w-full! text-lg p-2">
         <span>{item.title}</span>
       </AccordionTrigger>
-      <AccordionContent className="p-4">
+      <AccordionContent className="p-2 text-lg">
         <div dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(item.description) }} />
       </AccordionContent>
     </AccordionItem>

@@ -78,10 +78,6 @@ export function TripOverview({ trip }: TripOverviewProps) {
       <div className="md:hidden">
         <TripSidebar trip={trip} />
       </div>
-      <div className="space-y-4">
-        <div dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(trip.shortDescription) }} />
-        <div dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(trip.highlights[0]) }} />
-      </div>
     </div>
   );
 }

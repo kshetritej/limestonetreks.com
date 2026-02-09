@@ -1,8 +1,13 @@
 import SectionTemplate from "../templates/section-template";
 import TripCard from "../cards/trip-card";
 import placeHolderImage from "../data/image";
-import { LucideArrowRight, LucideCalendarClock, LucideCoins } from "lucide-react";
+import {
+  LucideArrowRight,
+  LucideCalendarClock,
+  LucideCoins,
+} from "lucide-react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const FeaturedTrip = async () => {
   const res = await fetch(
@@ -14,7 +19,7 @@ const FeaturedTrip = async () => {
 
   return (
     <SectionTemplate
-    className="w-full"
+      className="w-full"
       badgeText={<p>Trip of the Month</p>}
       title={<p>{trips[0].title}</p>}
       text={
@@ -29,7 +34,7 @@ const FeaturedTrip = async () => {
     >
       {
         <div className="relative md:h-120 overflow-hidden">
-          <img src={placeHolderImage.src} />
+          <img src={placeHolderImage.src} className="w-full" />
           <div className="absolute text-white font-bold top-8 md:top-12 left-8 md:left-100 flex items-center">
             <div className="md:text-2xl flex gap-2 items-start border-r-2 pr-10">
               <LucideCalendarClock className="size-8 md:size-12" />
@@ -38,7 +43,7 @@ const FeaturedTrip = async () => {
                 <p>{trips[0].duration}</p>
               </div>
             </div>
-            <div className="flex gap-2 items-start pl-10">
+            <div className="md:text-2xl flex gap-2 items-start pl-10">
               <LucideCoins className="size-8 md:size-12" />
               <div>
                 <p className="text-xs md:text-sm">Package Price</p>
@@ -46,7 +51,11 @@ const FeaturedTrip = async () => {
               </div>
             </div>
           </div>
-          <Button className="absolute bottom-2 left-130 py-6 px-12">Explore Package <LucideArrowRight/></Button>
+          <Link href={`/${trips[0].slug}`} className="absolute bottom-8 left-8">
+            <Button className="absolute bottom-2 left-130 py-6 px-12">
+              Explore Package <LucideArrowRight />
+            </Button>
+          </Link>
         </div>
       }
     </SectionTemplate>

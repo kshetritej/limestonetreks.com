@@ -1,4 +1,3 @@
-import { Mountain, Users, Heart, Zap } from "lucide-react";
 import adventure from "@/public/adventurer_icon.webp";
 import bump from "@/public/bump.webp";
 import no_hassle from "@/public/no-hassle.webp";

@@ -30,7 +30,7 @@ function Comp({
   filledDotsCount: number;
 }) {
   return (
-    <div className="text-sm flex items-center justify-center gap-1 bg-white/10 p-1 rounded-md text-white font-medium w-fit">
+    <div className="text-sm flex items-center justify-center gap-1 bg-secondary/50 p-1 rounded-md text-white font-medium w-fit">
       <LucideGauge className="size-5" />
       <div>{text ?? "Normal"}</div>
       <div className="flex gap-1 items-center">
@@ -39,8 +39,8 @@ function Comp({
             key={index}
             className={cn(
               filledDotsCount > index
-                ? "bg-green-600 border-green-600"
-                : "border-green-600",
+                ? "bg-green-300 border-green-600"
+                : "border-white",
               "size-3 rounded-full border",
             )}
           ></div>

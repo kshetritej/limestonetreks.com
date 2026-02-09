@@ -1,4 +1,6 @@
+import { LucideFacebook, LucideInstagram, LucideYoutube } from "lucide-react";
 import Link from "next/link";
+import { IconBrandFacebook, IconBrandInstagram, IconBrandTiktok, IconBrandYoutube } from '@tabler/icons-react';
 
 function generateRandomPhone(): string {
   const area = Math.floor(Math.random() * 900) + 100;
@@ -66,25 +68,22 @@ export default function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-200">
       {/* Partners & Associations */}
-      <div className="border-b border-slate-200 px-4 py-6 sm:px-6 sm:py-8">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between max-w-7xl mx-auto">
-          <div className="flex items-center gap-3">
-            <h3 className="font-bold text-xs sm:text-sm">OUR PARTNERS</h3>
-            <div className="flex gap-2">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-500 rounded" />
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-green-500 rounded" />
-            </div>
-          </div>
-          <div className="flex items-center gap-3 sm:gap-4">
-            <h3 className="font-bold text-xs sm:text-sm">ASSOCIATIONS</h3>
-            <div className="flex gap-2 overflow-x-auto">
-              {[...Array(5)].map((_, i) => (
-                <div
-                  key={i}
-                  className="w-10 h-6 sm:w-12 sm:h-8 bg-slate-300 rounded flex-shrink-0"
-                />
-              ))}
-            </div>
+      <div className="border-b border-slate-200  py-6 sm:py-8 container mx-auto">
+        <div className="flex items-center gap-3 sm:gap-4">
+          <div className="font-bold text-xs sm:text-sm">ASSOCIATIONS</div>
+          <div className="flex gap-2 overflow-x-auto">
+            {[
+              "/associated1.png",
+              "/associated2.png",
+              "/associated3.png",
+              "/associated4.png",
+            ].map((ass, i) => (
+              <img
+                key={i}
+                src={ass}
+                className="w-10 h-6 sm:w-12 sm:h-8 object-contain"
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -158,12 +157,10 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row gap-6 sm:gap-8 max-w-7xl mx-auto justify-between">
           {/* Social Media */}
           <div className="flex gap-2">
-            {[...Array(6)].map((_, i) => (
-              <div
-                key={i}
-                className="w-8 h-8 sm:w-10 sm:h-10 bg-slate-800 rounded-full flex-shrink-0"
-              />
-            ))}
+            <IconBrandFacebook />
+            <IconBrandInstagram />
+            <IconBrandYoutube />
+            <IconBrandTiktok/>
           </div>
 
           {/* Reviews */}

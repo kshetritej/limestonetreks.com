@@ -15,27 +15,24 @@ interface TripFaqsProps {
 
 export function TripFaqs({ trip }: TripFaqsProps) {
   return (
-    <div className="space-y-8 max-w-4xl min-w-3xl">
-      <div>
-        <h2 className="font-bold my-4">Frequently Asked Questions</h2>
+    <div className="max-w-4xl p-2">
+        <h2 className="font-bold -mt-1">Frequently Asked Questions</h2>
 
-        <Accordion type="single" collapsible className="w-full space-y-3">
+        <Accordion type="single" collapsible className="w-full">
           {trip.faqs.map((faq, index) => (
             <AccordionItem
               key={index}
               value={`faq-${index}`}
-              className="border border-primary-100 rounded-lg px-6 bg-primary-50 w-full!"
             >
-              <AccordionTrigger className="hover:no-underline py-4 font-bold text-left w-full! text-lg">
+              <AccordionTrigger className="hover:no-underline font-bold text-lg p-0">
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className="pb-4">
+              <AccordionContent className="pb-4 text-lg wrap-break-word">
                 <div dangerouslySetInnerHTML={{__html: decodeHtmlEntities(faq.answer)}}/>
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
       </div>
-    </div>
   )
 }

@@ -1,6 +1,8 @@
 import { LucideArrowRight, LucideCheckCircle } from "lucide-react";
 import { Button } from "../ui/button";
 import placeHolderImage from "../data/image";
+import Image from "next/image";
+import Link from "next/link";
 
 const highlights = [
   "Locally operated & region-focused",
@@ -38,15 +40,17 @@ export function AboutSection() {
             );
           })}
         </div>
-        <Button className="w-fit">
-          More About Us <LucideArrowRight />
-        </Button>
+        <Link href={"/about-us"}>
+          <Button className="w-fit">
+            More About Us <LucideArrowRight />
+          </Button>
+        </Link>
       </div>
-      <div className="rounded-sm relative">
-        <img src={placeHolderImage.src} className="rounded-md" />
-        <div className="rounded-md absolute -bottom-10 -left-24 size-56 object-cover overflow-hidden">
-          <img src={placeHolderImage.src} className="hidden md:flex w-full h-full object-cover rounded-md overflow-hidden" />
-        </div>
+      <div className="rounded-3xl relative">
+        <img alt="" src={placeHolderImage.src} className="rounded-3xl" />
+        {/* <div className="rounded-3xl absolute -bottom-10 -left-24 size-56 object-cover overflow-hidden">
+          <Image alt="" fill src={placeHolderImage.src} className="hidden md:flex w-full h-full object-cover rounded-3xl overflow-hidden" />
+        </div> */}
       </div>
     </div>
   );

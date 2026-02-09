@@ -1,12 +1,6 @@
-"use client";
-
-import { ArrowRight, Diff, LucideClock } from "lucide-react";
+import { ArrowRight} from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 import DifficultyBadge from "../atoms/difficulty-badge";
-import { getFullImageUrl } from "@/lib/getFullUrl";
-import placeHolderImage from "../data/image";
-import { Button } from "../ui/button";
 
 export type Tour = {
   id: string;
@@ -54,7 +48,7 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
               <p>
                 <span>{tour.duration}</span> from
               </p>
-              <p className="text-4xl opacity-90 mb-2 text-primary">USD {tour.price}</p>
+              <p className="text-4xl  mb-2 text-white font-bold">USD {tour.price}</p>
             </div>
             <button className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition">
               View Details

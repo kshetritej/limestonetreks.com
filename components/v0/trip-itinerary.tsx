@@ -10,6 +10,18 @@ interface TripItineraryProps {
 export function TripItinerary({ trip }: TripItineraryProps) {
   return (
     <div className="space-y-8 max-w-4xl">
+      <div className="space-y-4">
+        <div
+          dangerouslySetInnerHTML={{
+            __html: decodeHtmlEntities(trip.shortDescription),
+          }}
+        />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: decodeHtmlEntities(trip.highlights[0]),
+          }}
+        />
+      </div>
       <div>
         <h2 className="font-bold text-xl my-4">Detailed Itinerary</h2>
         <div className=" mb-8">
@@ -24,7 +36,10 @@ export function TripItinerary({ trip }: TripItineraryProps) {
 
               {/* Content */}
               <div className="flex-1 border-l-2 pl-4 border-dotted border-primary">
-                <div className="w-6 h-6 bg-primary rounded-full border-2 border-white shadow-md z-10 -ml-7 flex items-center justify-center" > <LucideMapPin className="text-white size-4"/> </div>
+                <div className="w-6 h-6 bg-primary rounded-full border-2 border-white shadow-md z-10 -ml-7 flex items-center justify-center">
+                  {" "}
+                  <LucideMapPin className="text-white size-4" />{" "}
+                </div>
                 <Badge>Day {index + 1}</Badge>
                 <h3 className="text-lg font-bold mb-3">{day.title}</h3>
 
@@ -73,7 +88,12 @@ export function TripItinerary({ trip }: TripItineraryProps) {
                 )} */}
 
                 {/* Description */}
-                <div dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(day.description) }}  className="-mt-2"/>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: decodeHtmlEntities(day.description),
+                  }}
+                  className="-mt-2"
+                />
               </div>
             </div>
           ))}
