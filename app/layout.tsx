@@ -3,9 +3,10 @@ import "./globals.css";
 import Navbar from "@/components/common/navbar";
 import Footer from "@/components/common/footer";
 import { mulish } from "@/lib/font";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
-  title: "Peakwise Travels",
+  title: "Limestone Treks",
   description: "Created by Growfore Solution",
 };
 
@@ -19,9 +20,10 @@ export default function RootLayout({
       <body
         className={`${mulish.className} sans-serif antialiased`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
+        <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );

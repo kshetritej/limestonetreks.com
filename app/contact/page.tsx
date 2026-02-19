@@ -145,10 +145,10 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold text-foreground">Email</p>
                   <a
-                    href="mailto:mail@peakwise.com"
+                    href="mailto:mail@limestonetreks.com"
                     className="hover:underline"
                   >
-                    mail@peakwise.com
+                    mail@limestonetreks.com
                   </a>
                 </div>
 

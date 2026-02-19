@@ -16,10 +16,10 @@ export function AboutSection() {
       <div className="mb-2 flex flex-col gap-1 space-y-4">
         <div className="font-bold flex items-center gap-1 text-primary">
           <div className="w-8 h-1 bg-primary" />
-          <p className="uppercase">why peakwise</p>
+          <p className="uppercase">why Limestone Treks</p>
         </div>
         <div className="mb-4 max-w-2xl">
-          Peakwise was built to simplify trekking and travel in the mountains —
+          Limestone Treks was built to simplify trekking and travel in the mountains —
           without cutting corners.
         </div>
 
@@ -28,7 +28,7 @@ export function AboutSection() {
           focus on trips that respect both travelers and terrain. No rushed
           schedules, no unnecessary upsells — just well-designed journeys led by
           people who know the mountains best. Whether you’re trekking for the
-          first time or returning for something more challenging, Peakwise helps
+          first time or returning for something more challenging, Limestone Treks helps
           you choose wisely.
         </p>
         <div className="flex flex-col gap-2">

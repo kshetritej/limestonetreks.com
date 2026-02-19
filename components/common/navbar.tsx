@@ -1,5 +1,4 @@
 import LogoComponent from "@/components/atoms/logo";
-import { AtSign, Phone } from "lucide-react";
 import { MegaMenu } from "./mega-menu";
 import { MobileMenu } from "./mobile-menu";
 import { CallNow } from "../atoms/whatsapp-phone-button";

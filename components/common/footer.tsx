@@ -160,7 +160,7 @@ export default function Footer() {
             <IconBrandFacebook />
             <IconBrandInstagram />
             <IconBrandYoutube />
-            <IconBrandTiktok/>
+            <IconBrandTiktok />
           </div>
 
           {/* Reviews */}
@@ -176,7 +176,7 @@ export default function Footer() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between max-w-7xl mx-auto text-xs text-slate-600">
           <p className="text-balance">
             COPYRIGHT ©{" "}
-            <span className="font-bold text-slate-900">PEAKWISE TRAVELS</span>{" "}
+            <span className="font-bold text-slate-900">LIMESTONE TREKS</span>{" "}
             THE TOURISM LICENSE NO.1111, COMPANY REGD. NO.111
           </p>
           <div className="flex flex-wrap gap-3 sm:gap-4">

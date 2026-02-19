@@ -21,6 +21,7 @@ export function TripItinerary({ trip }: TripItineraryProps) {
             __html: decodeHtmlEntities(trip.highlights[0]),
           }}
         />
+        <div dangerouslySetInnerHTML={{ __html: trip.fullDescription }} />
       </div>
       <div>
         <h2 className="font-bold text-xl my-4">Detailed Itinerary</h2>
@@ -37,7 +38,6 @@ export function TripItinerary({ trip }: TripItineraryProps) {
               {/* Content */}
               <div className="flex-1 border-l-2 pl-4 border-dotted border-primary">
                 <div className="w-6 h-6 bg-primary rounded-full border-2 border-white shadow-md z-10 -ml-7 flex items-center justify-center">
-                  {" "}
                   <LucideMapPin className="text-white size-4" />{" "}
                 </div>
                 <Badge>Day {index + 1}</Badge>
