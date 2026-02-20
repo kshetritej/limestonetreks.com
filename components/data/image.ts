@@ -1,3 +1,3 @@
-import placeHolderImage from "@/public/aerial-shot-of-snowy-mountains.jpg";
+import placeHolderImage from "@/public/placeholder-mountain-range.webp";
 
 export default placeHolderImage;

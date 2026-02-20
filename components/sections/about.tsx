@@ -1,7 +1,6 @@
 import { LucideArrowRight, LucideCheckCircle } from "lucide-react";
 import { Button } from "../ui/button";
 import placeHolderImage from "../data/image";
-import Image from "next/image";
 import Link from "next/link";
 
 const highlights = [
