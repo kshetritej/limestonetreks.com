@@ -35,13 +35,13 @@ export default function ContactPage() {
     <main className="bg-background text-foreground">
       <section className="relative min-h-[60vh] flex items-center justify-center text-center">
         <Image
-          src="/contact.jpg"
+          src="/majestic-mountain-range.webp"
           alt="contact"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0  bg-linear-to-b from-primary/50 to-primary/10" />
         <div className="relative z-10 max-w-3xl px-4 text-white">
           <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-lg text-white/90">
@@ -53,12 +53,12 @@ export default function ContactPage() {
       {/* CONTACT CONTENT */}
       <section className="py-15 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="bg-card rounded-2xl shadow-2xl p-8">
+          <div className="bg-card rounded-md shadow-xs p-8">
             <h2 className="text-4xl font-bold mb-6 mt-2">Send us a Message</h2>
 
             {submitted && (
               <div className="mb-6 rounded-lg border border-green-200 bg-green-50 p-4 text-green-800">
-                Thank you for your message. We’ll get back to you soon 🌿
+                Thank you for your message. We’ll get back to you soon.
               </div>
             )}
 
@@ -127,7 +127,7 @@ export default function ContactPage() {
 
               <Button
                 type="submit"
-                className="w-full py-7 bg-cyan-700 hover:bg-cyan-800 duration-300 cursor-pointer"
+                className="w-full py-7 bg-primary hover:bg-primary/90 duration-300 cursor-pointer"
               >
                 Send Message
               </Button>
