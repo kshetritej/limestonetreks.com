@@ -2,6 +2,7 @@ import { TripData } from "@/lib/dummy-trip-data";
 import Image from "next/image";
 import { TripSidebar } from "./trip-sidebar";
 import { decodeHtmlEntities } from "@/lib/html-decoder";
+import { LucideStar } from "lucide-react";
 
 interface TripOverviewProps {
   trip: TripData;
@@ -14,8 +15,8 @@ export function TripOverview({ trip }: TripOverviewProps) {
           {trip.title}
         </h1>
         <div className="flex items-center gap-2">
-          <span className="text-2xl">🌟</span>
-          <p className="text-sm text-slate-600">
+          <span className="text-2xl"><LucideStar size={16} /></span>
+          <p className="text-sm">
             Recommended by {trip?.ratings?.recommendedPercentage || "99"}% of
             travelers
           </p>
@@ -42,11 +43,11 @@ export function TripOverview({ trip }: TripOverviewProps) {
             image="/icons/group-size-icon.svg"
             value={String(trip.guestCapacity) ?? "-"}
           />
-          <GlanceItem
+          {/* <GlanceItem
             text="Max Altitude"
             image="/icons/altitude-icon.svg"
             value={trip.maxAltitude ?? "-"}
-          />
+          /> */}
           <GlanceItem
             text="Start"
             image="/icons/start-location-icon.svg"
@@ -57,16 +58,16 @@ export function TripOverview({ trip }: TripOverviewProps) {
             image="/icons/end-location-icon.svg"
             value={trip.dropOffPoint ?? "-"}
           />
-          <GlanceItem
+          {/* <GlanceItem
             text="Travel Style"
             image="/icons/travel-style-icon.svg"
             value={trip?.travelStyle || "-"}
-          />
-          <GlanceItem
+          /> */}
+          {/* <GlanceItem
             text="Best Time"
             image="/icons/best-time-icon.svg"
             value={trip.bestTime ?? "-"}
-          />
+          /> */}
           <GlanceItem
             text="Locations"
             image="/icons/route-icon.svg"

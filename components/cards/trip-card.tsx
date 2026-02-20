@@ -1,4 +1,4 @@
-import { ArrowRight} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import DifficultyBadge from "../atoms/difficulty-badge";
 
@@ -22,7 +22,7 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
       href={tour.canonicalPath ?? `/activities/${tour.id}`}
       className="relative cursor-pointer flex flex-col gap-2 shadow-sm border"
     >
-      <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
+      <div className="relative h-120 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
         {/* Background Image */}
         <img
           src={
@@ -34,7 +34,7 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
         />
 
         {/* Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60  to-black/10" />
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">
@@ -43,12 +43,12 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
           </div>
 
           <div>
-            <p className="text-2xl font-bold mb-2">{tour.title}</p>
+            <p className="text-3xl font-extrabold mb-2">{tour.title}</p>
             <div className="space-y-2">
               <p>
                 <span>{tour.duration}</span> from
               </p>
-              <p className="text-4xl  mb-2 text-white font-bold">USD {tour.price}</p>
+              <p className="text-4xl  mb-2 font-bold">USD {tour.price}</p>
             </div>
             <button className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition">
               View Details

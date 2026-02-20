@@ -56,7 +56,7 @@
 --card-foreground: oklch(0.141 0.005 285.823);
 --popover: oklch(1 0 0);
 --popover-foreground: oklch(0.141 0.005 285.823);
---primary: oklch(0.65 0.18 132);
+--primary: oklch(45% 0.085 224.283);
 --primary-foreground: oklch(0.99 0.03 121);
 --secondary: oklch(0.967 0.001 286.375);
 --secondary-foreground: oklch(0.21 0.006 285.885);
@@ -125,4 +125,65 @@
 body {
   @apply bg-background text-foreground;
 }
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+table thead {
+  background-color: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+table th {
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  color: #111827;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+table tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+table td {
+  padding: 1rem 1.5rem;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+table td:first-child {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+/* Mobile responsive */
+@media (max-width: 640px) {
+  table {
+    font-size: 0.875rem;
+  }
+
+  table th,
+  table td {
+    padding: 0.75rem 1rem;
+  }
 }

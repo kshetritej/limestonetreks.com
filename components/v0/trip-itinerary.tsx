@@ -21,7 +21,7 @@ export function TripItinerary({ trip }: TripItineraryProps) {
             __html: decodeHtmlEntities(trip.highlights[0]),
           }}
         />
-        <div dangerouslySetInnerHTML={{ __html: trip.fullDescription }} />
+        <div dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(trip.fullDescription) }} />
       </div>
       <div>
         <h2 className="font-bold text-xl my-4">Detailed Itinerary</h2>

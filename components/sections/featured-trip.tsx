@@ -35,6 +35,7 @@ const FeaturedTrip = async () => {
       {
         <div className="relative md:h-120 overflow-hidden">
           <img src={trips[0].images[0]} className="w-full object-cover" />
+          <div className="bg-linear-to-b from-primary/60 to-primary/0 absolute inset-0" />
           <div className="absolute text-white font-bold top-8 md:top-12 left-8 md:left-100 flex items-center">
             <div className="md:text-2xl flex gap-2 items-start border-r-2 pr-10">
               <LucideCalendarClock className="size-8 md:size-12" />
