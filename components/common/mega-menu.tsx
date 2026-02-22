@@ -2,11 +2,11 @@ import { LucideChevronDown } from "lucide-react";
 import Link from "next/link";
 
 // This is a Server Component (no 'use client' at the top)
-export function MegaMenu({ items }) {
+export function MegaMenu({ items }: { items: any }) {
   return (
     <nav className="flex items-center space-x-6">
       <ul className="flex gap-6">
-        {items?.map((item) => (
+        {items?.map((item: any) => (
           <li key={item.id} className="group relative py-4">
             {/* Main Link / Trigger */}
             <Link
@@ -19,9 +19,9 @@ export function MegaMenu({ items }) {
 
             {/* Dropdown Content - Controlled by CSS hover */}
             {item.children && (
-              <div className="absolute z-[999] left-0 top-full hidden group-hover:block w-[500px] pt-2">
+              <div className="absolute z-999 left-0 top-full hidden group-hover:block w-[500px] pt-2">
                 <div className="bg-white rounded-lg shadow-xl p-6 grid grid-cols-2 gap-8">
-                  {item.children.map((child) => (
+                  {item.children.map((child: any) => (
                     <div key={child.id} className="space-y-3">
                       {/* Sub-heading (e.g., Everest Region) */}
                       <Link
@@ -34,7 +34,7 @@ export function MegaMenu({ items }) {
                       {/* Nested Links */}
                       {child.subChildren && (
                         <ul className="space-y-2">
-                          {child.subChildren.map((subChild) => (
+                          {child.subChildren.map((subChild: any) => (
                             <li key={subChild.id}>
                               <Link
                                 href={subChild.url}
