@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import DifficultyBadge from "../atoms/difficulty-badge";
+import Image from "next/image";
 
 export type Tour = {
   id: string;
@@ -20,16 +21,18 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
   return (
     <Link
       href={tour.canonicalPath ?? `/activities/${tour.id}`}
-      className="relative cursor-pointer flex flex-col gap-2 shadow-sm border"
+      className="relative cursor-pointer flex flex-col gap-2 shadow-sm"
     >
       <div className="relative h-120 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
         {/* Background Image */}
-        <img
+        <Image
           src={
             tour.images[0] ??
             "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=600&fit=crop"
           }
           alt={tour.title}
+          height={720}
+          width={1280}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
 

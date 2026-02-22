@@ -22,7 +22,7 @@ export default async function Homepage() {
       <div className="container mx-auto p-2">
         <FeaturedTrip />
         <LatestTrips />
-        <RecentBlogs />
+        {/*<RecentBlogs />*/}
       </div>
       <WhyUsSection />
       <CTACard />

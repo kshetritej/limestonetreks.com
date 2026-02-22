@@ -11,7 +11,7 @@ const highlights = [
 ];
 export function AboutSection() {
   return (
-    <div className="grid  md:grid-cols-2 gap-2 min-h-[80vh] items-center justify-center">
+    <div className="grid  md:grid-cols-2 gap-12 h-[80vh] items-center justify-center">
       <div className="mb-2 flex flex-col gap-1 space-y-4">
         <div className="font-bold flex items-center gap-1 text-primary">
           <div className="w-8 h-1 bg-primary" />
@@ -45,8 +45,8 @@ export function AboutSection() {
           </Button>
         </Link>
       </div>
-      <div className="rounded-3xl relative">
-        <img alt="" src={placeHolderImage.src} className="rounded-3xl" />
+      <div className="overflow-hidden rounded-2xl">
+        <img alt="" src={placeHolderImage.src} className="rounded-sm overflow-hidden" />
         {/* <div className="rounded-3xl absolute -bottom-10 -left-24 size-56 object-cover overflow-hidden">
           <Image alt="" fill src={placeHolderImage.src} className="hidden md:flex w-full h-full object-cover rounded-3xl overflow-hidden" />
         </div> */}

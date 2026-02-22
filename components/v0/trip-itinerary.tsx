@@ -12,18 +12,25 @@ export function TripItinerary({ trip }: TripItineraryProps) {
     <div className="space-y-8 max-w-4xl">
       <div className="space-y-4">
         <div
+          id="overview"
           dangerouslySetInnerHTML={{
             __html: decodeHtmlEntities(trip.shortDescription),
           }}
         />
         <div
+          id="highlights"
           dangerouslySetInnerHTML={{
             __html: decodeHtmlEntities(trip.highlights[0]),
           }}
         />
-        <div dangerouslySetInnerHTML={{ __html: decodeHtmlEntities(trip.fullDescription) }} />
+        <div
+          id=""
+          dangerouslySetInnerHTML={{
+            __html: decodeHtmlEntities(trip.fullDescription),
+          }}
+        />
       </div>
-      <div>
+      <div id="itinerary">
         <h2 className="font-bold text-xl my-4">Detailed Itinerary</h2>
         <div className=" mb-8">
           {trip.itinerary.map((day, index) => (
@@ -43,51 +50,6 @@ export function TripItinerary({ trip }: TripItineraryProps) {
                 <Badge>Day {index + 1}</Badge>
                 <h3 className="text-lg font-bold mb-3">{day.title}</h3>
 
-                {/* Altitude & Duration Info */}
-                {/* {(day.altitude ||
-                  day.duration ||
-                  day.meals ||
-                  day.accommodation) && (
-                  <div className="flex flex-wrap gap-4 mb-4 text-sm text-slate-600">
-                    {day.altitude && (
-                      <div className="flex items-center gap-1">
-                        <span>⛰️</span>
-                        <span>{day.altitude}</span>
-                      </div>
-                    )}
-                    {day.duration && (
-                      <div className="flex items-center gap-1">
-                        <span>⏱️</span>
-                        <span>{day.duration}</span>
-                      </div>
-                    )}
-                    {day.meals && (
-                      <div className="flex items-center gap-1">
-                        <span>🍽️</span>
-                        <span>{day.meals}</span>
-                      </div>
-                    )}
-                    {day.accommodation && (
-                      <div className="flex items-center gap-1">
-                        <span>🏠</span>
-                        <span>{day.accommodation}</span>
-                      </div>
-                    )}
-                  </div>
-                )} */}
-
-                {/* Image */}
-                {/* {day.image && (
-                  <div className="mb-4 rounded-lg overflow-hidden h-80 w-full">
-                    <img
-                      src={day.image || "/placeholder.svg"}
-                      alt={`Day ${day.day}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )} */}
-
-                {/* Description */}
                 <div
                   dangerouslySetInnerHTML={{
                     __html: decodeHtmlEntities(day.description),

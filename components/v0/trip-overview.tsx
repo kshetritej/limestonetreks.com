@@ -1,7 +1,6 @@
 import { TripData } from "@/lib/dummy-trip-data";
 import Image from "next/image";
 import { TripSidebar } from "./trip-sidebar";
-import { decodeHtmlEntities } from "@/lib/html-decoder";
 import { LucideStar } from "lucide-react";
 
 interface TripOverviewProps {
@@ -15,7 +14,9 @@ export function TripOverview({ trip }: TripOverviewProps) {
           {trip.title}
         </h1>
         <div className="flex items-center gap-2">
-          <span className="text-2xl"><LucideStar size={16} /></span>
+          <span className="text-2xl">
+            <LucideStar size={16} />
+          </span>
           <p className="text-sm">
             Recommended by {trip?.ratings?.recommendedPercentage || "99"}% of
             travelers
