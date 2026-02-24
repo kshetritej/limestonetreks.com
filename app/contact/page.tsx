@@ -1,38 +1,11 @@
-"use client";
-
-import React, { useState } from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import Link from "next/link";
+import { ContactForm } from "@/components/forms/contact-form";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    setTimeout(() => setSubmitted(false), 5000);
-  };
-
   return (
     <main className="bg-background text-foreground">
+      {/* HERO */}
       <section className="relative min-h-[60vh] flex items-center justify-center text-center">
         <Image
           src="/majestic-mountain-range.webp"
@@ -41,11 +14,11 @@ export default function ContactPage() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0  bg-linear-to-b from-primary/50 to-primary/10" />
+        <div className="absolute inset-0 bg-linear-to-b from-primary/50 to-primary/10" />
         <div className="relative z-10 max-w-3xl px-4 text-white">
           <h1 className="text-5xl font-bold mb-4">Contact Us</h1>
           <p className="text-lg text-white/90">
-            Have questions about our treks? We’d love to hear from you.
+            Have questions about our treks? We'd love to hear from you.
           </p>
         </div>
       </section>
@@ -53,86 +26,8 @@ export default function ContactPage() {
       {/* CONTACT CONTENT */}
       <section className="py-15 px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <div className="bg-card rounded-md shadow-xs p-8">
-            <h2 className="text-4xl font-bold mb-6 mt-2">Send us a Message</h2>
-
-            {submitted && (
-              <div className="mb-6 rounded-lg border border-green-200 bg-green-50 p-4 text-green-800">
-                Thank you for your message. We’ll get back to you soon.
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <Label htmlFor="name" className="pb-3 text-lg">
-                  Name
-                </Label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Your full name"
-                  className="py-6 "
-                  required
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="email" className="pb-3 text-lg">
-                  Email
-                </Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="your@email.com"
-                  className="py-6 "
-                  required
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="phone" className="pb-3 text-lg">
-                  Phone
-                </Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="py-6 "
-                  placeholder="+977 9841328947"
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="message" className="pb-3 text-lg">
-                  Message
-                </Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  placeholder="Tell us more about your inquiry..."
-                  className="py-10"
-                  required
-                />
-              </div>
-
-              <Button
-                type="submit"
-                className="w-full py-7 bg-primary hover:bg-primary/90 duration-300 cursor-pointer"
-              >
-                Send Message
-              </Button>
-            </form>
-          </div>
+          {/* FORM - Client Component */}
+          <ContactForm />
 
           {/* CONTACT INFO */}
           <div className="space-y-2">
@@ -140,25 +35,22 @@ export default function ContactPage() {
               <h2 className="text-4xl font-bold mb-4 mt-7">
                 Other Ways to Reach Us
               </h2>
-
               <div className="space-y-4 text-muted-foreground">
                 <div>
                   <p className="font-semibold text-foreground">Email</p>
-                  <a
-                    href="mailto:mail@limestonetreks.com"
+                  <Link
+                    href="mailto:info@limestonetreks.com"
                     className="hover:underline"
                   >
-                    mail@limestonetreks.com
-                  </a>
+                    info@limestonetreks.com
+                  </Link>
                 </div>
-
                 <div>
                   <p className="font-semibold text-foreground">Phone</p>
                   <a href="tel:+9779841328947" className="hover:underline">
                     +977 9841328947
                   </a>
                 </div>
-
                 <div>
                   <p className="font-semibold text-foreground">Location</p>
                   <p>Kathmandu, Nepal</p>

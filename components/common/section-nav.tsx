@@ -81,7 +81,7 @@ export function SectionNavigation({ sections }: SectionNavigationProps) {
   return (
     <nav
       className={`sticky z-9999 border-y border-gray-200 shadow-sm bg-background top-0`}
-      style={{ top: navbarHeight - 20 }}
+      style={{ top: navbarHeight - 3 }}
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center gap-8 overflow-x-auto">
