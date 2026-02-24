@@ -1,8 +1,6 @@
 export const dynamic = "force-static";
 
-import CTACard from "@/components/cards/cta-card";
 import Hero from "@/components/hero";
-import RecentBlogs from "../sections/recent-blogs";
 import LatestTrips from "../sections/latest-trips";
 import WhyUsSection from "../sections/why-us";
 import BestSellerTrips from "../sections/best-sellerts";
@@ -25,7 +23,7 @@ export default async function Homepage() {
         {/*<RecentBlogs />*/}
       </div>
       <WhyUsSection />
-      <CTACard />
+      {/*<CTACard />*/}
     </div>
   );
 }
