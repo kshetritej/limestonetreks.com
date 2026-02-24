@@ -13,6 +13,7 @@ import { SectionNavigation } from "@/components/common/section-nav";
 import { Metadata } from "next";
 import Script from "next/script";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({
   params,
@@ -28,7 +29,7 @@ export async function generateMetadata({
   const trip = data.data;
 
   return {
-    title: trip.seo.metaTitle || "Limestone Treks",
+    title: trip.seo?.metaTitle || "Limestone Treks",
     description:
       trip.seo.metaDescription || "Explore the beauty of Limestone Treks",
     openGraph: {
@@ -55,6 +56,10 @@ export default async function TripPage({
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/activity/slug/${slug}`,
   );
+
+  if (res.status == 404) {
+    return notFound();
+  }
 
   if (!res.ok) {
     return (
