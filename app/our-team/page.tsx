@@ -64,7 +64,7 @@ export default async function TeamPage() {
                 <h2 className="text-4xl font-bold text-primary mb-4">
                   {department.name}
                 </h2>
-                <div className="h-1 bg-gradient-to-r from-gray-300 via-gray-200 to-transparent"></div>
+                <div className="h-1 bg-linear-to-r from-gray-300 via-gray-200 to-transparent"></div>
               </div>
 
               {/* Team Members */}
@@ -76,12 +76,14 @@ export default async function TeamPage() {
                       className="flex flex-col md:flex-row gap-8 items-start"
                     >
                       {/* Member Image */}
-                      <div className="flex-shrink-0">
+                      <div className="shrink-0">
                         {member.image ? (
-                          <img
+                          <Image
+                            height={720}
+                            width={1280}
                             src={getFullImageUrl(member.image)}
                             alt={member.name}
-                            className="w-80 h-80 object-cover rounded-lg shadow-lg rounded-sm"
+                            className="w-80 h-80 object-cover shadow-sm"
                           />
                         ) : (
                           <div className="w-80 h-80 bg-gray-300 rounded-lg shadow-lg flex items-center justify-center">

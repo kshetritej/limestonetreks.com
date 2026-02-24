@@ -12,87 +12,72 @@ interface SectionNavigationProps {
 }
 
 export function SectionNavigation({ sections }: SectionNavigationProps) {
-  const [activeSection, setActiveSection] = useState<string>(
-    sections[0]?.id || "",
-  );
-  const [navbarHeight, setNavbarHeight] = useState(0);
+  const [activeSection, setActiveSection] = useState(sections[0]?.id ?? "");
+  const [offsetTop, setOffsetTop] = useState(0);
 
+  // Read navbar height ONCE and store as CSS-safe value
   useEffect(() => {
-    const updateNavbarHeight = () => {
-      const navbar = document.getElementById("site-navbar");
-      if (navbar) {
-        setNavbarHeight(navbar.offsetHeight);
-      }
-    };
-
-    updateNavbarHeight();
-    window.addEventListener("resize", updateNavbarHeight);
-    return () => window.removeEventListener("resize", updateNavbarHeight);
+    const navbar = document.getElementById("site-navbar");
+    if (navbar) {
+      setOffsetTop(navbar.offsetHeight);
+    }
   }, []);
 
+  // Intersection Observer
   useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px 0px -50% 0px",
-      threshold: 0,
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
 
-    const observer = new IntersectionObserver((entries) => {
-      // Find the first intersecting entry (top-most visible section)
-      const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+        if (visible[0]) {
+          setActiveSection(visible[0].target.id);
+        }
+      },
+      {
+        root: null,
+        rootMargin: `-${offsetTop}px 0px -50% 0px`,
+        threshold: 0,
+      },
+    );
 
-      if (visibleEntries.length > 0) {
-        // Sort by position and get the topmost section
-        const topMostEntry = visibleEntries.reduce((top, current) => {
-          return current.boundingClientRect.top < top.boundingClientRect.top
-            ? current
-            : top;
-        });
-
-        setActiveSection(topMostEntry.target.id);
-      }
-    }, observerOptions);
-
-    // Observe all sections
-    sections.forEach((section) => {
-      const element = document.getElementById(section.id);
-      if (element) {
-        observer.observe(element);
-      }
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
     });
 
-    return () => {
-      sections.forEach((section) => {
-        const element = document.getElementById(section.id);
-        if (element) {
-          observer.unobserve(element);
-        }
-      });
-    };
-  }, [sections]);
+    return () => observer.disconnect();
+  }, [sections, offsetTop]);
 
-  const handleNavClick = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const handleNavClick = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const y = el.getBoundingClientRect().top + window.scrollY - offsetTop - 4;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
   };
 
   return (
     <nav
-      className={`sticky z-9999 shadow-sm bg-background top-0`}
-      style={{ top: navbarHeight - 3 }}
+      className="sticky top-[var(--section-nav-top)] z-50 bg-background shadow-y-sm md:px-12 pt-2"
+      style={
+        {
+          "--section-nav-top": `${offsetTop}px`,
+        } as React.CSSProperties
+      }
     >
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center gap-8 overflow-x-auto scrollbar-hide">
+        <div className="flex gap-8 overflow-x-auto scrollbar-hide">
           {sections.map((section) => (
             <button
               key={section.id}
               onClick={() => handleNavClick(section.id)}
-              className={`py-4 px-1 text-base font-medium whitespace-nowrap border-b-2 transition-all duration-200 ${
+              className={`py-4 px-1 text-base font-medium whitespace-nowrap border-b-2 transition-colors ${
                 activeSection === section.id
                   ? "border-gray-900 text-gray-900"
-                  : "border-transparent text-gray-600 hover:text-gray-900"
+                  : "border-transparent text-gray-500 hover:text-gray-900"
               }`}
             >
               {section.label}

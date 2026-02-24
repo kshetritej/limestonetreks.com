@@ -85,7 +85,7 @@ export default async function TripPage({
     { id: "faqs", label: "FAQs" },
   ];
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen p-2">
       {/*Schema */}
       {trip.seo?.schema && (
         <Script
@@ -99,14 +99,12 @@ export default async function TripPage({
       )}
 
       {/*Section Navigation*/}
-      <div>
-        <SectionNavigation sections={sections} />
-      </div>
+      <SectionNavigation sections={sections} />
 
       {/*Images in Lightbox*/}
       {trip.images && trip.images.length > 0 && (
         <Lightbox images={trip.images}>
-          <div className="grid md:grid-cols-3 gap-2 container mx-auto p-4">
+          <div className="grid md:grid-cols-3 gap-2 container mx-auto">
             <div className="rounded-3xl overflow-hidden col-span-2">
               <Image
                 src={mainImage}
@@ -134,7 +132,7 @@ export default async function TripPage({
       )}
 
       {/*Content starts */}
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto">
         <div className="grid md:grid-cols-4 gap-4 min-w-0">
           <div className="col-span-3 min-w-0!">
             <TripOverview trip={trip} />
@@ -150,7 +148,7 @@ export default async function TripPage({
       prose-strong:text-black prose-strong:font-bold
       prose-ul:my-2 prose-ol:my-2
       prose-li:text-gray-700 prose-li:mb-1
-      prose-blockquote:border-l-4 prose-blockquote:border-green-700 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-600
+      prose-blockquote:border-l-4 prose-blockquote:border-primary/70 prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-600
       prose-img:rounded-lg prose-img:my-6
       prose-code:bg-gray-100 prose-code:px-2 prose-code:py-1 prose-code:rounded prose-code:text-sm
       prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-lg prose-pre:p-4
@@ -176,7 +174,7 @@ export default async function TripPage({
                 dangerouslySetInnerHTML={{
                   __html: decodeHtmlEntities(trip.inclusions[0]),
                 }}
-                className="bg-primary/10 p-4 border-t-4 border-primary
+                className="bg-primary/10 p-2 border-t-4 border-primary
                   w-full
                   prose-li:before:mask-[url('/icons/tick.svg')]
                   prose-li:before:rotate-360
@@ -187,7 +185,7 @@ export default async function TripPage({
                 dangerouslySetInnerHTML={{
                   __html: decodeHtmlEntities(trip.exclusions[0]),
                 }}
-                className="w-full bg-rose-500/10 p-4 border-t-4 border-rose-500 mt-4 prose-li:before:mask-[url('/icons/cross-color.svg')]"
+                className="w-full bg-rose-500/10 p-2 border-t-4 border-rose-500 mt-4 prose-li:before:mask-[url('/icons/cross-color.svg')]"
               />
               {trip.additionalInfo.length > 0 && (
                 <>
