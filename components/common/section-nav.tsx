@@ -80,7 +80,7 @@ export function SectionNavigation({ sections }: SectionNavigationProps) {
 
   return (
     <nav
-      className={`sticky z-9999 shadow-sm bg-background top-0 md:px-24`}
+      className={`sticky z-9999 shadow-sm bg-background top-0`}
       style={{ top: navbarHeight - 3 }}
     >
       <div className="max-w-7xl mx-auto px-4">
