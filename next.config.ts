@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
       return [
         {
           source: "/api/:path*",
-          destination: "https://api.growfore.com/api/:path*",
+          destination: "https://api.limestonetreks.com/api/:path*",
         },
       ];
     }
@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "api.growfore.com",
+        hostname: "api.limestonetreks.com",
         pathname: "/**",
       },
       {
