@@ -24,17 +24,16 @@ export default async function Navbar() {
 
     <div
       id="site-navbar"
-      className="min-w-screen! mx-auto sticky top-0 bg-background shadow-b-sm flex gap-1 md:justify-between container  p-2  px-32 justify-end z-999"
+      className="min-w-screen! mx-auto sticky top-0 bg-background shadow-b-sm flex flex-col gap-1 justify-between p-2  z-999"
     >
-      <LogoComponent dark />
-      <div className="hidden md:flex">
-        <MegaMenu items={menuData} />
+      <div className="flex gap-4 justify-center md:justify-end border-b py-2  border-slate-100 container mx-auto">
+        <CallNow />
       </div>
-      <CallNow />
-      <div className="md:hidden">
+      <div className="flex flex-row items-center w-screen justify-between px-4 container mx-auto">
+        <LogoComponent dark />
+        <MegaMenu items={menuData} />
         <MobileMenu items={menuData} />
       </div>
     </div>
-    // </div>
   );
 }

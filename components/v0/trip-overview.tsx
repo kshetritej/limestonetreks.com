@@ -72,7 +72,7 @@ export function TripOverview({ trip }: TripOverviewProps) {
           <GlanceItem
             text="Locations"
             image="/icons/route-icon.svg"
-            value={String(trip.locations) ?? "-"}
+            value={String(trip.locations.map((l) => l + " ")) ?? "-"}
           />
         </div>
       </div>
@@ -102,6 +102,7 @@ function GlanceItem({
           alt={imageAlt ?? `icon for ${text}`}
           height={30}
           width={30}
+          className="min-w-8"
           src={image ?? "/icons/duration-calendar.svg"}
         />
       </span>

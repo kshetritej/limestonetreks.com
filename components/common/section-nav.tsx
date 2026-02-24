@@ -80,11 +80,11 @@ export function SectionNavigation({ sections }: SectionNavigationProps) {
 
   return (
     <nav
-      className={`sticky z-9999 border-y border-gray-200 shadow-sm bg-background top-0`}
+      className={`sticky z-9999 shadow-sm bg-background top-0 md:px-24`}
       style={{ top: navbarHeight - 3 }}
     >
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center gap-8 overflow-x-auto">
+        <div className="flex items-center gap-8 overflow-x-auto scrollbar-hide">
           {sections.map((section) => (
             <button
               key={section.id}

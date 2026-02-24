@@ -4,7 +4,7 @@ import Link from "next/link";
 // This is a Server Component (no 'use client' at the top)
 export function MegaMenu({ items }: { items: any }) {
   return (
-    <nav className="flex items-center space-x-6">
+    <nav className="items-center space-x-6 hidden md:flex">
       <ul className="flex gap-6">
         {items?.map((item: any) => (
           <li key={item.id} className="group relative py-4">
@@ -14,7 +14,7 @@ export function MegaMenu({ items }: { items: any }) {
               className="flex items-center gap-1 font-medium text-sm hover:text-primary transition-colors"
             >
               {item.label}
-              {item.children && <LucideChevronDown size={12} />}
+              {item.children.length > 0 && <LucideChevronDown size={12} />}
             </Link>
 
             {/* Dropdown Content - Controlled by CSS hover */}

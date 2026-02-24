@@ -13,6 +13,7 @@ export function TripItinerary({ trip }: TripItineraryProps) {
       <div className="space-y-4">
         <div
           id="overview"
+          className="mt-4"
           dangerouslySetInnerHTML={{
             __html: decodeHtmlEntities(trip.shortDescription),
           }}

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from "react";
 
 interface LightboxProps {
   images: string[];
@@ -31,13 +31,13 @@ export const Lightbox: React.FC<LightboxProps> = ({ images, children }) => {
     if (!isOpen) return;
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowRight') goToNext();
-      if (e.key === 'ArrowLeft') goToPrevious();
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowRight") goToNext();
+      if (e.key === "ArrowLeft") goToPrevious();
     };
 
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, closeLightbox, goToNext, goToPrevious]);
 
   const triggerElement = React.cloneElement(children as React.ReactElement, {
@@ -52,31 +52,31 @@ export const Lightbox: React.FC<LightboxProps> = ({ images, children }) => {
       {triggerElement}
       <div
         style={{
-          position: 'fixed',
+          position: "fixed",
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.9)',
+          backgroundColor: "rgba(0, 0, 0, 0.9)",
           zIndex: 9999,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
         onClick={closeLightbox}
       >
         <button
           onClick={closeLightbox}
           style={{
-            position: 'absolute',
-            top: '20px',
-            right: '20px',
-            background: 'none',
-            border: 'none',
-            color: 'white',
-            fontSize: '32px',
-            cursor: 'pointer',
-            padding: '10px',
+            position: "absolute",
+            top: "20px",
+            right: "20px",
+            background: "none",
+            border: "none",
+            color: "white",
+            fontSize: "32px",
+            cursor: "pointer",
+            padding: "10px",
             lineHeight: 1,
           }}
           aria-label="Close"
@@ -92,14 +92,14 @@ export const Lightbox: React.FC<LightboxProps> = ({ images, children }) => {
                 goToPrevious();
               }}
               style={{
-                position: 'absolute',
-                left: '20px',
-                background: 'none',
-                border: 'none',
-                color: 'white',
-                fontSize: '48px',
-                cursor: 'pointer',
-                padding: '10px',
+                position: "absolute",
+                left: "20px",
+                background: "none",
+                border: "none",
+                color: "white",
+                fontSize: "48px",
+                cursor: "pointer",
+                padding: "10px",
                 lineHeight: 1,
               }}
               aria-label="Previous"
@@ -113,14 +113,14 @@ export const Lightbox: React.FC<LightboxProps> = ({ images, children }) => {
                 goToNext();
               }}
               style={{
-                position: 'absolute',
-                right: '20px',
-                background: 'none',
-                border: 'none',
-                color: 'white',
-                fontSize: '48px',
-                cursor: 'pointer',
-                padding: '10px',
+                position: "absolute",
+                right: "20px",
+                background: "none",
+                border: "none",
+                color: "white",
+                fontSize: "48px",
+                cursor: "pointer",
+                padding: "10px",
                 lineHeight: 1,
               }}
               aria-label="Next"
@@ -135,19 +135,19 @@ export const Lightbox: React.FC<LightboxProps> = ({ images, children }) => {
           alt={`Image ${currentIndex + 1}`}
           onClick={(e) => e.stopPropagation()}
           style={{
-            maxWidth: '90%',
-            maxHeight: '90%',
-            objectFit: 'contain',
+            maxWidth: "100vw",
+            maxHeight: "100vh",
+            objectFit: "contain",
           }}
         />
 
         {images.length > 1 && (
           <div
             style={{
-              position: 'absolute',
-              bottom: '20px',
-              color: 'white',
-              fontSize: '14px',
+              position: "absolute",
+              top: "20px",
+              color: "white",
+              fontSize: "14px",
             }}
           >
             {currentIndex + 1} / {images.length}

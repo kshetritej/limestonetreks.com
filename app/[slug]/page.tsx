@@ -99,12 +99,14 @@ export default async function TripPage({
       )}
 
       {/*Section Navigation*/}
-      <SectionNavigation sections={sections} />
+      <div>
+        <SectionNavigation sections={sections} />
+      </div>
 
       {/*Images in Lightbox*/}
       {trip.images && trip.images.length > 0 && (
         <Lightbox images={trip.images}>
-          <div className="grid grid-cols-4 gap-2 container mx-auto p-4">
+          <div className="grid md:grid-cols-3 gap-2 container mx-auto p-4">
             <div className="rounded-3xl overflow-hidden col-span-2">
               <Image
                 src={mainImage}
@@ -133,8 +135,8 @@ export default async function TripPage({
 
       {/*Content starts */}
       <div className="container mx-auto p-4">
-        <div className="grid md:grid-cols-3 gap-4 min-w-0">
-          <div className="col-span-2 min-w-0!">
+        <div className="grid md:grid-cols-4 gap-4 min-w-0">
+          <div className="col-span-3 min-w-0!">
             <TripOverview trip={trip} />
             <div
               className="col-span-2 min-w-0!
@@ -187,26 +189,34 @@ export default async function TripPage({
                 }}
                 className="w-full bg-rose-500/10 p-4 border-t-4 border-rose-500 mt-4 prose-li:before:mask-[url('/icons/cross-color.svg')]"
               />
-              <h2 id="trip-info" className="font-bold text-xl my-4">
-                Trip Information
-              </h2>
-              <Accordion
-                collapsible
-                type="single"
-                className="bg-primary-50 w-full! mb-8"
-              >
-                {trip.additionalInfo.map((info: any, idx: any) => {
-                  return (
-                    <AdditionalInfoRenderer key={idx} index={idx} item={info} />
-                  );
-                })}
-              </Accordion>
+              {trip.additionalInfo.length > 0 && (
+                <>
+                  <h2 id="trip-info" className="font-bold text-xl my-4">
+                    Trip Information
+                  </h2>
+                  <Accordion
+                    collapsible
+                    type="single"
+                    className="bg-primary-50 w-full! mb-8"
+                  >
+                    {trip.additionalInfo.map((info: any, idx: any) => {
+                      return (
+                        <AdditionalInfoRenderer
+                          key={idx}
+                          index={idx}
+                          item={info}
+                        />
+                      );
+                    })}
+                  </Accordion>
+                </>
+              )}
               <div id="faqs">
                 {trip.faqs && trip.faqs.length > 1 && <TripFaqs trip={trip} />}
               </div>
             </div>
           </div>
-          <div className="col-span-1 p-4 hidden md:flex">
+          <div className="col-span-1 hidden md:flex">
             <TripSidebar trip={trip} />
           </div>
         </div>

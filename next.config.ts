@@ -29,6 +29,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "limestonetreks.com",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "images.unsplash.com",
         pathname: "/**",
       },
