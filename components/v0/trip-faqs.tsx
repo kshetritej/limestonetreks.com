@@ -1,5 +1,3 @@
-"use client";
-
 import { TripData } from "@/lib/dummy-trip-data";
 import {
   Accordion,
@@ -21,10 +19,10 @@ export function TripFaqs({ trip }: TripFaqsProps) {
       <Accordion type="single" collapsible className="w-full">
         {trip.faqs.map((faq, index) => (
           <AccordionItem key={index} value={`faq-${index}`}>
-            <AccordionTrigger className="hover:no-underline font-bold text-lg p-0">
+            <AccordionTrigger className="hover:no-underline font-bold text-md p-0">
               {faq.question}
             </AccordionTrigger>
-            <AccordionContent className="text-lg">
+            <AccordionContent className="text-base">
               <div
                 dangerouslySetInnerHTML={{
                   __html: decodeHtmlEntities(faq.answer),

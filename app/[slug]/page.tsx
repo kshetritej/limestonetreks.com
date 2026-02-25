@@ -6,7 +6,6 @@ import { TripSidebar } from "@/components/v0/trip-sidebar";
 import placeHolderImage from "@/components/data/image";
 import { AdditionalInfoRenderer } from "@/components/molecules/additional-info-renderer";
 import { Accordion } from "@/components/ui/accordion";
-import CTACard from "@/components/cards/cta-card";
 import { decodeHtmlEntities } from "@/lib/html-decoder";
 import { Lightbox } from "@/components/claude/lightbox";
 import { SectionNavigation } from "@/components/common/section-nav";
@@ -143,11 +142,11 @@ export default async function TripPage({
             <TripOverview trip={trip} />
             <div
               className="col-span-2 min-w-0!
-      prose-lg leading leading-relaxed
+      prose-base leading leading-relaxed
       prose-headings:text-gray-900 prose-headings:font-bold
-      prose-h1:text-4xl
-      prose-h2:text-3xl   prose-h2:font-bold
-      prose-h3:text-xl
+      prose-h1:text-2xl
+      prose-h2:text-xl   prose-h2:font-bold
+      prose-h3:text-lg
       prose-p:leading-relaxed prose-p:mb-4 prose-p:mt-0
       prose-a:text-primary prose-a:no-underline hover:prose-a:text-primary hover:prose-a:underline
       prose-strong:text-black prose-strong:font-bold
@@ -223,9 +222,6 @@ export default async function TripPage({
             <TripSidebar trip={trip} />
           </div>
         </div>
-      </div>
-      <div className="text-white mt-8">
-        <CTACard />
       </div>
     </main>
   );

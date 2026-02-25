@@ -54,7 +54,7 @@ export function SectionNavigation({ sections }: SectionNavigationProps) {
     const el = document.getElementById(id);
     if (!el) return;
 
-    const y = el.getBoundingClientRect().top + window.scrollY - offsetTop - 4;
+    const y = el.getBoundingClientRect().top + window.scrollY - offsetTop - 8;
 
     window.scrollTo({ top: y, behavior: "smooth" });
   };
