@@ -2,7 +2,7 @@ import { LucidePhone } from "lucide-react";
 
 export function CallNow() {
   return (
-    <div className="flex items-center gap-2">
+    <div className="items-center gap-2 hidden md:flex">
       <div className="rounded-full aspect-square bg-sky-900 p-2">
         <LucidePhone className="text-white" />
       </div>

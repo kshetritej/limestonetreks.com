@@ -1,18 +1,18 @@
 export const dynamic = "force-static";
-import { TripOverview } from "@/components/v0/trip-overview";
-import { TripItinerary } from "@/components/v0/trip-itinerary";
-import { TripFaqs } from "@/components/v0/trip-faqs";
-import { TripSidebar } from "@/components/v0/trip-sidebar";
+import { Lightbox } from "@/components/claude/lightbox";
+import { SectionNavigation } from "@/components/common/section-nav";
 import placeHolderImage from "@/components/data/image";
 import { AdditionalInfoRenderer } from "@/components/molecules/additional-info-renderer";
 import { Accordion } from "@/components/ui/accordion";
+import { TripFaqs } from "@/components/v0/trip-faqs";
+import { TripItinerary } from "@/components/v0/trip-itinerary";
+import { TripOverview } from "@/components/v0/trip-overview";
+import { TripSidebar } from "@/components/v0/trip-sidebar";
 import { decodeHtmlEntities } from "@/lib/html-decoder";
-import { Lightbox } from "@/components/claude/lightbox";
-import { SectionNavigation } from "@/components/common/section-nav";
 import { Metadata } from "next";
-import Script from "next/script";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 
 export async function generateMetadata({
   params,

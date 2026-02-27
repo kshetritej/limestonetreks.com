@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative h-[70vh] bg-gradient-to-r from-sky-900 to-primary/5 text-primary-foreground overflow-hidden">
+    <section className="relative h-[70vh] bg-linear-to-r from-sky-900 to-primary/5 text-primary-foreground overflow-hidden">
       {/* Background Image Overlay */}
       <div
         className="absolute inset-0 opacity-30"
         style={{
           backgroundImage:
-          "url(https://images.unsplash.com/photo-1561355167-4eac6650cbeb?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
+            "url(https://images.unsplash.com/photo-1561355167-4eac6650cbeb?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -24,7 +24,8 @@ export default function Hero() {
             Local Experts in Himalayan Trekking
           </h1>
           <p className="text-md mb-10 opacity-95 text-balance leading-relaxed">
-            Explore the Himalayas with a team that's guided with care for over 17 years.
+            Explore the Himalayas with a team that's guided with care for over
+            17 years.
           </p>
           <div className="flex gap-4 justify-start flex-wrap">
             <Link
