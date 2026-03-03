@@ -1,0 +1,37 @@
+export const siteConfig = {
+  name: "Limestone Treks",
+  description: "Best Trekking Agency in Pokhara",
+  url: "https://limestonetreks.com",
+  image: "/og.png",
+  whatsAppNumber: "+9779804148802",
+  phoneNumber: "+977 9841328947",
+  phoneNumbers: [
+    { phone: "+977-9804148802" },
+    { tel: "+061-452788" },
+    { tel2: "+061-452677" },
+  ],
+  email: "info@limestonetreks.com",
+  openHours: "Sunday to Friday 9:00 AM to 5:00 PM Nepal Standard Time",
+  experience: "15 years",
+  address: {
+    city: "Pokhara",
+    street: "Lakeside Rd",
+    district: "Kaski",
+    country: "Nepal",
+    postalCode: "33700",
+  },
+  socials: {
+    facebook: "https://www.facebook.com/limestonetreks",
+    instagram: "https://www.instagram.com/",
+    twitter: "https://twitter.com/",
+    youtube: "https://www.youtube.com/",
+    tiktok: "https://www.tiktok.com/",
+  },
+  documents: {
+    Bird_Identification_Training_Certificate:
+      "/documents/bird-identification-training-certificate.webp",
+    Guide_Identity_Card: "/documents/guide-identity-card.webp",
+    Trekking_Guide_Certificate: "/documents/trekking-guide-certificate.webp",
+    PAN_Card: "/documents/pan-card.webp",
+  },
+};

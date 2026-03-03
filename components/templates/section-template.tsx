@@ -1,15 +1,13 @@
 import { cn } from "@/lib/utils";
-import { ChevronRight } from "lucide-react";
-import Link from "next/link";
 import { ReactNode } from "react";
 
 type SectionTemplateProps = {
-  badgeText: ReactNode;
-  title: ReactNode;
-  text: ReactNode;
-  buttonLink: string;
+  badgeText?: ReactNode;
+  title?: ReactNode;
+  text?: ReactNode;
+  buttonLink?: string;
   buttonText?: string;
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
 };
 export default function SectionTemplate({
@@ -19,7 +17,7 @@ export default function SectionTemplate({
   buttonLink,
   buttonText = "Explore More",
   children,
-  className
+  className,
 }: SectionTemplateProps) {
   return (
     <section className={cn("py-16 px-4 bg-background", className)}>
@@ -27,7 +25,7 @@ export default function SectionTemplate({
         <div>
           <div className="mb-12">
             <div className="text-sm font-bold uppercase tracking-widest text-primary mb-2 flex gap-1 items-center">
-              <div className="w-8 h-1 bg-primary"/>
+              <div className="w-8 h-1 bg-primary" />
               {badgeText}
             </div>
             <h2 className="text-4xl font-bold text-foreground mb-6 leading-tight text-balance uppercase">
