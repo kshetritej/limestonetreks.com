@@ -10,7 +10,7 @@ interface TripSidebarProps {
 
 export function TripSidebar({ trip }: TripSidebarProps) {
   return (
-    <Card className="p-6 sticky top-54 bg-white border-slate-200 h-fit w-full">
+    <Card className="p-6 sticky top-34 bg-white border-slate-200 h-fit w-full">
       {/* Price Section */}
       <div className="pb-6 border-b border-slate-200">
         <p className="text-slate-600 text-sm font-medium mb-1">

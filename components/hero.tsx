@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative h-[90vh] bg-linear-to-r from-sky-900 to-primary/70 text-primary-foreground overflow-hidden">
+    <section className="relative h-screen bg-linear-to-r from-sky-900 to-primary/70 text-primary-foreground overflow-hidden">
       {/* Background Image Overlay */}
       <div
         className="absolute inset-0 opacity-30"

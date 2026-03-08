@@ -218,7 +218,7 @@ export default async function TripPage({
               </div>
             </div>
           </div>
-          <div className="col-span-1 hidden md:flex">
+          <div className="col-span-1 hidden md:flex border-l border-gray-200 pl-1">
             <TripSidebar trip={trip} />
           </div>
         </div>
