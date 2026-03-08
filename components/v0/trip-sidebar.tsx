@@ -2,6 +2,7 @@ import { TripData } from "@/lib/dummy-trip-data";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { siteConfig } from "@/lib/siteConfig";
 
 interface TripSidebarProps {
   trip: TripData;
@@ -32,23 +33,14 @@ export function TripSidebar({ trip }: TripSidebarProps) {
       <div className="space-y-3">
         <Link href={"/contact"}>
           <Button className="w-full bg-primary hover:bg-blue-800 text-white font-semibold mb-4">
-            BOOK THIS TRIP
-          </Button>
-        </Link>
-
-        <Link href="/inquiry">
-          <Button
-            variant="outline"
-            className="w-full text-primary-700 border-slate-300 bg-transparent"
-          >
-            SEND INQUIRY
+            SEND A BOOKING INQUIRY
           </Button>
         </Link>
       </div>
 
       {/* Expert Contact */}
       <Link
-        href={"https://api.whatsapp.com/send/?phone=9779841328947"}
+        href={`https://api.whatsapp.com/send/?phone=${siteConfig.whatsAppNumber}`}
         className="pt-6 border-t decoration-0"
       >
         <div className="font-bold mb-4">Speak to an Expert</div>
@@ -56,7 +48,9 @@ export function TripSidebar({ trip }: TripSidebarProps) {
           <div className="w-12 h-12 bg-slate-300 rounded-full" />
           <div>
             <p className="text-sm font-semibold">WhatsApp</p>
-            <p className="text-sm text-primary">+977 9841328947</p>
+            <p className="text-sm text-primary">
+              +977 {siteConfig.whatsAppNumber}
+            </p>
           </div>
         </div>
       </Link>

@@ -4,6 +4,7 @@ import { SectionNavigation } from "@/components/common/section-nav";
 import placeHolderImage from "@/components/data/image";
 import { AdditionalInfoRenderer } from "@/components/molecules/additional-info-renderer";
 import { Accordion } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import { TripFaqs } from "@/components/v0/trip-faqs";
 import { TripItinerary } from "@/components/v0/trip-itinerary";
 import { TripOverview } from "@/components/v0/trip-overview";
@@ -108,7 +109,7 @@ export default async function TripPage({
       {/*Images in Lightbox*/}
       {trip.images && trip.images.length > 0 && (
         <Lightbox images={trip.images}>
-          <div className="grid md:grid-cols-3 gap-2 container mx-auto">
+          <div className="grid md:grid-cols-3 gap-2 container mx-auto mb-4">
             <div className="rounded-3xl overflow-hidden col-span-2">
               <Image
                 src={mainImage}
@@ -118,7 +119,7 @@ export default async function TripPage({
                 className="w-full h-full object-cover rounded-3xl"
               />
             </div>
-            <div className="col-span-2 grid grid-cols-2 gap-2">
+            <div className="col-span-1 grid gap-2">
               {otherImages.map((imageUrl: string) => (
                 <div key={imageUrl} className="rounded-3xl overflow-hidden">
                   <Image
