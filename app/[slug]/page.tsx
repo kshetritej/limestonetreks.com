@@ -126,7 +126,7 @@ export default async function TripPage({
                     src={imageUrl}
                     height={1280}
                     width={1920}
-                    className="w-full h-60 object-cover rounded-3xl"
+                    className="w-full h-full object-cover rounded-3xl"
                   />
                 </div>
               ))}

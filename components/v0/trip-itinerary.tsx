@@ -1,13 +1,5 @@
 import { TripData } from "@/lib/dummy-trip-data";
-import { LucideMapPin } from "lucide-react";
-import { Badge } from "../ui/badge";
 import { decodeHtmlEntities } from "@/lib/html-decoder";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../ui/accordion";
 import FullItinerary from "../trek-detail/FullItinerary";
 
 interface TripItineraryProps {

@@ -1,10 +1,5 @@
-import {
-  LucideArrowRight,
-  LucideCheckCircle,
-  LucideChevronRight,
-} from "lucide-react";
+import { LucideChevronRight } from "lucide-react";
 import { Button } from "../ui/button";
-import placeHolderImage from "../data/image";
 import Link from "next/link";
 import Image from "next/image";
 import { siteConfig } from "@/lib/siteConfig";
@@ -12,7 +7,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export function AboutSection() {
   return (
     <div className="flex items-center justify-center flex-col ">
-      <div className="rounded-full bg-orange-500 overflow-hidden object-cover size-50 flex items-center justify-center z-9">
+      <div className="rounded-full bg-primary/50 overflow-hidden object-cover size-50 flex items-center justify-center z-9">
         <Image
           src={"/bidur-poudel.webp"}
           alt="Bidur Poudel"
