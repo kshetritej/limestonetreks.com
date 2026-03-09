@@ -1,55 +1,44 @@
-import { LucideArrowRight, LucideCheckCircle } from "lucide-react";
+import {
+  LucideArrowRight,
+  LucideCheckCircle,
+  LucideChevronRight,
+} from "lucide-react";
 import { Button } from "../ui/button";
 import placeHolderImage from "../data/image";
 import Link from "next/link";
+import Image from "next/image";
+import { siteConfig } from "@/lib/siteConfig";
 
-const highlights = [
-  "Locally operated & region-focused",
-  "Transparent pricing",
-  "Carefully paced itineraries",
-  "Small groups, big experiences",
-];
 export function AboutSection() {
   return (
-    <div className="grid  md:grid-cols-2 gap-12 h-[80vh] items-center justify-center">
-      <div className="mb-2 flex flex-col gap-1 space-y-4">
-        <div className="font-bold flex items-center gap-1 text-primary">
-          <div className="w-8 h-1 bg-primary" />
-          <p className="uppercase">why Limestone Treks</p>
+    <div className="flex items-center justify-center flex-col ">
+      <div className="rounded-full bg-orange-500 overflow-hidden object-cover size-50 flex items-center justify-center z-9">
+        <Image
+          src={"/bidur-poudel.webp"}
+          alt="Bidur Poudel"
+          width={1280}
+          height={100}
+          className="rounded-fulla object-cover"
+        />
+      </div>
+      <div className="max-w-4xl bg-accent/70 p-12 rounded-sm flex flex-col gap-4 items-center justify-center -mt-12 ">
+        <div className="text-white font-bold text-2xl text-center">
+          <p>{siteConfig.mainGuide}</p>
+          <div className="text-whitea font-bold text-sm">
+            {siteConfig.guideDesignation}
+          </div>
         </div>
-        <div className="mb-4 max-w-2xl">
-          Limestone Treks was built to simplify trekking and travel in the mountains —
-          without cutting corners.
-        </div>
-
-        <p className="max-w-3xl">
-          We work closely with local guides, plan realistic itineraries, and
-          focus on trips that respect both travelers and terrain. No rushed
-          schedules, no unnecessary upsells — just well-designed journeys led by
-          people who know the mountains best. Whether you’re trekking for the
-          first time or returning for something more challenging, Limestone Treks helps
-          you choose wisely.
+        <p className="text-secondary text-center">
+          Bidur doesn’t just lead treks; he shares the mountains he’s called
+          home his entire life. With a deep respect for the terrain and a
+          commitment to safety that never cuts corners, Bidur ensures every
+          traveler feels as secure as they are inspired.
         </p>
-        <div className="flex flex-col gap-2">
-          {highlights.map((h, index) => {
-            return (
-              <li key={index} className="list-none flex gap-1 items-center">
-                <LucideCheckCircle className="text-primary" /> {h}
-              </li>
-            );
-          })}
-        </div>
-        <Link href={"/about-us"}>
-          <Button className="w-fit">
-            More About Us <LucideArrowRight />
+        <Link href="/about">
+          <Button variant={"secondary"}>
+            Learn More <LucideChevronRight />
           </Button>
         </Link>
-      </div>
-      <div className="overflow-hidden rounded-2xl">
-        <img alt="" src={placeHolderImage.src} className="rounded-sm overflow-hidden" />
-        {/* <div className="rounded-3xl absolute -bottom-10 -left-24 size-56 object-cover overflow-hidden">
-          <Image alt="" fill src={placeHolderImage.src} className="hidden md:flex w-full h-full object-cover rounded-3xl overflow-hidden" />
-        </div> */}
       </div>
     </div>
   );

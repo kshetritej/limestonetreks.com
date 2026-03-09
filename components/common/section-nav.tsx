@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Button } from "../ui/button";
 
 interface Section {
   id: string;
@@ -68,7 +69,7 @@ export function SectionNavigation({ sections }: SectionNavigationProps) {
         } as React.CSSProperties
       }
     >
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-4 flex justify-between">
         <div className="flex gap-8 overflow-x-auto scrollbar-hide">
           {sections.map((section) => (
             <button
@@ -83,6 +84,9 @@ export function SectionNavigation({ sections }: SectionNavigationProps) {
               {section.label}
             </button>
           ))}
+        </div>
+        <div>
+          <Button>Book Now</Button>
         </div>
       </div>
     </nav>
