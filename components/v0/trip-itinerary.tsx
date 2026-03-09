@@ -38,6 +38,7 @@ export function TripItinerary({ trip }: TripItineraryProps) {
           }}
         />
       </div>
+      {/*@ts-expect-error type issues*/}
       <FullItinerary days={trip.itinerary} />
     </div>
   );

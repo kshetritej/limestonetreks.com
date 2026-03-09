@@ -1,20 +1,7 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
-import { useForm } from "react-hook-form";
 import Link from "next/link";
 
 export default function CTACard() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
-    defaultValues: {
-      email: "",
-    },
-  });
-
   return (
     <section className="w-full rounded-lg bg-primary text-white! p-6 md:p-8 mb-4">
       <div className="space-y-4 p-8 flex flex-col items-center  text-center justify-between max-w-6xl mx-auto">
