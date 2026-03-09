@@ -192,26 +192,26 @@ export default async function TripPage({
                 className="w-full bg-rose-500/10 p-2 border-t-4 border-rose-500 mt-4 prose-li:before:mask-[url('/icons/cross-color.svg')]"
               />
               {trip.additionalInfo.length > 0 && (
-                <>
-                  <h2 id="trip-info" className="font-bold text-xl my-4">
+                <div id="trip-info">
+                  {/*<h2 id="trip-info" className="font-bold text-xl my-4">
                     Trip Information
-                  </h2>
-                  <Accordion
+                  </h2>*/}
+                  {/*<Accordion
                     collapsible
                     type="single"
                     className="bg-primary-50 w-full! mb-8"
-                  >
-                    {trip.additionalInfo.map((info: any, idx: any) => {
-                      return (
-                        <AdditionalInfoRenderer
-                          key={idx}
-                          index={idx}
-                          item={info}
-                        />
-                      );
-                    })}
-                  </Accordion>
-                </>
+                  >*/}
+                  {trip.additionalInfo.map((info: any, idx: any) => {
+                    return (
+                      <AdditionalInfoRenderer
+                        key={idx}
+                        index={idx}
+                        item={info}
+                      />
+                    );
+                  })}
+                  {/*</Accordion>*/}
+                </div>
               )}
               <div id="faqs">
                 {trip.faqs && trip.faqs.length > 1 && <TripFaqs trip={trip} />}

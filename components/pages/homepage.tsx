@@ -24,7 +24,6 @@ export default async function Homepage() {
         {/*<RecentBlogs />*/}
       </div>
       <WhyUsSection />
-      <CTACard />
     </div>
   );
 }

@@ -1,0 +1,42 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { decodeHtmlEntities } from "@/lib/htmlDecoder";
+
+interface ItineraryDay {
+  day: number;
+  title: string;
+  description: string;
+}
+
+export default function FullItinerary({ days }: { days: ItineraryDay[] }) {
+  return (
+    <section className="py-2" id="itinerary">
+      <h2>Detailed Itinerary</h2>
+      <Accordion type="single" collapsible defaultValue="day-1">
+        {days.map((d) => (
+          <AccordionItem key={d.day} value={`day-${d.day}`}>
+            <AccordionTrigger className="hover:no-underline [&[data-state=open]>svg]:rotate-180 py-0">
+              <div className="flex items-center gap-1">
+                <span className="rounded bg-primary/90 px-2 py-1 font-semibold text-white">
+                  Day {d.day}
+                </span>
+                <span className="font-semibold text-lg">{d.title}</span>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className="p-2">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: decodeHtmlEntities(d.description),
+                }}
+              />
+            </AccordionContent>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </section>
+  );
+}
