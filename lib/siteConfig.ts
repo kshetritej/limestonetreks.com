@@ -1,5 +1,6 @@
 export const siteConfig = {
   name: "Limestone Treks",
+  tourismLicenseNumber: "",
   mainGuide: "Bidur Poudel",
   guideDesignation: "Expert Trekking Guide",
   description: "Best Trekking Agency in Pokhara",
