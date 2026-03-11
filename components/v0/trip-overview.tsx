@@ -44,11 +44,11 @@ export function TripOverview({ trip }: TripOverviewProps) {
             image="/icons/group-size-icon.svg"
             value={String(trip.guestCapacity) ?? "-"}
           />
-          {/* <GlanceItem
+          <GlanceItem
             text="Max Altitude"
             image="/icons/altitude-icon.svg"
-            value={trip.maxAltitude ?? "-"}
-          /> */}
+            value={trip.maximumAltitude ?? "-"}
+          />
           <GlanceItem
             text="Start"
             image="/icons/start-location-icon.svg"
@@ -59,20 +59,15 @@ export function TripOverview({ trip }: TripOverviewProps) {
             image="/icons/end-location-icon.svg"
             value={trip.dropOffPoint ?? "-"}
           />
-          {/* <GlanceItem
-            text="Travel Style"
-            image="/icons/travel-style-icon.svg"
-            value={trip?.travelStyle || "-"}
-          /> */}
-          {/* <GlanceItem
-            text="Best Time"
-            image="/icons/best-time-icon.svg"
-            value={trip.bestTime ?? "-"}
-          /> */}
           <GlanceItem
             text="Locations"
             image="/icons/route-icon.svg"
-            value={String(trip.locations.map((l) => l + " ")) ?? "-"}
+            value={trip.locations && trip.locations.join(", ")}
+          />
+          <GlanceItem
+            text="Accommodations"
+            image="/icons/accommodation.png"
+            value={trip.accommodations && trip.accommodations.join(", ")}
           />
         </div>
       </div>
