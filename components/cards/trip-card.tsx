@@ -31,7 +31,7 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
             tour.images[0] ??
             "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=600&fit=crop"
           }
-          alt={tour.keywords[0] || tour.title || ""}
+          alt={tour?.keywords[0] || tour.title || ""}
           height={720}
           width={1280}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
