@@ -85,9 +85,6 @@ export function SectionNavigation({ sections }: SectionNavigationProps) {
             </button>
           ))}
         </div>
-        <div>
-          <Button>Book Now</Button>
-        </div>
       </div>
     </nav>
   );

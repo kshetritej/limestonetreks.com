@@ -1,6 +1,4 @@
 import SectionTemplate from "../templates/section-template";
-import TripCard from "../cards/trip-card";
-import placeHolderImage from "../data/image";
 import {
   LucideArrowRight,
   LucideCalendarClock,

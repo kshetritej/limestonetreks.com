@@ -1,4 +1,8 @@
-import { ChevronDown } from "lucide-react";
+import {
+  ChevronDown,
+  LucideFlagTriangleRight,
+  LucideMapPin,
+} from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -33,14 +37,16 @@ export default function FullItinerary({ days }: { days: ItineraryDay[] }) {
           <AccordionItem
             key={d.day}
             value={`day-${d.day}`}
-            className="rounded-xl border border-slate-200 bg-white data-[state=open]:border-primary/60 data-[state=open]:bg-blue-50/40"
+            className=" border-slate-200 bg-white data-[state=open]:border-primary/60 data-[state=open]:bg-blue-50/40 data-[state=open]:p-2 "
           >
-            <AccordionTrigger className="flex w-full items-center justify-between gap-4 px-4 py-3 text-left hover:no-underline [&[data-state=open]>svg]:rotate-180">
+            <AccordionTrigger className="font-bold text-md p-0 flex items-center prose-h3:p-0 prose-h3:m-0 prose-h3:leading-0 px-2 hover:no-underline cursor-pointer">
               <div className="flex items-center gap-3">
-                <span className="rounded bg-blue-100 px-2 py-1 font-semibold text-sky-700">
-                  Day {d.day}
+                <span className="rounded bg-blue-100 p-2 font-semibold text-sky-700">
+                  <LucideFlagTriangleRight />
                 </span>
-                <span className="font-semibold text-slate-900">{d.title}</span>
+                <h3 className="font-bold  text-xl text-slate-900 ">
+                  {d.title}
+                </h3>
               </div>
             </AccordionTrigger>
             <AccordionContent className="px-4 pb-4">

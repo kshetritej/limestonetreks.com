@@ -3,12 +3,13 @@ import { Lightbox } from "@/components/claude/lightbox";
 import { SectionNavigation } from "@/components/common/section-nav";
 import placeHolderImage from "@/components/data/image";
 import { AdditionalInfoRenderer } from "@/components/molecules/additional-info-renderer";
-import { Accordion } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 import { TripFaqs } from "@/components/v0/trip-faqs";
 import { TripItinerary } from "@/components/v0/trip-itinerary";
 import { TripOverview } from "@/components/v0/trip-overview";
 import { TripSidebar } from "@/components/v0/trip-sidebar";
 import { decodeHtmlEntities } from "@/lib/html-decoder";
+import { LucideImage, LucideImages } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -107,8 +108,8 @@ export default async function TripPage({
 
       {/*Images in Lightbox*/}
       {trip.images && trip.images.length > 0 && (
-        <Lightbox images={trip.images}>
-          <div className="grid md:grid-cols-3 gap-2 container mx-auto mb-4">
+        <Lightbox images={trip.images} imageAlts={trip.keywords || []}>
+          <div className="relative grid md:grid-cols-3 gap-2 container mx-auto mb-4">
             <div className="rounded-3xl overflow-hidden col-span-2">
               <Image
                 src={mainImage}
@@ -118,7 +119,7 @@ export default async function TripPage({
                 className="w-full h-full object-cover rounded-3xl"
               />
             </div>
-            <div className="col-span-1 grid gap-2">
+            <div className="col-span-1 gap-2 hidden md:grid">
               {otherImages.map((imageUrl: string) => (
                 <div key={imageUrl} className="rounded-3xl overflow-hidden">
                   <Image
@@ -131,6 +132,10 @@ export default async function TripPage({
                 </div>
               ))}
             </div>
+            <Button className="absolute bottom-4 right-4">
+              <LucideImages />
+              {trip.images.length} Photos
+            </Button>
           </div>
         </Lightbox>
       )}
@@ -144,10 +149,11 @@ export default async function TripPage({
               className="col-span-2 min-w-0!
       prose-base leading leading-relaxed
       prose-headings:text-gray-900 prose-headings:font-bold
-      prose-h1:text-2xl
-      prose-h2:text-xl   prose-h2:font-bold
-      prose-h3:text-lg
-      prose-p:leading-relaxed prose-p:mb-4 prose-p:mt-0
+      prose-h1:text-3xl
+      prose-h2:text-3xl   prose-h2:font-bold
+      prose-h3:text-xl
+      prose-h4:text-lg
+      prose-p:leading-loose prose-p:tracking-normal prose-p:text-lg prose-p:mb-4 prose-p:mt-0
       prose-a:text-primary prose-a:no-underline hover:prose-a:text-primary hover:prose-a:underline
       prose-strong:text-black prose-strong:font-bold
       prose-ul:my-2 prose-ol:my-2
@@ -167,6 +173,8 @@ export default async function TripPage({
       prose-li:before:rotate-90
       prose-li:before:mask-contain
       prose-li:before:mask-no-repeat
+      prose-li:text-lg prose-li:leading-loose prose-li:tracking-normal
+      prose-ul:text-lg prose-ul:leading-loose prose-ul:tracking-normal
       prose max-w-none w-full
       wrap-break-word
       **:wrap-break-word

@@ -53,8 +53,8 @@ export function TripSidebar({ trip }: TripSidebarProps) {
             <Image
               src={"/bidur-poudel.webp"}
               alt="Bidur Poudel"
-              width={720}
-              height={420}
+              width={100}
+              height={100}
               className="rounded-full object-cover size-12"
             />
           </div>
