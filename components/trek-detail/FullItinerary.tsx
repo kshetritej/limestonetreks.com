@@ -1,8 +1,4 @@
-import {
-  ChevronDown,
-  LucideFlagTriangleRight,
-  LucideMapPin,
-} from "lucide-react";
+import { LucideFlagTriangleRight } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
