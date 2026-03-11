@@ -16,12 +16,13 @@ export type Tour = {
   link?: string;
   canonicalPath?: string;
   urlHistory: [];
+  slug: string;
 };
 
 export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
   return (
     <Link
-      href={tour.canonicalPath ?? `/activities/${tour.id}`}
+      href={tour.canonicalPath ?? `/${tour.slug}`}
       className="relative cursor-pointer flex flex-col gap-2 shadow-sm"
     >
       <div className="relative h-120 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
