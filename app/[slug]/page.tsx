@@ -9,7 +9,7 @@ import { TripItinerary } from "@/components/v0/trip-itinerary";
 import { TripOverview } from "@/components/v0/trip-overview";
 import { TripSidebar } from "@/components/v0/trip-sidebar";
 import { decodeHtmlEntities } from "@/lib/html-decoder";
-import { LucideImage, LucideImages } from "lucide-react";
+import { LucideImages } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";

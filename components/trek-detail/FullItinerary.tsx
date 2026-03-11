@@ -39,7 +39,7 @@ export default function FullItinerary({ days }: { days: ItineraryDay[] }) {
             value={`day-${d.day}`}
             className=" border-slate-200 bg-white data-[state=open]:border-primary/60 data-[state=open]:bg-blue-50/40 data-[state=open]:p-2 "
           >
-            <AccordionTrigger className="font-bold text-md p-0 flex items-center prose-h3:p-0 prose-h3:m-0 prose-h3:leading-0 px-2 hover:no-underline cursor-pointer">
+            <AccordionTrigger className="font-bold text-md p-0 flex items-center prose-h3:p-0 prose-h3:m-0 px-2 hover:no-underline cursor-pointer">
               <div className="flex items-center gap-3">
                 <span className="rounded bg-blue-100 p-2 font-semibold text-sky-700">
                   <LucideFlagTriangleRight />
