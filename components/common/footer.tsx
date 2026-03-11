@@ -85,10 +85,10 @@ export default function Footer() {
             THE TOURISM LICENSE NO.1111, COMPANY REGD. NO.111
           </p>
           <div className="flex flex-wrap gap-3 sm:gap-4">
-            {["About Us", "Blog", "Partnership", "Trekking"].map((link) => (
+            {["About", "Legal Documents", "Contact"].map((link) => (
               <Link
                 key={link}
-                href="#"
+                href={`/${link.toLowerCase().split(" ").join("-")}`}
                 className="hover:text-slate-900 whitespace-nowrap"
               >
                 {link}

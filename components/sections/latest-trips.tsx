@@ -1,5 +1,4 @@
 import SectionTemplate from "../templates/section-template";
-import MyLink from "../atoms/my-link";
 import TripCard from "../cards/trip-card";
 
 const LatestTrips = async () => {
