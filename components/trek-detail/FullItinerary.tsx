@@ -21,7 +21,7 @@ interface ItineraryDay {
 
 export default function FullItinerary({ days }: { days: ItineraryDay[] }) {
   return (
-    <section className="my-4">
+    <section className="my-4" id="itinerary">
       <SectionTitle title="Detailed Itinerary" />
       <Accordion
         type="single"

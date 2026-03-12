@@ -79,8 +79,8 @@ export default async function TripPage({
 
   const trip = jsonres.data;
 
-  const mainImage = trip.images[0] || placeHolderImage.src;
-  const otherImages = trip.images.slice(1) || [];
+  // const mainImage = trip.images[0] || placeHolderImage.src;
+  // const otherImages = trip.images.slice(1) || [];
   const sections = [
     { id: "overview", label: "Overview" },
     { id: "highlights", label: "Highlights" },
