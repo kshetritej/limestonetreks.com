@@ -108,45 +108,47 @@ export default async function TripPage({
       <SectionNavigation sections={sections} />
 
       {/*Images in Lightbox*/}
-      {trip.images && trip.images.length > 0 && (
-        <Lightbox images={trip.images} imageAlts={trip.keywords || []}>
-          <div>
-            <div className="relative md:grid-cols-3 gap-2 container mx-auto mb-4 max-h-144 overflow-hidden hidden md:grid">
-              {trip.images.slice(0, 3).map((img: string, index: number) => (
-                <Image
-                  key={index + img}
-                  src={img}
-                  alt={trip.keywords[index] || trip.title + index}
-                  height={1280}
-                  width={1920}
-                  className="w-full h-full object-cover object-center"
-                />
-              ))}
-              <Button className="absolute bottom-4 right-4">
-                <LucideImages />
-                {trip.images.length} Photos
-              </Button>
-            </div>
+      <div className="min-h-144 w-full relative">
+        {trip.images && trip.images.length > 0 && (
+          <Lightbox images={trip.images} imageAlts={trip.keywords || []}>
+            <div>
+              <div className="relative md:grid-cols-3 gap-2 container mx-auto mb-4 max-h-144 overflow-hidden hidden md:grid">
+                {trip.images.slice(0, 3).map((img: string, index: number) => (
+                  <Image
+                    key={index + img}
+                    src={img}
+                    alt={trip.keywords[index] || trip.title + index}
+                    height={1280}
+                    width={1920}
+                    className="w-full h-full object-cover object-center"
+                  />
+                ))}
+                <Button className="absolute bottom-4 right-4">
+                  <LucideImages />
+                  {trip.images.length} Photos
+                </Button>
+              </div>
 
-            <div className="relative md:grid-cols-3 gap-2 container mx-auto mb-4 max-h-144 overflow-hidden md:hidden">
-              {trip.images.slice(0, 1).map((img: string, index: number) => (
-                <Image
-                  key={index + img}
-                  src={img}
-                  alt={trip.keywords[index] || trip.title + index}
-                  height={1280}
-                  width={1920}
-                  className="w-full h-full object-cover object-center"
-                />
-              ))}
-              <Button className="absolute bottom-4 right-4">
-                <LucideImages />
-                {trip.images.length} Photos
-              </Button>
+              <div className="relative md:grid-cols-3 gap-2 container mx-auto mb-4 max-h-144 overflow-hidden md:hidden">
+                {trip.images.slice(0, 1).map((img: string, index: number) => (
+                  <Image
+                    key={index + img}
+                    src={img}
+                    alt={trip.keywords[index] || trip.title + index}
+                    height={1280}
+                    width={1920}
+                    className="w-full h-full object-cover object-center"
+                  />
+                ))}
+                <Button className="absolute bottom-4 right-4">
+                  <LucideImages />
+                  {trip.images.length} Photos
+                </Button>
+              </div>
             </div>
-          </div>
-        </Lightbox>
-      )}
+          </Lightbox>
+        )}
+      </div>
 
       {/*Content starts */}
       <div className="container mx-auto">
