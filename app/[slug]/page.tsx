@@ -109,7 +109,7 @@ export default async function TripPage({
       {/*Images in Lightbox*/}
       {trip.images && trip.images.length > 0 && (
         <Lightbox images={trip.images} imageAlts={trip.keywords || []}>
-          <div className="relative grid md:grid-cols-3 gap-2 container mx-auto mb-4 max-h-200">
+          <div className="relative grid md:grid-cols-3 gap-2 container mx-auto mb-4 max-h-200 overflow-hidden">
             <div className="rounded-3xl overflow-hidden col-span-2">
               <Image
                 src={mainImage}
