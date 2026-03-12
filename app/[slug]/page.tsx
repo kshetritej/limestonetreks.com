@@ -121,7 +121,10 @@ export default async function TripPage({
             </div>
             <div className="col-span-1 gap-2 hidden md:grid">
               {otherImages.map((imageUrl: string) => (
-                <div key={imageUrl} className="rounded-3xl overflow-hidden">
+                <div
+                  key={imageUrl}
+                  className="rounded-3xl overflow-hidden max-h-100 object-center object-cover"
+                >
                   <Image
                     alt={trip.title + "2"}
                     src={imageUrl}
