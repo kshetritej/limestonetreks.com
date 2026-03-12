@@ -185,3 +185,7 @@ table td:first-child {
 .scrollbar-hide::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
 }
+
+/** {
+    border: 1px solid red;
+}*/
