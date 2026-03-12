@@ -14,6 +14,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Script from "next/script";
+import { Suspense } from "react";
 
 export async function generateMetadata({
   params,
