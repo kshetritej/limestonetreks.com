@@ -186,3 +186,16 @@ table td:first-child {
 }
 
 /* Table Styles */
+table {
+    /* 1. Change display to allow overflow */
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    /*border-collapse: collapse;*/
+    margin: 1.5rem 0;
+    /*border: 1px solid #e5e7eb;*/
+    /*border-radius: 0.5rem;*/
+    /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);*/
+}
