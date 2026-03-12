@@ -5,6 +5,7 @@ import Footer from "@/components/common/footer";
 import { mulish } from "@/lib/font";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import CTACard from "@/components/cards/cta-card";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "Limestone Treks",
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={`${mulish.className} sans-serif antialiased`}>
         <Navbar />
         {children}
+        <Analytics />
         <CTACard />
         <Footer />
         <SpeedInsights />
