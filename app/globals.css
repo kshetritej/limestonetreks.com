@@ -119,18 +119,19 @@
 }
 /* Table Styles */
 table {
+    display: block;
     width: 100%;
     border-collapse: collapse;
+    border: none !important;
+    overflow-x: auto;
     margin: 1.5rem 0;
     border: 1px solid #e5e7eb;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    -webkit-overflow-scrolling: touch;
 }
 
-table thead {
-    background-color: #f9fafb;
-    border-bottom: 2px solid #e5e7eb;
+thead {
+    background-color: var(--primary);
+    border-bottom: 2px solid var(--accent);
 }
 
 table th {
@@ -183,19 +184,4 @@ table td:first-child {
 }
 .scrollbar-hide::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
-}
-
-/* Table Styles */
-table {
-    /* 1. Change display to allow overflow */
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-
-    /*border-collapse: collapse;*/
-    margin: 1.5rem 0;
-    /*border: 1px solid #e5e7eb;*/
-    /*border-radius: 0.5rem;*/
-    /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);*/
 }
