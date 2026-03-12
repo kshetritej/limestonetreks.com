@@ -6,10 +6,15 @@ import { mulish } from "@/lib/font";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import CTACard from "@/components/cards/cta-card";
 import { Analytics } from "@vercel/analytics/next";
+import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
   title: "Limestone Treks",
   description: "Created by Growfore Solution",
+  openGraph: {
+    siteName: siteConfig.name,
+    description: siteConfig.description,
+  },
   robots: {
     index: false,
     follow: false,

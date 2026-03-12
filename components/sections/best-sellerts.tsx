@@ -1,5 +1,5 @@
 import SectionTemplate from "../templates/section-template";
-import TripCard from "../cards/trip-card";
+import TripCard, { Tour } from "../cards/trip-card";
 
 const BestSellerTrips = async () => {
   const res = await fetch(
@@ -25,7 +25,7 @@ const BestSellerTrips = async () => {
     >
       {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-2 py-4">
-          {trips?.map((tour: any) => (
+          {trips?.map((tour: Tour) => (
             <TripCard tour={tour} key={tour.id} />
           ))}
         </div>

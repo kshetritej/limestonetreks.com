@@ -1,7 +1,10 @@
 export const dynamic = "force-static";
 import { Lightbox } from "@/components/claude/lightbox";
 import { SectionNavigation } from "@/components/common/section-nav";
-import { AdditionalInfoRenderer } from "@/components/molecules/additional-info-renderer";
+import {
+  AdditionalInfoItem,
+  AdditionalInfoRenderer,
+} from "@/components/molecules/additional-info-renderer";
 import { Button } from "@/components/ui/button";
 import { TripFaqs } from "@/components/v0/trip-faqs";
 import { TripItinerary } from "@/components/v0/trip-itinerary";
@@ -23,12 +26,11 @@ export async function generateMetadata({
 
   const data = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/activity/slug/${param.slug}`,
-  )
-    .then((res) => res.json())
-    .catch((_e: unknown) => {
-      return notFound();
-    });
+  ).then((res) => res.json());
 
+  if (!data) {
+    return notFound();
+  }
   const trip = data.data;
 
   return {
@@ -81,17 +83,6 @@ export default async function TripPage({
 
   const trip = jsonres.data;
 
-  // const mainImage = trip.images[0] || placeHolderImage.src;
-  // const otherImages = trip.images.slice(1) || [];
-  const sections = [
-    { id: "overview", label: "Overview" },
-    { id: "highlights", label: "Highlights" },
-    { id: "itinerary", label: "Itinerary" },
-    { id: "inclusions", label: "Inclusions" },
-    { id: "exclusions", label: "Exclusions" },
-    { id: "trip-info", label: "Trip Info" },
-    { id: "faqs", label: "FAQs" },
-  ];
   return (
     <main className="min-h-screen p-2">
       {/*Schema */}
@@ -107,7 +98,7 @@ export default async function TripPage({
       )}
 
       {/*Section Navigation*/}
-      <SectionNavigation sections={sections} />
+      <SectionNavigation />
 
       {/*Images in Lightbox*/}
       <div className="min-h-144 w-full relative">
@@ -213,24 +204,17 @@ export default async function TripPage({
               />
               {trip.additionalInfo.length > 0 && (
                 <div id="trip-info">
-                  {/*<h2 id="trip-info" className="font-bold text-xl my-4">
-                    Trip Information
-                  </h2>*/}
-                  {/*<Accordion
-                    collapsible
-                    type="single"
-                    className="bg-primary-50 w-full! mb-8"
-                  >*/}
-                  {trip.additionalInfo.map((info: any, idx: any) => {
-                    return (
-                      <AdditionalInfoRenderer
-                        key={idx}
-                        index={idx}
-                        item={info}
-                      />
-                    );
-                  })}
-                  {/*</Accordion>*/}
+                  {trip.additionalInfo.map(
+                    (info: AdditionalInfoItem, idx: number) => {
+                      return (
+                        <AdditionalInfoRenderer
+                          key={idx}
+                          index={idx}
+                          item={info}
+                        />
+                      );
+                    },
+                  )}
                 </div>
               )}
               <div id="faqs">

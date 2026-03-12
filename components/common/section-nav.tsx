@@ -2,16 +2,17 @@
 
 import { useEffect, useState } from "react";
 
-interface Section {
-  id: string;
-  label: string;
-}
+const sections = [
+  { id: "overview", label: "Overview" },
+  { id: "highlights", label: "Highlights" },
+  { id: "itinerary", label: "Itinerary" },
+  { id: "inclusions", label: "Inclusions" },
+  { id: "exclusions", label: "Exclusions" },
+  { id: "trip-info", label: "Trip Info" },
+  { id: "faqs", label: "FAQs" },
+];
 
-interface SectionNavigationProps {
-  sections: Section[];
-}
-
-export function SectionNavigation({ sections }: SectionNavigationProps) {
+export function SectionNavigation() {
   const [activeSection, setActiveSection] = useState(sections[0]?.id ?? "");
   const [offsetTop, setOffsetTop] = useState(0);
 
@@ -74,7 +75,7 @@ export function SectionNavigation({ sections }: SectionNavigationProps) {
             <button
               key={section.id}
               onClick={() => handleNavClick(section.id)}
-              className={`py-4 px-1 text-base font-medium whitespace-nowrap border-b-2 transition-colors ${
+              className={`py-1 px-1 text-base font-medium whitespace-nowrap border-b-2 transition-colors ${
                 activeSection === section.id
                   ? "border-gray-900 text-gray-900"
                   : "border-transparent text-gray-500 hover:text-gray-900"

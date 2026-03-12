@@ -6,6 +6,7 @@ import {
 } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 const FeaturedTrip = async () => {
   const res = await fetch(
@@ -32,7 +33,13 @@ const FeaturedTrip = async () => {
     >
       {
         <div className="relative md:h-120 overflow-hidden">
-          <img src={trips[0].images[0]} className="w-full object-cover" />
+          <Image
+            alt={trips[0].keywords[0] || trips[0].title || ""}
+            src={trips[0].images[0]}
+            height={720}
+            width={1280}
+            className="w-full object-cover"
+          />
           <div className="bg-linear-to-b from-primary/60 to-primary/0 absolute inset-0" />
           <div className="absolute text-white font-bold top-8 md:top-12 left-8 md:left-100 flex items-center">
             <div className="md:text-2xl flex gap-2 items-start border-r-2 pr-10">
