@@ -1,7 +1,6 @@
 export const dynamic = "force-static";
 import { Lightbox } from "@/components/claude/lightbox";
 import { SectionNavigation } from "@/components/common/section-nav";
-import placeHolderImage from "@/components/data/image";
 import { AdditionalInfoRenderer } from "@/components/molecules/additional-info-renderer";
 import { Button } from "@/components/ui/button";
 import { TripFaqs } from "@/components/v0/trip-faqs";
@@ -14,7 +13,6 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import { Suspense } from "react";
 
 export async function generateMetadata({
   params,
@@ -25,7 +23,11 @@ export async function generateMetadata({
 
   const data = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/activity/slug/${param.slug}`,
-  ).then((res) => res.json());
+  )
+    .then((res) => res.json())
+    .catch((_e: unknown) => {
+      return notFound();
+    });
 
   const trip = data.data;
 
