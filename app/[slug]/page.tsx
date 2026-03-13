@@ -101,7 +101,7 @@ export default async function TripPage({
       <SectionNavigation />
 
       {/*Images in Lightbox*/}
-      <div className="min-h-144 w-full relative">
+      <div className="max-h-144 w-full relative">
         {trip.images && trip.images.length > 0 && (
           <Lightbox images={trip.images} imageAlts={trip.keywords || []}>
             <div>
@@ -109,6 +109,7 @@ export default async function TripPage({
                 {trip.images.slice(0, 3).map((img: string, index: number) => (
                   <Image
                     key={index + img}
+                    data-lightbox-index={index}
                     src={img}
                     alt={trip.keywords[index] || trip.title + index}
                     height={1280}
@@ -116,7 +117,10 @@ export default async function TripPage({
                     className="w-full h-full object-cover object-center"
                   />
                 ))}
-                <Button className="absolute bottom-4 right-4">
+                <Button
+                  className="absolute bottom-4 right-4"
+                  data-lightbox-index={0}
+                >
                   <LucideImages />
                   {trip.images.length} Photos
                 </Button>
