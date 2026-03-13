@@ -6,6 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import SectionTitle from "./SectionTitle";
+import { decodeHtmlEntities } from "@/lib/html-decoder";
 
 interface ItineraryDay {
   day: number;
@@ -46,7 +47,11 @@ export default function FullItinerary({ days }: { days: ItineraryDay[] }) {
               </div>
             </AccordionTrigger>
             <AccordionContent className="px-4 pb-4">
-              <div dangerouslySetInnerHTML={{ __html: d.description }} />
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: decodeHtmlEntities(d.description),
+                }}
+              />
             </AccordionContent>
           </AccordionItem>
         ))}
