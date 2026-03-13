@@ -4,7 +4,7 @@ import Hero from "@/components/hero";
 import WhyUsSection from "../sections/why-us";
 import { AboutSection } from "../sections/about";
 import FeaturedSections from "../featured-sections";
-import FeaturedTrip from "../sections/featured-trip";
+import TripOfTheMonth from "../sections/featured-trip";
 
 export default async function Homepage() {
   return (
@@ -17,7 +17,7 @@ export default async function Homepage() {
       <div className="container mx-auto p-2">
         <FeaturedSections />
       </div>
-      <FeaturedTrip />
+      <TripOfTheMonth />
       <WhyUsSection />
     </div>
   );

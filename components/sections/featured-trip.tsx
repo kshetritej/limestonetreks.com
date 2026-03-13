@@ -8,7 +8,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 
-const FeaturedTrip = async () => {
+const TripOfTheMonth = async () => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/featured/trip-of-the-month?includeActivity=true`,
     { method: "GET" },
@@ -20,8 +20,8 @@ const FeaturedTrip = async () => {
   return (
     <SectionTemplate
       className="w-full"
-      title={<p>{featured.title || "Hello world"}</p>}
-      text={<p>{featured.description || "Hello world"}</p>}
+      title={<p>{featured.featuredTag.name || "Hello world"}</p>}
+      text={<p>{featured.featuredTag.description || "Hello world"}</p>}
       buttonLink="/"
     >
       {
@@ -61,4 +61,4 @@ const FeaturedTrip = async () => {
   );
 };
 
-export default FeaturedTrip;
+export default TripOfTheMonth;

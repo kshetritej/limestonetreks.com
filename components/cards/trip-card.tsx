@@ -48,7 +48,9 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
           </div>
 
           <div>
-            <p className="text-3xl font-extrabold mb-2">{tour.title}</p>
+            <p className="text-3xl font-extrabold mb-2">
+              {tour.title.split(":")[0]}
+            </p>
             <div className="space-y-2">
               <p>
                 <span>{tour.duration}</span> from

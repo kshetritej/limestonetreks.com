@@ -8,11 +8,14 @@ export default async function FeaturedSections() {
   const data = await res.json();
 
   const featured = data?.data;
+  const otherFeaturedExpectTOM = featured.featuredTags.filter(
+    (tag: any) => tag.slug !== "trip-of-the-month",
+  );
 
   return (
     <div className="flex flex-col gap-4 p-4 items-center justify-center">
       {/*@ts-expect-error error */}
-      {featured.featuredTags.map((tag, index) => {
+      {otherFeaturedExpectTOM.map((tag, index) => {
         return (
           <div key={index} className="container mx-auto">
             {tag.activity && tag.activity.length > 0 && (
@@ -27,7 +30,7 @@ export default async function FeaturedSections() {
             )}
             <div>
               {tag.activity && tag.activity.length > 0 && (
-                <div className="flex gap-4 flex-wrap w-full">
+                <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 flex-wrap w-full">
                   {tag.activity.map((activity: any) => (
                     <TripCard key={activity.id} tour={activity} />
                   ))}
