@@ -21,7 +21,7 @@ const FeaturedTrip = async () => {
     <SectionTemplate
       className="w-full"
       title={<p>{featured.title || "Hello world"}</p>}
-      text={<p>{featured.description || ""}</p>}
+      text={<p>{featured.description || "Hello world"}</p>}
       buttonLink="/"
     >
       {

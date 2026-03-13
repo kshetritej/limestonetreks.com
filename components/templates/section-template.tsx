@@ -20,8 +20,8 @@ export default function SectionTemplate({
   className,
 }: SectionTemplateProps) {
   return (
-    <section className={cn("py-16 px-4 bg-background", className)}>
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-baseline-last justify-between">
+    <section className={cn("py-16 px-6 bg-background", className)}>
+      <div className="md:max-w-7xl md:mx-auto flex flex-col md:flex-row  justify-between">
         <div>
           <div className="mb-12">
             <div className="text-sm font-bold uppercase tracking-widest text-primary mb-2 flex gap-1 items-center">
@@ -36,18 +36,6 @@ export default function SectionTemplate({
             </div>
           </div>
         </div>
-
-        <div className="text-center">
-          {/* <Link
-            href={buttonLink}
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition"
-          >
-            {buttonText}
-            <ChevronRight className="w-5 h-5" />
-          </Link> */}
-        </div>
-
-        {/* CTA Section */}
       </div>
       {children}
     </section>
