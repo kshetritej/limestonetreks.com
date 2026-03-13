@@ -55,7 +55,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
       </div>
       <div className="space-y-2">
         <Label htmlFor="startDate">Start Date</Label>
-        <Input type="date"/>
+        <Input type="date" />
         {/* <DatePicker setStartDate={setStartDate} />
         {formState.errors.startDate && (
           <p className="text-red-500 text-sm">Start date is required</p>

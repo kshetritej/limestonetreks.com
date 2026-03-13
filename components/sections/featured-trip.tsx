@@ -10,32 +10,25 @@ import Image from "next/image";
 
 const FeaturedTrip = async () => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/activity?page=1&limit=8`,
+    `${process.env.NEXT_PUBLIC_API_BASE_URL}/featured/trip-of-the-month?includeActivity=true`,
     { method: "GET" },
   );
   const resJSON = await res.json();
-  const trips = resJSON.data;
+  const featured = resJSON.data;
+  const trip = resJSON.data.featuredTag.activity;
 
   return (
     <SectionTemplate
       className="w-full"
-      badgeText={<p>Trip of the Month</p>}
-      title={<p>{trips[0].title}</p>}
-      text={
-        <p>
-          These trips are chosen, booked, and recommended the most — for good
-          reason. Thoughtful itineraries, experienced guides, and routes that
-          never disappoint.
-        </p>
-      }
+      title={<p>{featured.title || "Hello world"}</p>}
+      text={<p>{featured.description || ""}</p>}
       buttonLink="/"
-      buttonText="Explore All Latest Trips"
     >
       {
-        <div className="relative md:h-120 overflow-hidden">
+        <div className="relative md:h-120 overflow-hidden container mx-auto">
           <Image
-            alt={trips[0].keywords[0] || trips[0].title || ""}
-            src={trips[0].images[0]}
+            alt={trip[0].keywords[0] || trip[0].title || ""}
+            src={trip[0].images[0]}
             height={720}
             width={1280}
             className="w-full object-cover"
@@ -46,19 +39,19 @@ const FeaturedTrip = async () => {
               <LucideCalendarClock className="size-8 md:size-12" />
               <div>
                 <p className="text-xs md:text-sm">Total Duration</p>
-                <p>{trips[0].duration}</p>
+                <p>{trip[0].duration}</p>
               </div>
             </div>
             <div className="md:text-2xl flex gap-2 items-start pl-10">
               <LucideCoins className="size-8 md:size-12" />
               <div>
                 <p className="text-xs md:text-sm">Package Price</p>
-                <p>USD {trips[0].price}</p>
+                <p>USD {trip[0].price}</p>
               </div>
             </div>
           </div>
-          <Link href={`/${trips[0].slug}`} className="absolute bottom-8 left-8">
-            <Button className="absolute bottom-2 left-130 py-6 px-12">
+          <Link href={`/${trip[0].slug}`} className="absolute bottom-8 left-8">
+            <Button className="absolute bottom-2 lg:left-130 py-6 px-12">
               Explore Package <LucideArrowRight />
             </Button>
           </Link>
