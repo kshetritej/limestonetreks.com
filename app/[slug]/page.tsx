@@ -128,14 +128,19 @@ export default async function TripPage({
 
               <div className="relative md:grid-cols-3 gap-2 container mx-auto mb-4 max-h-144 overflow-hidden md:hidden">
                 {trip.images.slice(0, 1).map((img: string, index: number) => (
-                  <Image
-                    key={index + img}
-                    src={img}
-                    alt={trip.keywords[index] || trip.title + index}
-                    height={1280}
-                    width={1920}
-                    className="w-full h-full object-cover object-center"
-                  />
+                  <figure key={index + img}>
+                    <figcaption>
+                      {trip.keywords[index] || trip.title + index}
+                    </figcaption>
+                    <Image
+                      src={img}
+                      alt={trip.keywords[index] || trip.title + index}
+                      title={trip.keywords[index] || trip.title + index}
+                      height={1280}
+                      width={1920}
+                      className="w-full h-full object-cover object-center"
+                    />
+                  </figure>
                 ))}
                 <Button className="absolute bottom-4 right-4">
                   <LucideImages />

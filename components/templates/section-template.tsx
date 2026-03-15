@@ -28,12 +28,10 @@ export default function SectionTemplate({
               <div className="w-8 h-1 bg-primary" />
               {badgeText}
             </div>
-            <h2 className="text-4xl font-bold text-foreground mb-6 leading-tight text-balance uppercase">
+            <h2 className="text-4xl font-bold mb-6 leading-tight text-balance uppercase">
               {title}
             </h2>
-            <div className="text-md text-muted-foreground mb-4 leading-relaxed max-w-3xl">
-              {text}
-            </div>
+            <div className="text-md mb-4 leading-relaxed max-w-3xl">{text}</div>
           </div>
         </div>
       </div>
