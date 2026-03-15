@@ -6,6 +6,7 @@ export const siteConfig = {
   description: "Best Trekking Agency in Pokhara",
   url: "https://limestonetreks.com",
   image: "/og.png",
+  countryCode: "+977",
   whatsAppNumber: "9846619460",
   phoneNumber: "+977 9846619460",
   phoneNumbers: [

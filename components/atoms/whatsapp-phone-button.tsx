@@ -13,7 +13,7 @@ export function CallNow() {
       </div>
       <div className="text-right">
         <p className="font-bold text-sm md:text-lg">
-          {siteConfig.whatsAppNumber}
+          {siteConfig.countryCode} {siteConfig.whatsAppNumber}
         </p>
         <p className="text-xs md:text-sm">Direct Call or WhatsApp 24/7</p>
       </div>
