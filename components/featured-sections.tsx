@@ -13,11 +13,11 @@ export default async function FeaturedSections() {
   );
 
   return (
-    <div className="flex flex-col gap-4 p-4 items-center justify-center">
+    <div className="flex flex-col gap-4 p-4 items-center justify-center space-y-4">
       {/*@ts-expect-error error */}
       {otherFeaturedExpectTOM.map((tag, index) => {
         return (
-          <div key={index} className="container mx-auto">
+          <div key={index} className="container mx-auto my-12">
             {tag.activity && tag.activity.length > 0 && (
               <h2 className="text-4xl font-bold text-foreground mb-6 leading-tight text-balance uppercase">
                 {tag.name}

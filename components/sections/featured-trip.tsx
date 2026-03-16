@@ -14,14 +14,15 @@ const TripOfTheMonth = async () => {
     { method: "GET" },
   );
   const resJSON = await res.json();
-  const featured = resJSON.data;
-  const trip = resJSON.data.featuredTag.activity;
+
+  const featured = resJSON?.data;
+  const trip = resJSON?.data?.featuredTag?.activity;
 
   return (
     <SectionTemplate
       className="w-full"
-      title={<p>{featured.featuredTag.name || "Hello world"}</p>}
-      text={<p>{featured.featuredTag.description || "Hello world"}</p>}
+      title={<p>{featured?.featuredTag.name || "Hello world"}</p>}
+      text={<p>{featured?.featuredTag.description || "Hello world"}</p>}
       buttonLink="/"
     >
       {
