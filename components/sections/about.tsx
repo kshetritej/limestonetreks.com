@@ -15,16 +15,17 @@ const highlights = [
 export function AboutSection() {
   return (
     <div className="bg-primary flex gap-4" style={{ borderRadius: "12px" }}>
-      <div className="bg-primary/50 overflow-hidden object-cover  flex items-center justify-center z-9">
+      <div className="bg-primary/50 overflow-hidden object-cover  flex items-center justify-center">
         <Image
           src={"/bidur-poudel.webp"}
           alt="Bidur Poudel"
           width={1280}
           height={720}
           className="object-cover"
+          style={{ borderRadius: "12px" }}
         />
       </div>
-      <div className="p-4 space-y-2 flex flex-col items-center">
+      <div className="p-4 space-y-2 flex flex-col items-start">
         <Badge variant={"secondary"}> Meet your Expert Guide</Badge>
         <p className="font-bold text-3xl"> {siteConfig.mainGuide}</p>
         {/*<div className="text-white font-bold text-sm">
