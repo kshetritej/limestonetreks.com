@@ -27,7 +27,7 @@ export default function HeroSection() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 flex min-h-[80vh] flex-col justify-center px-6 py-12 md:px-16 container mx-auto">
+      <div className="relative z-10 flex min-h-screen flex-col justify-center px-6 py-12 md:px-16 container mx-auto">
         {/* Main Content */}
         <div className="max-w-2xl space-y-6">
           {/* Tagline */}

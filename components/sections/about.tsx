@@ -14,14 +14,17 @@ const highlights = [
 
 export function AboutSection() {
   return (
-    <div className="bg-primary flex gap-4" style={{ borderRadius: "12px" }}>
+    <div
+      className="bg-primary flex flex-col md:flex-row gap-4 md:px-4"
+      style={{ borderRadius: "12px" }}
+    >
       <div className="bg-primary/50 overflow-hidden object-cover  flex items-center justify-center">
         <Image
           src={"/bidur-poudel.webp"}
           alt="Bidur Poudel"
           width={1280}
           height={720}
-          className="object-cover"
+          className="object-cover w-3xl"
           style={{ borderRadius: "12px" }}
         />
       </div>
