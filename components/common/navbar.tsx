@@ -22,7 +22,7 @@ export default async function Navbar() {
         <LogoComponent dark />
         <MegaMenu items={menuData} />
         <MobileMenu items={menuData} />
-        <div className="flex items-center gap-4">
+        <div className="items-center gap-4 hidden md:flex">
           <Link
             href={`https://api.whatsapp.com/send/?phone=${siteConfig.whatsAppNumber}`}
             className="items-center gap-2 hidden md:flex"

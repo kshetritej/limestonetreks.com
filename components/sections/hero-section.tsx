@@ -47,9 +47,8 @@ export default function HeroSection() {
 
           {/* Description */}
           <p className="text-white text-lg max-w-xl leading-relaxed opacity-95 font-bold">
-            Based in Pokhara, Limestone Treks brings you more than 15 years of
-            local expertise, safety, and passion. From iconic peaks to hidden
-            valleys, we don’t just show you the mountains we share our home.
+            From iconic peaks to hidden valleys, we don’t just show you the
+            mountains we share our home.
           </p>
 
           {/* CTA Button */}

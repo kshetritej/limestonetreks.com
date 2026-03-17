@@ -26,11 +26,7 @@ const TripOfTheMonth = async () => {
           {featured?.featuredTag.name || "Hello world"}: {trip[0].title}
         </p>
       }
-      text={
-        <p className="text-lg">
-          {featured?.featuredTag.description || "Hello world"}
-        </p>
-      }
+      text={<p>{featured?.featuredTag.description || "Hello world"}</p>}
       buttonLink="/"
     >
       {
