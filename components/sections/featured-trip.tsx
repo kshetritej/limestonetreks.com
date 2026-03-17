@@ -21,8 +21,16 @@ const TripOfTheMonth = async () => {
   return (
     <SectionTemplate
       className="w-full"
-      title={<p>{featured?.featuredTag.name || "Hello world"}</p>}
-      text={<p>{featured?.featuredTag.description || "Hello world"}</p>}
+      title={
+        <p>
+          {featured?.featuredTag.name || "Hello world"}: {trip[0].title}
+        </p>
+      }
+      text={
+        <p className="text-lg">
+          {featured?.featuredTag.description || "Hello world"}
+        </p>
+      }
       buttonLink="/"
     >
       {

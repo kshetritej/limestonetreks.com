@@ -1,45 +1,46 @@
-import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import Link from "next/link";
+import { Button } from "../ui/button";
 
 export default function CTACard() {
   return (
-    <section className="w-full rounded-lg bg-primary text-white! p-6 md:p-8 mb-4">
-      <div className="space-y-4 p-8 flex flex-col items-center  text-center justify-between max-w-6xl mx-auto">
+    <section className="relative w-full rounded-lg text-white p-6 md:p-8 mb-4 overflow-hidden">
+      {/* Background Image */}
+      <Image
+        src="/ama-dablam.jpeg"
+        alt="Background"
+        fill
+        className="object-cover"
+        priority
+      />
+
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50" />
+
+      {/* Content */}
+      <div className="relative space-y-4 p-8 flex flex-col items-center text-center justify-between max-w-4xl mx-auto">
         <div className="space-y-1 flex flex-col gap-4">
-          <p className="text-sm ">/Let&apos;s Talk</p>
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight">
-            Stop Daydreaming, Start Planning
+          <h2 className="text-2xl md:text-3xl  tracking-tight font-bold">
+            From Dreams to Doorsteps <br /> Let’s Build Your Itinerary
           </h2>
+          <p className="max-w-2xl">
+            The mountains are calling, and we have the map. Whether you’re
+            looking for a challenging summit or a serene cultural walk, our
+            experts are ready to help.
+          </p>
         </div>
+
         <Link href={"/contact"}>
           <Button
             type="button"
             size="lg"
-            variant={"outline"}
-            className="bg-transparent cursor-pointer"
+            variant="default"
+            className="cursor-pointer"
           >
-            Learn More
+            Start Planning
           </Button>
         </Link>
       </div>
     </section>
   );
 }
-
-// const onSubmit = async (data: { email: string }) => {
-//   const res = await fetch(
-//     `${process.env.NEXT_PUBLIC_API_BASE_URL}/newsletter/subscribe`,
-//     {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify({ email: data.email }),
-//     },
-//   );
-
-//   if (res.ok) {
-//     toast.success("Successfully subscribed to newsletter!");
-//   } else {
-//     const resData = await res.json();
-//     toast.error(resData.message || "Failed to subscribe to newsletter.");
-//   }
-// };

@@ -7,27 +7,27 @@ export default function WhyUsSection() {
   const features = [
     {
       image: adventure,
-      title: "Explore places you couldn’t on your own",
+      title: "Beyond the Starndard Trail",
       description:
-        "Every trip is led by certified, experienced guides — opening access to landscapes and moments most travelers never reach.",
+        'We specialize in "hidden Nepal." Our guides lead you to secluded landscapes and authentic cultural encounters that standard tour operators often overlook.',
     },
     {
       image: world,
-      title: "Go with outdoor specialists",
+      title: "Veteran Mountain Specialists",
       description:
-        "Choose from carefully designed active adventures in truly wild places, whatever kind of challenge or pace you’re looking for.",
+        "Experience matters at high altitudes. Our team is composed of certified professionals with nearly two decades of experience navigating the specific terrain of the Annapurna and Everest regions.",
     },
     {
       image: bump,
-      title: "Small Groups, Big Connections",
+      title: "Small Groups, Real Bonds",
       description:
-        "Most travelers join solo, typically in their 30s–50s. Our small groups consistently earn top ratings for atmosphere and camaraderie.",
+        "We prioritize quality over quantity. By keeping our groups small, we ensure that every trekker receives personalized attention and care.",
     },
     {
       image: no_hassle,
-      title: "Hassle-Free from Start to Finish",
+      title: "Seamless Logistics",
       description:
-        "We handle the planning and logistics — so you can simply arrive, switch off, and enjoy the mountains.",
+        "From the moment you land to the final descent, we handle the details. Airport transfers, permits, and quality lodging are all managed so you can focus entirely on the horizon.",
     },
   ];
 
@@ -41,7 +41,7 @@ export default function WhyUsSection() {
                 key={index}
                 className="flex flex-col items-center text-center"
               >
-                <img src={feature.image?.src} className="size-24"/>
+                <img src={feature.image?.src} className="size-24" />
 
                 {/* Title */}
                 <h3 className="text-lg font-bold text-foreground mb-3 uppercase tracking-wider">

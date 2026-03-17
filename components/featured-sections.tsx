@@ -24,7 +24,7 @@ export default async function FeaturedSections() {
               </h2>
             )}
             {tag.activity && tag.activity.length > 0 && (
-              <p className="text-md text-muted-foreground mb-4 leading-relaxed max-w-3xl">
+              <p className="text-lg text-muted-foreground mb-4 leading-relaxed max-w-3xl">
                 {tag.description}
               </p>
             )}

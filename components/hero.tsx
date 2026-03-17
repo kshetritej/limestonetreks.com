@@ -7,7 +7,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 opacity-30"
         style={{
-          backgroundImage: "url(/majestic-mountains.webp)",
+          backgroundImage: "url(/ama-dablam.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -23,8 +23,8 @@ export default function Hero() {
             Local Experts in Himalayan Trekking
           </h1>
           <p className="text-md mb-10 opacity-95 text-balance leading-relaxed">
-            Explore the Himalayas with a team that's guided with care for over
-            17 years.
+            Explore the Himalayas with a team that&apos;s guided with care for
+            over 17 years.
           </p>
           <div className="flex gap-4 justify-start flex-wrap">
             <Link

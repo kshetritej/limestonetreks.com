@@ -16,14 +16,14 @@ export default function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <Image
-          src={"/majestic-mountain-range.webp"}
+          src={"/ama-dablam.jpeg"}
           alt="Mountain trekking background"
           fill
           className="object-cover"
           priority
         />
         {/* Blue overlay */}
-        <div className="absolute inset-0 bg-primary/60 opacity-40"></div>
+        <div className="absolute inset-0 bg-black/60 opacity-40"></div>
       </div>
 
       {/* Content */}
@@ -34,37 +34,38 @@ export default function HeroSection() {
           <p
             className={cn(
               cedarVile.className,
-              `text-white text-lg font-light tracking-wide font-mono`,
+              `text-white text-lg  tracking-wide font-mono font-bold`,
             )}
           >
             Since 1996 — Nepal&apos;s Trusted Trekking Experts
           </p>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-            Trek with Experienced Nepali Guides
+          <h1 className="text-5xl md:text-6xl  text-white leading-tight font-bold uppercase">
+            Journey to the Heart of Himalayas
           </h1>
 
           {/* Description */}
-          <p className="text-white text-lg max-w-xl leading-relaxed opacity-95">
-            We have curated trek plans for you that gives you the worlds best
-            experience with more than 30 years of experience staffs
+          <p className="text-white text-lg max-w-xl leading-relaxed opacity-95 font-bold">
+            Based in Pokhara, Limestone Treks brings you more than 15 years of
+            local expertise, safety, and passion. From iconic peaks to hidden
+            valleys, we don’t just show you the mountains we share our home.
           </p>
 
           {/* CTA Button */}
           <div className="pt-4">
             <Button size={"lg"}>
-              Explore Packages
+              View Our Treks
               <ArrowRight size={20} />
             </Button>
           </div>
-          <div>
+          {/*<div>
             <ReviewBatch
               imageSource="/tripadvisor-logo.png"
               alt="tripadvisor logo"
               reviewCount={5}
             />
-          </div>
+          </div>*/}
         </div>
       </div>
     </section>

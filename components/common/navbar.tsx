@@ -30,7 +30,7 @@ export default async function Navbar() {
             <MessageCircle size={20} />
             <span className="text-sm font-medium">Chat with us</span>
           </Link>
-          <Link href={"/contact"}>
+          <Link href={"/contact"} className="hidden md:block">
             <Button className="bg-black text-white hover:bg-gray-900 rounded-full px-6 py-2 h-auto text-sm font-medium">
               Contact Us
             </Button>
