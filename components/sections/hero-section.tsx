@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { Cedarville_Cursive } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { ReviewBatch } from "../reviewbatch";
+import Link from "next/link";
 
 const cedarVile = Cedarville_Cursive({
   subsets: ["latin"],
@@ -52,12 +52,12 @@ export default function HeroSection() {
           </p>
 
           {/* CTA Button */}
-          <div className="pt-4">
+          <Link href="/explore" className="pt-4">
             <Button size={"lg"}>
               View Our Treks
               <ArrowRight size={20} />
             </Button>
-          </div>
+          </Link>
           {/*<div>
             <ReviewBatch
               imageSource="/tripadvisor-logo.png"
