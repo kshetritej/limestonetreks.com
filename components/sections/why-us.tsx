@@ -2,6 +2,7 @@ import adventure from "@/public/mountain-trail.png";
 import bump from "@/public/small-group.png";
 import no_hassle from "@/public/logistics.png";
 import world from "@/public/mountains.png";
+import Image from "next/image";
 
 export default function WhyUsSection() {
   const features = [
@@ -41,7 +42,13 @@ export default function WhyUsSection() {
                 key={index}
                 className="flex flex-col items-center text-center"
               >
-                <img src={feature.image?.src} className="size-24" />
+                <Image
+                  src={feature.image?.src}
+                  className="size-24"
+                  height={200}
+                  width={200}
+                  alt={feature.title}
+                />
 
                 {/* Title */}
                 <h3 className="text-lg font-bold text-foreground mb-3 uppercase tracking-wider h-12">
