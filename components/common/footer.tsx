@@ -34,8 +34,8 @@ export default function Footer() {
       <div className="border-b border-slate-200 px-4 py-8 sm:px-6 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
           {/* Head Office */}
-          <div className="sm:border-r sm:border-slate-200 sm:pr-8">
-            <h4 className="font-bold text-sm mb-4">🏔️ HEAD OFFICE</h4>
+          <div className=" sm:pr-8">
+            <h4 className="font-bold text-sm mb-4"> HEAD OFFICE</h4>
             <div className="space-y-3 text-sm text-slate-700">
               <p>
                 {siteConfig.address.street}, {siteConfig.address.city},{" "}
@@ -48,19 +48,17 @@ export default function Footer() {
               <p>
                 <span className="font-semibold">Email:</span> {siteConfig.email}
               </p>
-              <div className="mt-4 pt-4 border-t border-slate-200">
-                <p className="font-semibold mb-2">24 hrs Emergency Contact</p>
-                <p>{siteConfig.phoneNumbers[0].tel}</p>
+              {/*<div className="mt-4 pt-4 ">
+                <p className="font-bold mb-2">24 hrs Emergency Contact</p>
+                <p className="text-black">{siteConfig.phoneNumbers[0].tel}</p>
                 <p>{siteConfig.phoneNumbers[0].tel2}</p>
-              </div>
+              </div>*/}
             </div>
           </div>
         </div>
       </div>
 
-      <div className="border-b border-slate-200 px-4 py-6 sm:px-6 sm:py-8">
-        <div className="flex flex-col md:flex-row gap-6 sm:gap-8 max-w-7xl mx-auto justify-between">
-          {/* Social Media */}
+      {/*<div className="border-b border-slate-200 px-4 py-6 sm:px-6 sm:py-8"> <div className="flex flex-col md:flex-row gap-6 sm:gap-8 max-w-7xl mx-auto justify-between">
           <div className="flex gap-2">
             <IconBrandFacebook />
             <IconBrandInstagram />
@@ -68,13 +66,12 @@ export default function Footer() {
             <IconBrandTiktok />
           </div>
 
-          {/* Reviews */}
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
             <div className="w-20 h-6 sm:w-24 sm:h-8 bg-slate-300 rounded" />
             <div className="w-20 h-6 sm:w-24 sm:h-8 bg-slate-300 rounded" />
           </div>
         </div>
-      </div>
+      </div>*/}
 
       {/* Copyright & Links */}
       <div className="px-4 py-6 sm:px-6">
