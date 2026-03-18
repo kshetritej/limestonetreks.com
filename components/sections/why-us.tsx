@@ -1,7 +1,7 @@
-import adventure from "@/public/adventurer_icon.webp";
-import bump from "@/public/bump.webp";
-import no_hassle from "@/public/no-hassle.webp";
-import world from "@/public/world.svg";
+import adventure from "@/public/mountain-trail.png";
+import bump from "@/public/small-group.png";
+import no_hassle from "@/public/logistics.png";
+import world from "@/public/mountains.png";
 
 export default function WhyUsSection() {
   const features = [
@@ -44,7 +44,7 @@ export default function WhyUsSection() {
                 <img src={feature.image?.src} className="size-24" />
 
                 {/* Title */}
-                <h3 className="text-lg font-bold text-foreground mb-3 uppercase tracking-wider">
+                <h3 className="text-lg font-bold text-foreground mb-3 uppercase tracking-wider h-12">
                   {feature.title}
                 </h3>
 
