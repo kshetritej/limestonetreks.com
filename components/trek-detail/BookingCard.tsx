@@ -18,13 +18,17 @@ export default function BookingCard() {
       <div className="text-sm text-slate-500">Starting from</div>
 
       <div className="mt-1 flex items-end gap-2">
-        <div className="text-2xl font-semibold text-slate-900">${price.toLocaleString()}</div>
+        <div className="text-2xl font-semibold text-slate-900">
+          ${price.toLocaleString()}
+        </div>
         <div className="pb-[2px] text-sm text-slate-500">/person</div>
       </div>
 
       <div className="mt-4 space-y-3">
         <div>
-          <label className="text-sm font-semibold text-slate-700">Travel Date</label>
+          <label className="text-sm font-semibold text-slate-700">
+            Travel Date
+          </label>
           <div className="mt-2 rounded-lg border border-slate-200 bg-white px-3 py-2">
             <input
               type="date"
@@ -77,7 +81,8 @@ export default function BookingCard() {
           Need help with booking?
         </div>
         <div className="mt-1 text-sm text-slate-600">
-          Our travel experts are available 24/7 to help you customize your journey.
+          Our travel experts are available 24/7 to help you customize your
+          journey.
         </div>
         <button
           type="button"

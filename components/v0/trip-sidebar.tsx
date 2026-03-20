@@ -44,6 +44,7 @@ export function TripSidebar({ trip }: TripSidebarProps) {
 
       {/* Expert Contact */}
       <Link
+        target="_blank"
         href={`https://api.whatsapp.com/send/?phone=${siteConfig.whatsAppNumber}`}
         className="pt-6 border-t decoration-0"
       >
