@@ -5,11 +5,12 @@ import { AboutSection } from "../sections/about";
 import FeaturedSections from "../featured-sections";
 import TripOfTheMonth from "../sections/featured-trip";
 import HeroSection from "../sections/hero-section";
+import Hero from "../hero";
 
 export default async function Homepage() {
   return (
     <div>
-      <HeroSection />
+      <Hero />
       <div className="bg-primary/20">
         <div className="container mx-auto p-4">
           <AboutSection />

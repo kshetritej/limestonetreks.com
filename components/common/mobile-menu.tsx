@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown, LayoutGrid } from "lucide-react";
 import {
   Sheet,
   SheetTrigger,
@@ -120,7 +120,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
           className="md:hidden"
           aria-label="Open menu"
         >
-          <Menu className="size-6" />
+          <LayoutGrid className="size-6 text-sky-900" />
         </Button>
       </SheetTrigger>
       <SheetContent

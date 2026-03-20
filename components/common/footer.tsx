@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-50 border-t border-slate-200">
       <div className="border-b border-slate-200  py-6 sm:py-8 container mx-auto">
-        <div className="flex items-center gap-3 sm:gap-4">
+        <div className="flex items-center gap-3 sm:gap-4 p-4">
           <div className="font-bold text-xs sm:text-sm">ASSOCIATIONS</div>
           <div className="flex gap-2 overflow-x-auto">
             {[

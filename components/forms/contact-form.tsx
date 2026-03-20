@@ -53,7 +53,7 @@ export function ContactForm() {
   };
 
   return (
-    <div className="bg-card rounded-md shadow-xs p-8">
+    <div className="bg-card rounded-md shadow-xs md:p-8">
       <h2 className="text-4xl font-bold mb-6 mt-2">Send us a Message</h2>
 
       {submitted && (

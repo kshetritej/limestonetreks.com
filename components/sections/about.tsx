@@ -7,14 +7,14 @@ import { Badge } from "../ui/badge";
 export function AboutSection() {
   return (
     <div
-      className="flex flex-col gap-12 md:px-4 min-h-120 p-4 sm:p-8 justify-center items-center"
+      className="flex flex-col gap-12 md:px-4 min-h-120 p-2 sm:p-8 justify-center items-center"
       style={{ borderRadius: "12px" }}
     >
       <Badge className="text-center uppercase font-bold px-4 text-lg">
         Meet your lead guide
       </Badge>
-      <div className="overflow-hidden object-cover  flex flex-col md:flex-row items-center justify-center">
-        <div className="p-4 space-y-4 flex flex-col items-start">
+      <div className="overflow-hidden object-cover  flex flex-col md:flex-row items-center justify-center gap-4">
+        <div className="space-y-4 flex flex-col items-start">
           <div className="uppercase text-primary">
             {" "}
             A Lifetime Among the Peaks

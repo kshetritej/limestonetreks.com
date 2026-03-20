@@ -30,6 +30,8 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
         <Image
           src={
             tour.images[0] ??
+            tour.images[1] ??
+            tour.images[2] ??
             "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=600&fit=crop"
           }
           alt={tour?.keywords[0] || tour.title || ""}
@@ -39,7 +41,7 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
         />
 
         {/* Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60  to-black/10" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/60  to-black/10" />
 
         {/* Content */}
         <div className="absolute inset-0 flex flex-col justify-between p-6 text-white">

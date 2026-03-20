@@ -1,6 +1,7 @@
 export const dynamic = "force-static";
 import { Lightbox } from "@/components/claude/lightbox";
 import { SectionNavigation } from "@/components/common/section-nav";
+import MobileImageViewer from "@/components/mobile-image-viewer";
 import {
   AdditionalInfoItem,
   AdditionalInfoRenderer,
@@ -127,7 +128,7 @@ export default async function TripPage({
               </div>
 
               <div className="relative md:grid-cols-3 gap-2 container mx-auto mb-4 max-h-144 overflow-hidden md:hidden">
-                {trip.images.slice(0, 1).map((img: string, index: number) => (
+                {/*{trip.images.slice(0, 1).map((img: string, index: number) => (
                   <figure key={index + img}>
                     <figcaption>
                       {trip.keywords[index] || trip.title + index}
@@ -141,7 +142,7 @@ export default async function TripPage({
                       className="w-full h-full object-cover object-center"
                     />
                   </figure>
-                ))}
+                ))}*/}
                 <Button className="absolute bottom-4 right-4">
                   <LucideImages />
                   {trip.images.length} Photos
@@ -151,6 +152,8 @@ export default async function TripPage({
           </Lightbox>
         )}
       </div>
+
+      <MobileImageViewer images={trip.images} keywords={trip.keywords} />
 
       {/*Content starts */}
       <div className="container mx-auto">

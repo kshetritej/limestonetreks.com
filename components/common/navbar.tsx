@@ -21,20 +21,24 @@ export default async function Navbar() {
       <div className="flex flex-row items-center md:container md:mx-auto md:px-2 justify-between container">
         <LogoComponent dark />
         <MegaMenu items={menuData} />
-        <MobileMenu items={menuData} />
-        <div className="items-center gap-4 hidden md:flex">
-          <Link
-            href={`https://api.whatsapp.com/send/?phone=${siteConfig.whatsAppNumber}`}
-            className="items-center gap-2 hidden md:flex"
-          >
-            <MessageCircle size={20} />
-            <span className="text-sm font-medium">Chat with us</span>
-          </Link>
-          <Link href={"/contact"} className="hidden md:block">
-            <Button className="bg-black text-white hover:bg-gray-900 rounded-full px-6 py-2 h-auto text-sm font-medium">
-              Contact Us
-            </Button>
-          </Link>
+        <div className="flex gap-1 items-center flex-row-reverse md:flex-row">
+          <MobileMenu items={menuData} />
+          <div className="items-center gap-4 flex">
+            <Link
+              href={`https://api.whatsapp.com/send/?phone=${siteConfig.whatsAppNumber}`}
+              className="items-center gap-2 flex hover:underline"
+            >
+              <MessageCircle size={20} className="text-green-700" />
+              <span className="text-sm font-medium hidden md:flex text-green-700">
+                Chat with us
+              </span>
+            </Link>
+            <Link href={"/contact"} className="hidden md:block">
+              <Button className="bg-primary text-white hover:bg-sky-900 rounded-full px-6 py-2 h-auto text-sm font-medium">
+                Contact Us
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
