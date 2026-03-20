@@ -102,7 +102,7 @@ export default async function TripPage({
       <SectionNavigation />
 
       {/*Images in Lightbox*/}
-      <div className="max-h-144 w-full relative">
+      <div className="max-h-144 w-full relative hidden md:block">
         {trip.images && trip.images.length > 0 && (
           <Lightbox images={trip.images} imageAlts={trip.keywords || []}>
             <div>
@@ -153,7 +153,9 @@ export default async function TripPage({
         )}
       </div>
 
-      <MobileImageViewer images={trip.images} keywords={trip.keywords} />
+      <div className="md:hidden">
+        <MobileImageViewer images={trip.images} keywords={trip.keywords} />
+      </div>
 
       {/*Content starts */}
       <div className="container mx-auto">
