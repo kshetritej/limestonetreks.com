@@ -22,7 +22,7 @@ export type Tour = {
 export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
   return (
     <Link
-      href={tour.canonicalPath ?? `/${tour.slug}`}
+      href={tour.canonicalPath ?? `/package/${tour.slug}`}
       className="relative cursor-pointer flex flex-col gap-2 shadow-sm max-w-sm"
     >
       <div className="relative h-120 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">

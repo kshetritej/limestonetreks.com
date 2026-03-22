@@ -26,7 +26,7 @@ export function AboutSection() {
             meaningful, unforgettable experience.
           </p>
           <Link
-            href="/about"
+            href="/about-us"
             className="flex gap-1 items-center cursor-pointer mt-4"
           >
             <Button variant={"default"}>

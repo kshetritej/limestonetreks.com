@@ -55,7 +55,10 @@ const TripOfTheMonth = async () => {
               </div>
             </div>
           </div>
-          <Link href={`/${trip[0].slug}`} className="absolute bottom-8 left-8">
+          <Link
+            href={`/package/${trip[0].slug}`}
+            className="absolute bottom-8 left-8"
+          >
             <Button className="absolute bottom-2 lg:left-130 py-6 px-12">
               Explore Package <LucideArrowRight />
             </Button>

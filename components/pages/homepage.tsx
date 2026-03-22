@@ -4,7 +4,6 @@ import WhyUsSection from "../sections/why-us";
 import { AboutSection } from "../sections/about";
 import FeaturedSections from "../featured-sections";
 import TripOfTheMonth from "../sections/featured-trip";
-import HeroSection from "../sections/hero-section";
 import Hero from "../hero";
 
 export default async function Homepage() {

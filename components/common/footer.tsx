@@ -1,10 +1,4 @@
 import Link from "next/link";
-import {
-  IconBrandFacebook,
-  IconBrandInstagram,
-  IconBrandTiktok,
-  IconBrandYoutube,
-} from "@tabler/icons-react";
 import { siteConfig } from "@/lib/siteConfig";
 
 export default function Footer() {
@@ -83,7 +77,7 @@ export default function Footer() {
             </span>{" "}
           </p>
           <div className="flex flex-wrap gap-3 sm:gap-4">
-            {["About", "Legal Documents", "Contact"].map((link) => (
+            {["About us", "Legal Documents", "Contact"].map((link) => (
               <Link
                 key={link}
                 href={`/${link.toLowerCase().split(" ").join("-")}`}

@@ -26,6 +26,7 @@ export default async function Navbar() {
           <div className="items-center gap-4 flex">
             <Link
               href={`https://api.whatsapp.com/send/?phone=${siteConfig.whatsAppNumber}`}
+              target="_blank"
               className="items-center gap-2 flex hover:underline"
             >
               <MessageCircle size={20} className="text-green-700" />
