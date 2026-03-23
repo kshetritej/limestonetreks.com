@@ -112,7 +112,6 @@ export function SectionNavigation() {
                   : "border-transparent text-gray-500 hover:text-gray-900"
               }`}
             >
-              {section.icon}
               {section.label}
             </button>
           ))}
