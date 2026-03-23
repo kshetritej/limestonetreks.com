@@ -35,7 +35,7 @@ export default function PackagesBlock({
     <div className="my-8">
       <div className="flex flex-row gap-4 overflow-auto max-w-screen">
         {packages.map((pkg, index) => (
-          <TripCard key={index} trip={pkg} />
+          <TripCard key={index} tour={pkg} />
         ))}
       </div>
     </div>

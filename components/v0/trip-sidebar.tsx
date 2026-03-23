@@ -35,7 +35,7 @@ export function TripSidebar({ trip }: TripSidebarProps) {
 
       {/* CTA Buttons */}
       <div className="space-y-3">
-        <Link href={"/contact"}>
+        <Link href={`/booking?q=${trip.slug}`}>
           <Button className="w-full bg-primary hover:bg-primary/70 text-white font-semibold mb-4">
             SEND A BOOKING INQUIRY
           </Button>
