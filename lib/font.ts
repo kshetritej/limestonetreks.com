@@ -4,6 +4,7 @@ import {
   Merriweather_Sans,
   Mulish,
   Satisfy,
+  Gabarito,
 } from "next/font/google";
 
 export const varela = Varela_Round({
@@ -30,4 +31,8 @@ export const mulish = Mulish({
 export const satisfy = Satisfy({
   subsets: ["latin"],
   weight: ["400"],
+});
+
+export const gabarito = Gabarito({
+  subsets: ["latin"],
 });

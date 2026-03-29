@@ -20,7 +20,7 @@ const TripOfTheMonth = async () => {
 
   return (
     <SectionTemplate
-      className="w-full"
+      className="w-full bg-primary/20"
       title={
         <p>
           {featured?.featuredTag.name || "Hello world"}: {trip[0].title}
@@ -38,16 +38,16 @@ const TripOfTheMonth = async () => {
             width={1280}
             className="w-full object-cover"
           />
-          <div className="bg-linear-to-b from-primary/60 to-primary/0 absolute inset-0" />
+          <div className="bg-linear-to-b from-white to-transparent absolute inset-0" />
           <div className="absolute text-white font-bold top-8 md:top-12 left-8 md:left-100 flex items-center">
-            <div className="md:text-2xl flex gap-2 items-start border-r-2 pr-10">
-              <LucideCalendarClock className="size-8 md:size-12" />
+            <div className="md:text-2xl flex gap-2 items-start border-r-2 pr-10 text-primary">
+              <LucideCalendarClock className="size-8 md:size-12 " />
               <div>
                 <p className="text-xs md:text-sm">Total Duration</p>
                 <p>{trip[0].duration}</p>
               </div>
             </div>
-            <div className="md:text-2xl flex gap-2 items-start pl-10">
+            <div className="md:text-2xl flex gap-2 items-start pl-10 text-primary">
               <LucideCoins className="size-8 md:size-12" />
               <div>
                 <p className="text-xs md:text-sm">Package Price</p>

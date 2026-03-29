@@ -1,33 +1,12 @@
 import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200">
-      <div className="border-b border-slate-200  py-6 sm:py-8 container mx-auto">
-        <div className="flex items-center gap-3 sm:gap-4 p-4">
-          <div className="font-bold text-xs sm:text-sm">ASSOCIATIONS</div>
-          <div className="flex gap-2 overflow-x-auto">
-            {[
-              "/associated1.png",
-              "/associated2.png",
-              "/associated3.png",
-              "/associated4.png",
-            ].map((ass, i) => (
-              <img
-                key={i}
-                src={ass}
-                className="w-10 h-6 sm:w-12 sm:h-8 object-contain"
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Contact Info Sections */}
+    <footer className="bg-slate-50  border-slate-200">
       <div className="border-b border-slate-200 px-4 py-8 sm:px-6 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto">
-          {/* Head Office */}
           <div className=" sm:pr-8">
             <h4 className="font-bold text-sm mb-4"> HEAD OFFICE</h4>
             <div className="space-y-3 text-sm text-slate-700">
@@ -48,6 +27,37 @@ export default function Footer() {
                 <p>{siteConfig.phoneNumbers[0].tel2}</p>
               </div>*/}
             </div>
+          </div>
+          <div className="flex  flex-col sm:gap-4">
+            <div className="font-bold text-xs sm:text-sm mb-4">
+              ASSOCIATIONS
+            </div>
+            <div className="flex gap-2 overflow-x-auto">
+              {[
+                "/associated1.png",
+                "/associated2.png",
+                "/associated3.png",
+                "/associated4.png",
+              ].map((ass, i) => (
+                <Image
+                  alt={`Associated ${i + 1}`}
+                  key={i}
+                  src={ass}
+                  height={400}
+                  width={400}
+                  className="w-16 h-12 sm:w-16 sm:h-12 object-contain"
+                />
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h4 className="font-bold text-sm mb-4">QUICK LINKS</h4>
+            <ul className="flex flex-col gap-1">
+              <Link href="/about-us">About</Link>
+              <Link href="/contact">Contact</Link>
+              <Link href="/legal-documents">Legal Documents</Link>
+            </ul>
           </div>
         </div>
       </div>
@@ -77,10 +87,10 @@ export default function Footer() {
             </span>{" "}
           </p>
           <div className="flex flex-wrap gap-3 sm:gap-4">
-            {["About us", "Legal Documents", "Contact"].map((link) => (
+            {["Facebook", "Instagram", "Tiktok", "Youtube"].map((link) => (
               <Link
                 key={link}
-                href={`/${link.toLowerCase().split(" ").join("-")}`}
+                href={"#"}
                 className="hover:text-slate-900 whitespace-nowrap"
               >
                 {link}

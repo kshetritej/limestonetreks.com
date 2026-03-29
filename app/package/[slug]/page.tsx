@@ -85,7 +85,7 @@ export default async function TripPage({
   const trip = jsonres.data;
 
   return (
-    <main className="min-h-screen p-2">
+    <main className="min-h-screen bg-accent/10">
       {/*Schema */}
       {trip.seo?.schema && (
         <Script
@@ -99,10 +99,12 @@ export default async function TripPage({
       )}
 
       {/*Section Navigation*/}
+      {/*<div className="bg-background w-full">*/}
       <SectionNavigation />
+      {/*</div>*/}
 
       {/*Images in Lightbox*/}
-      <div className="max-h-144 w-full relative hidden md:block">
+      <div className="max-h-144 w-full relative hidden md:block p-4 md:p-0 mt-2">
         {trip.images && trip.images.length > 0 && (
           <Lightbox images={trip.images} imageAlts={trip.keywords || []}>
             <div>
@@ -158,7 +160,7 @@ export default async function TripPage({
       </div>
 
       {/*Content starts */}
-      <div className="container mx-auto">
+      <div className="container mx-auto p-4">
         <div className="grid md:grid-cols-4 gap-4 min-w-0">
           <div className="col-span-3 min-w-0!">
             <TripOverview trip={trip} />
@@ -204,10 +206,11 @@ export default async function TripPage({
                   __html: decodeHtmlEntities(trip.inclusions[0]),
                 }}
                 className="bg-primary/10 p-2 border-t-4 border-primary
-                  w-full
-                  prose-li:before:mask-[url('/icons/tick.svg')]
-                  prose-li:before:rotate-360
-                   "
+                    w-full
+                    prose-li:before:mask-[url('/icons/tick.svg')]
+                    prose-li:before:rotate-360
+                    my-12
+                     "
               />
               <div
                 id="exclusions"
@@ -231,12 +234,12 @@ export default async function TripPage({
                   )}
                 </div>
               )}
-              <div id="faqs">
+              <div id="faqs" className="my-12">
                 {trip.faqs && trip.faqs.length > 1 && <TripFaqs trip={trip} />}
               </div>
             </div>
           </div>
-          <div className="col-span-1 hidden md:flex border-l border-gray-200 pl-1">
+          <div className="col-span-1 hidden md:flex justify-center">
             <TripSidebar trip={trip} />
           </div>
         </div>

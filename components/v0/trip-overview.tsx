@@ -26,7 +26,7 @@ export function TripOverview({ trip }: TripOverviewProps) {
       {/* AT A GLANCE Section */}
       <div>
         <div className="font-bold mb-2">AT A GLANCE</div>
-        <div className="grid  grid-cols-2 md:grid-cols-3 gap-2 bg-amber-100/30 p-4">
+        <div className="grid  grid-cols-2 md:grid-cols-3 gap-2 bg-green-50  p-4">
           {/* Duration */}
           <GlanceItem
             text="Duration"
@@ -59,14 +59,14 @@ export function TripOverview({ trip }: TripOverviewProps) {
             value={trip.dropOffPoint ?? "-"}
           />
           <GlanceItem
-            text="Locations"
-            image="/icons/route-icon.svg"
-            value={trip.locations && trip.locations.join(", ")}
-          />
-          <GlanceItem
             text="Accommodations"
             image="/icons/accommodation.png"
             value={trip.accommodations && trip.accommodations.join(", ")}
+          />
+          <GlanceItem
+            text="Locations"
+            image="/icons/route-icon.svg"
+            value={trip.locations && trip.locations.join(", ")}
           />
         </div>
       </div>

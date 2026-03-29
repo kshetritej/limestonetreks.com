@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/common/navbar";
 import Footer from "@/components/common/footer";
-import { mulish } from "@/lib/font";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import CTACard from "@/components/cards/cta-card";
 import { Analytics } from "@vercel/analytics/next";
 import { siteConfig } from "@/lib/siteConfig";
+import { gabarito } from "@/lib/font";
 
 export const metadata: Metadata = {
   title: "Limestone Treks",
@@ -28,7 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${mulish.className} sans-serif antialiased`}>
+      <body className={`${gabarito.className} sans-serif antialiased`}>
         <Navbar />
         {children}
         <Analytics />

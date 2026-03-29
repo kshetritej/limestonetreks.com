@@ -11,7 +11,7 @@ interface TripSidebarProps {
 
 export function TripSidebar({ trip }: TripSidebarProps) {
   return (
-    <Card className="p-6 sticky top-34 bg-white border-slate-200 h-fit w-full">
+    <Card className="p-6 sticky top-34 white  border-slate-200 h-fit w-full">
       <CardHeader className="p-0">
         <CardTitle className="font-bold leading-5">{trip.title}</CardTitle>
       </CardHeader>
@@ -34,7 +34,7 @@ export function TripSidebar({ trip }: TripSidebarProps) {
       </div>
 
       {/* CTA Buttons */}
-      <div className="space-y-3">
+      <div className="">
         <Link href={`/booking?q=${trip.slug}`}>
           <Button className="w-full bg-primary hover:bg-primary/70 text-white font-semibold mb-4">
             SEND A BOOKING INQUIRY
@@ -46,10 +46,9 @@ export function TripSidebar({ trip }: TripSidebarProps) {
       <Link
         target="_blank"
         href={`https://api.whatsapp.com/send/?phone=${siteConfig.whatsAppNumber}`}
-        className="pt-6 border-t decoration-0"
       >
         <div className="font-bold mb-4">Speak to an Expert</div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <div className=" bg-slate-300 rounded-full size-12 object-cover">
             <Image
               src={"/bidur-poudel.webp"}

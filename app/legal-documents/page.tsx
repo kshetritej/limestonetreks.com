@@ -11,7 +11,7 @@ export default function LegalDocumentsPage() {
       {Object.keys(siteConfig.documents).map((doc) => {
         return (
           <div key={doc}>
-            <h2 className="font-bold my-4 text-xl">
+            <h2 className="font-bold my-4 text-2xl mt-12">
               {doc.split("_").join(" ")}
             </h2>
             <Image
@@ -20,6 +20,7 @@ export default function LegalDocumentsPage() {
               // @ts-expect-error some object errors
               src={siteConfig.documents[doc]}
               alt={doc}
+              className="w-full"
             />
           </div>
         );

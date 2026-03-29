@@ -7,6 +7,26 @@ import TripOfTheMonth from "../sections/featured-trip";
 import Hero from "../hero";
 
 export default async function Homepage() {
+  let data;
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_API_BASE_URL}/featured?includeActivity=true`,
+    );
+
+    data = await res.json();
+  } catch (error) {
+    console.log("Error: ", error);
+    return;
+  }
+
+  const featured = data?.data;
+  const featuredWithoutTOM = featured.featuredTags.filter(
+    (tag: any) => tag.slug !== "trip-of-the-month",
+  );
+  const firstFeatured = featuredWithoutTOM.slice(0, 1);
+  const secondFeatured = featuredWithoutTOM.slice(1, 2);
+  const thirdFeatured = featuredWithoutTOM.slice(2, 3);
+
   return (
     <div>
       <Hero />
@@ -16,11 +36,15 @@ export default async function Homepage() {
         </div>
       </div>
       {/*<Stats />*/}
-      <TripOfTheMonth />
       <div className="container mx-auto p-2">
-        <FeaturedSections />
+        <FeaturedSections featuredTags={firstFeatured} />
       </div>
+      <TripOfTheMonth />
+      {/*<div className="container mx-auto p-2">*/}
+      <FeaturedSections featuredTags={secondFeatured} />
       <WhyUsSection />
+      <FeaturedSections featuredTags={thirdFeatured} />
+      {/*</div>*/}
     </div>
   );
 }

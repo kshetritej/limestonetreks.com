@@ -19,8 +19,8 @@ export function MegaMenu({ items }: { items: any }) {
 
             {/* Dropdown Content - Controlled by CSS hover */}
             {item.children.length > 0 && (
-              <div className="bg-white absolute z-999 left-0  top-16 hidden group-hover:block w-screen min-h-[30vh] pt-2 shadow-sm">
-                <div className="container mx-auto p-6 grid sm:grid-cols-3 md:grid-cols-4 gap-8 w-full border-t border-t-primary">
+              <div className="bg-transparent absolute z-999 left-0  top-12 hidden group-hover:block w-screen min-h-[30vh] pt-2">
+                <div className="container  bg-green-50 mt-5 mx-auto p-6 grid sm:grid-cols-3 md:grid-cols-4 gap-8 w-full rounded-sm">
                   {item.children.map((child: any) => (
                     <div key={child.id} className="space-y-3">
                       {/* Sub-heading (e.g., Everest Region) */}

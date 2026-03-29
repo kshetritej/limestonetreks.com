@@ -39,7 +39,7 @@ function Comp({
             key={index}
             className={cn(
               filledDotsCount > index
-                ? "bg-emerald-900 border-emerald-900 font-black"
+                ? "bg-orange-600 border-orange-600 font-black"
                 : "border-white",
               "size-3 rounded-full border",
             )}

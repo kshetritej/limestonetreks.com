@@ -63,13 +63,13 @@ export default function ContactPage() {
             </div>
 
             {/* MAP */}
-            <div className="rounded-2xl overflow-hidden shadow-lg border">
+            {/*<div className="rounded-2xl overflow-hidden shadow-lg border">
               <iframe
                 src={siteConfig.gmb.googleMapsLocation}
                 width="600"
                 height="450"
               />
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import DifficultyBadge from "../atoms/difficulty-badge";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 export type Tour = {
   id: string;
@@ -23,9 +24,17 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
   return (
     <Link
       href={tour.canonicalPath ?? `/package/${tour.slug}`}
-      className="relative cursor-pointer flex flex-col gap-2 shadow-sm max-w-sm"
+      className="relative cursor-pointer flex flex-col gap-2 max-w-sm min-w-sm"
     >
-      <div className="relative h-120 rounded-2xl overflow-hidden shadow-lg group cursor-pointer">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{
+          opacity: 100,
+          scale: 1,
+          transition: { duration: 1 },
+        }}
+        className="relative h-120 rounded-2xl overflow-hidden shadow-lg group cursor-pointer"
+      >
         {/* Background Image */}
         <Image
           src={
@@ -65,7 +74,7 @@ export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Link>
   );
 }

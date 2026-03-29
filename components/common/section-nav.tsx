@@ -1,5 +1,16 @@
 "use client";
 
+import {
+  Eye,
+  HdIcon,
+  Icon,
+  LucideBadgeQuestionMark,
+  LucideCheck,
+  LucideInfo,
+  LucideX,
+  Map,
+  Star,
+} from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 interface Section {
@@ -13,13 +24,13 @@ interface SectionNavigationProps {
 }
 
 const sections = [
-  { id: "overview", label: "Overview" },
-  { id: "highlights", label: "Highlights" },
-  { id: "itinerary", label: "Itinerary" },
-  { id: "inclusions", label: "Inclusions" },
-  { id: "exclusions", label: "Exclusions" },
-  { id: "trip-info", label: "Trip Info" },
-  { id: "faqs", label: "FAQs" },
+  { id: "overview", label: "Overview", icon: <Eye /> },
+  { id: "highlights", label: "Highlights", icon: <Star /> },
+  { id: "itinerary", label: "Itinerary", icon: <Map /> },
+  { id: "inclusions", label: "Inclusions", icon: <LucideCheck /> },
+  { id: "exclusions", label: "Exclusions", icon: <LucideX /> },
+  { id: "trip-info", label: "Trip Info", icon: <LucideInfo /> },
+  { id: "faqs", label: "FAQs", icon: <LucideBadgeQuestionMark /> },
 ];
 
 export function SectionNavigation() {
@@ -49,7 +60,7 @@ export function SectionNavigation() {
       },
       {
         root: null,
-        rootMargin: `-${offsetTop}px 0px -50% 0px`,
+        rootMargin: `-${offsetTop}px 0px -60% 0px`,
         threshold: 0,
       },
     );
@@ -87,7 +98,7 @@ export function SectionNavigation() {
 
   return (
     <nav
-      className="sticky top-[var(--section-nav-top)] z-50 bg-background shadow-y-sm md:px-12 pt-2"
+      className="sticky top-[var(--section-nav-top)] z-50 bg-primary shadow-y-sm md:px-12"
       style={
         {
           "--section-nav-top": `${offsetTop}px`,
@@ -106,12 +117,13 @@ export function SectionNavigation() {
                 buttonRefs.current[section.id] = el;
               }}
               onClick={() => handleNavClick(section.id)}
-              className={`p-2 px-1 text-base font-medium whitespace-nowrap border-b-2 transition-colors flex items-center gap-2 ${
+              className={`p-2 px-1 text-base font-medium whitespace-nowrap border-y-2 transition-colors flex items-center gap-2 ${
                 activeSection === section.id
-                  ? "border-primary text-primary"
-                  : "border-transparent text-gray-500 hover:text-gray-900"
+                  ? " text-black-500 border-b-black  cursor-pointer border-t-transparent"
+                  : "border-transparent text-white hover:text-slate-900 cursor-pointer"
               }`}
             >
+              {section.icon}
               {section.label}
             </button>
           ))}

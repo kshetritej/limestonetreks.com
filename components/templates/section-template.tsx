@@ -21,7 +21,7 @@ export default function SectionTemplate({
 }: SectionTemplateProps) {
   return (
     <section className={cn("py-16 px-6 bg-background", className)}>
-      <div className="md:max-w-7xl md:mx-auto flex flex-col md:flex-row  justify-between">
+      <div className="md:container md:mx-auto flex flex-col md:flex-row  justify-between">
         <div>
           <div className="mb-12">
             <div className="text-sm font-bold uppercase tracking-widest text-primary mb-2 flex gap-1 items-center">
