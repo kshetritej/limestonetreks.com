@@ -7,7 +7,7 @@ export const siteConfig = {
   url: "https://limestonetreks.com",
   image: "/og.png",
   countryCode: "+977",
-  whatsAppNumber: "9846619460",
+  whatsAppNumber: "9779846619460",
   phoneNumber: "+977 9846619460",
   phoneNumbers: [
     { phone: "+977-9846619460" },

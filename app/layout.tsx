@@ -7,6 +7,7 @@ import CTACard from "@/components/cards/cta-card";
 import { Analytics } from "@vercel/analytics/next";
 import { siteConfig } from "@/lib/siteConfig";
 import { gabarito } from "@/lib/font";
+import FloatingWhatsAppIcon from "@/components/floating-whatsapp";
 
 export const metadata: Metadata = {
   title: "Limestone Treks",
@@ -34,6 +35,7 @@ export default function RootLayout({
         <Analytics />
         <CTACard />
         <Footer />
+        <FloatingWhatsAppIcon />
         <SpeedInsights />
       </body>
     </html>
