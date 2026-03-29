@@ -19,7 +19,9 @@ export default async function Navbar() {
       className="bg-white min-w-screen! mx-auto sticky top-0 shadow-b-sm flex flex-col gap-1 justify-between p-2  z-999 shadow-sm"
     >
       <div className="flex flex-row items-center md:container md:mx-auto md:px-2 justify-between container">
-        <LogoComponent dark />
+        <div>
+          <LogoComponent dark />
+        </div>
         <MegaMenu items={menuData} />
         <div className="flex gap-1 items-center flex-row-reverse md:flex-row">
           <MobileMenu items={menuData} />
