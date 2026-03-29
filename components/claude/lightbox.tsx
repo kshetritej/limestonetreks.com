@@ -142,7 +142,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
             </button>
           </>
         )}
-        <pre className="hidden md:block text-white absolute bottom-4">
+        <pre className="hidden md:block text-white absolute bottom-4 max-w-3xl">
           {JSON.stringify(imageAlts[currentIndex])}
         </pre>
         <Image
