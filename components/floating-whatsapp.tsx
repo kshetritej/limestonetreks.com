@@ -7,6 +7,14 @@ export default function FloatingWhatsAppIcon() {
   return (
     <div className="absolute bottom-2! left-4!">
       <FloatingWhatsApp
+        buttonStyle={{
+          left: "2rem",
+          right: "auto",
+        }}
+        chatboxStyle={{
+          left: "2rem",
+          right: "auto",
+        }}
         phoneNumber={siteConfig.whatsAppNumber}
         avatar={"/favicon.ico"}
         accountName={siteConfig.name}
