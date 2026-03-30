@@ -61,7 +61,7 @@ export function TripSidebar({ trip }: TripSidebarProps) {
           <div>
             <p className="text-sm font-semibold">WhatsApp</p>
             <p className="text-sm text-primary">
-              +977 {siteConfig.whatsAppNumber}
+              + {siteConfig.whatsAppNumber}
             </p>
           </div>
         </div>
