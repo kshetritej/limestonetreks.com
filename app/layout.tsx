@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { siteConfig } from "@/lib/siteConfig";
 import { gabarito } from "@/lib/font";
 import FloatingWhatsAppIcon from "@/components/floating-whatsapp";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Limestone Treks",
@@ -29,6 +30,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          id="initializeGtag"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-W9GY0QNMB0"
+        />
+        <Script id="gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-W9GY0QNMB0');
+          `}
+        </Script>
+      </head>
       <body className={`${gabarito.className} sans-serif antialiased`}>
         <Navbar />
         {children}
