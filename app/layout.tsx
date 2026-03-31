@@ -32,11 +32,11 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <Script
-          id="initializeGtag"
+          id="initializeGAnalytics"
           strategy="afterInteractive"
           src="https://www.googletagmanager.com/gtag/js?id=G-W9GY0QNMB0"
         />
-        <Script id="gtag" strategy="afterInteractive">
+        <Script id="ganalytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -45,8 +45,24 @@ export default function RootLayout({
             gtag('config', 'G-W9GY0QNMB0');
           `}
         </Script>
+        <Script
+          id="gtag"
+          strategy="afterInteractive"
+        >{`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T4SFPFLL');`}</Script>
       </head>
       <body className={`${gabarito.className} sans-serif antialiased`}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-T4SFPFLL"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Navbar />
         {children}
         <Analytics />
