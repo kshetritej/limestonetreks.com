@@ -15,7 +15,7 @@ import { decodeHtmlEntities } from "@/lib/html-decoder";
 import { LucideImages } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Script from "next/script";
 
 export async function generateMetadata({
@@ -25,13 +25,30 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const param = await params;
 
-  const data = await fetch(
+  const res = await fetch(
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/activity/slug/${param.slug}`,
-  ).then((res) => res.json());
+  );
+
+  const data = await res.json();
+
+  if (res.status === 404) {
+    const redirectedSlug = res.url.split("/slug/")[1];
+
+    if (redirectedSlug && redirectedSlug !== param.slug) {
+      redirect(`/package/${redirectedSlug}`);
+    }
+
+    return notFound();
+  }
+
+  if (!res.ok) {
+    notFound();
+  }
 
   if (!data) {
     return notFound();
   }
+
   const trip = data.data;
 
   return {
@@ -63,7 +80,13 @@ export default async function TripPage({
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/activity/slug/${slug}`,
   );
 
-  if (res.status == 404) {
+  if (res.status === 404) {
+    const redirectedSlug = res.url.split("/slug/")[1];
+
+    if (redirectedSlug && redirectedSlug !== slug) {
+      redirect(`/package/${redirectedSlug}`);
+    }
+
     return notFound();
   }
 

@@ -1,10 +1,10 @@
-export const dynamic = "force-static";
 import { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Image from "next/image";
 import { parseHTMLContent } from "@/lib/parse-html-content";
 import PackagesBlock from "@/components/packages-block";
 import { decodeHtmlEntities } from "@/lib/html-decoder";
+export const dynamic = "force-static";
 import { MyBreadCrumb } from "@/components/molecules/my-breadcrumb";
 
 export async function generateMetadata({
@@ -18,7 +18,16 @@ export async function generateMetadata({
   const URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/blogs/${slug}`;
 
   const response = await fetch(URL);
-  const blog = await response.json();
+
+  if (response.status === 404) {
+    const redirectedSlug =
+      response.url.split("/")[response.url.split("/").length - 1];
+
+    if (redirectedSlug && redirectedSlug !== slug) {
+      redirect(`/${redirectedSlug}`);
+    }
+    return notFound();
+  }
 
   if (!response.ok) {
     return {
@@ -26,6 +35,8 @@ export async function generateMetadata({
       description: "This blog post does not exist.",
     };
   }
+
+  const blog = await response.json();
 
   return {
     title: `${blog.metaTitle}`,
@@ -56,11 +67,22 @@ export default async function BlogSingle({
 
   const URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/blogs/${slug}`;
   const response = await fetch(URL);
-  const blog = await response.json();
+
+  if (response.status === 404) {
+    const redirectedSlug =
+      response.url.split("/")[response.url.split("/").length - 1];
+
+    if (redirectedSlug && redirectedSlug !== slug) {
+      redirect(`/${redirectedSlug}`);
+    }
+    return notFound();
+  }
 
   if (!response.ok) {
     return notFound();
   }
+
+  const blog = await response.json();
 
   const blocks = parseHTMLContent(decodeHtmlEntities(blog.content));
 
@@ -70,9 +92,7 @@ export default async function BlogSingle({
 
   return (
     <div className=" max-w-6xl mx-auto">
-      <div className="p-4">
-        <MyBreadCrumb items={breadcrumbItems} />
-      </div>
+      <MyBreadCrumb items={breadcrumbItems} />
       <section
         className="pt-8 md:pt-4 p-2
         prose-base leading leading-relaxed
@@ -109,7 +129,7 @@ export default async function BlogSingle({
           <h1 className="text-3xl md:text-5xl font-bold  leading-tight max-w-4xl">
             {blog?.title}
           </h1>
-          {/*<div className="flex justify-between gap-4 text-sm text-foreground w-full mt-4 items-center">
+          <div className="flex justify-between gap-4 text-sm text-foreground w-full mt-4 items-center">
             <div className="flex items-center gap-8">
               <time className="flex items-center">
                 Last Updated:{" "}
@@ -120,7 +140,7 @@ export default async function BlogSingle({
                 })}
               </time>
             </div>
-          </div>*/}
+          </div>
         </header>
 
         <div className="grid md:grid-cols-6 gap-8 py-4">
