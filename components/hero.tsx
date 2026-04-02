@@ -43,7 +43,7 @@ export default function Hero() {
                   Explore Nepal treks
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/design-your-trip">
                 <Button
                   variant={"secondary"}
                   className="cursor-pointer"

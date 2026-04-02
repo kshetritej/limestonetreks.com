@@ -8,6 +8,7 @@ export const siteConfig = {
   image: "/og.png",
   countryCode: "+977",
   whatsAppNumber: "9779846619460",
+  whatsAppUrl: "https://api.whatsapp.com/send/?phone=9779846619460",
   phoneNumber: "+977 9846619460",
   phoneNumbers: [
     { phone: "+977-9846619460" },
