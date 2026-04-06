@@ -3,15 +3,15 @@
 import { siteConfig } from "@/lib/siteConfig";
 import { FloatingWhatsApp } from "react-floating-whatsapp";
 
-const handleChatOpen = () => {
-  if (typeof window !== "undefined" && window.gtag) {
-    window.gtag("event", "whatsapp_chat_initiated", {
-      event_category: "conversion",
-      event_label: "Floating WhatsApp Tooltip/Button",
-      page_location: window.location.href,
-    });
-  }
-};
+// const handleChatOpen = () => {
+//   if (typeof window !== "undefined" && window.gtag) {
+//     window.gtag("event", "whatsapp_chat_initiated", {
+//       event_category: "conversion",
+//       event_label: "Floating WhatsApp Tooltip/Button",
+//       page_location: window.location.href,
+//     });
+//   }
+// };
 
 export default function FloatingWhatsAppIcon() {
   return (
@@ -25,7 +25,7 @@ export default function FloatingWhatsAppIcon() {
           left: "2rem",
           right: "auto",
         }}
-        onClick={() => handleChatOpen}
+        // onClick={() => handleChatOpen}
         phoneNumber={siteConfig.whatsAppNumber}
         avatar={"/favicon.ico"}
         accountName={siteConfig.name}

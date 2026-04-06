@@ -64,12 +64,12 @@ export default async function ExplorePage({
       ) : (
         <div className="flex flex-col items-center justify-center w-full py-16 gap-2 text-center">
           <LucideSearch className="w-10 h-10 text-muted-foreground" />
-          <p className="text-lg font-medium">No trips found</p>
+          <div className="text-lg font-medium">No trips found</div>
           {search && (
-            <p className="text-muted-foreground">
+            <div className="text-muted-foreground">
               No results for <span className="font-semibold">{search}</span>.
               Try a different keyword.
-            </p>
+            </div>
           )}
         </div>
       )}

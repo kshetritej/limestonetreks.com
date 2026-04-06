@@ -20,12 +20,12 @@ export const siteConfig = {
   experience: "15 years",
   address: {
     city: "Pokhara",
-    street: "Lakeside Rd",
+    street: "Sushanta Tole, Birauta-17",
     district: "Kaski",
     country: "Nepal",
     postalCode: "33700",
   },
-  fullAddress: "Pokhara, Lakeside Rd, Kaski, Nepal",
+  fullAddress: "Sushanta Tole, Birauta-17, Pokhara, Kaski, Nepal",
   socials: {
     facebook: "https://www.facebook.com/limestonetreks",
     instagram: "https://www.instagram.com/",
