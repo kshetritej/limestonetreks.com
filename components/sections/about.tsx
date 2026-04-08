@@ -34,7 +34,7 @@ export function AboutSection() {
           </Link>
         </div>
         <Image
-          src={"/bidur-poudel.webp"}
+          src={"/yam-prasad-poudel.jpeg"}
           alt="Bidur Poudel"
           width={1280}
           height={720}
