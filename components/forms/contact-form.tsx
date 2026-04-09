@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { siteConfig } from "@/lib/siteConfig";
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -35,7 +36,7 @@ export function ContactForm() {
         method: "POST",
         body: JSON.stringify({
           from: `${formData.email}<${formData.phone}>`,
-          to: "tejghartikshetri@gmail.com",
+          to: siteConfig.email,
           subject: formData.subject,
           text: formData.message,
           html: "",

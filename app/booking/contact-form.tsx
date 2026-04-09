@@ -98,7 +98,7 @@ export function Form_Component({ packages }: { packages: TPackageDetails[] }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           from: data.email,
-          to: "tejghartikshetri@gmail.com",
+          to: siteConfig.email,
           subject: `New Booking Inquiry from ${data.fullName} — ${data.destination}`,
           text: [
             `Name:              ${data.fullName}`,

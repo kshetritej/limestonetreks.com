@@ -1,10 +1,11 @@
 import { siteConfig } from "@/lib/siteConfig";
 import ContactForm from "./contact-form";
+import { Metadata } from "next";
 
 export const dynamic = "force-static";
 export const revalidate = 3600;
 
-export const metadata = {
+export const metadata: Metadata = {
   title: `Plan Your Adventure - ${siteConfig.name}`,
   description: "Plan your adventure",
   alternates: {
