@@ -25,7 +25,7 @@ export type Tour = {
 export default function TripCard({ tour }: Readonly<{ tour: Tour }>) {
   return (
     <Link
-      href={tour.canonicalPath ?? `/package/${tour.slug}`}
+      href={`/package/${tour.slug}`}
       className="relative cursor-pointer flex flex-col gap-2 max-w-sm min-w-sm"
     >
       <motion.div
