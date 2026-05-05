@@ -51,7 +51,7 @@ export function TripSidebar({ trip }: TripSidebarProps) {
         <div className="flex items-center gap-2">
           <div className=" bg-slate-300 rounded-full size-12 object-cover">
             <Image
-              src={"/bidur-poudel.webp"}
+              src={"/yam-prasad-poudel.jpeg"}
               alt="Bidur Poudel"
               width={100}
               height={100}
