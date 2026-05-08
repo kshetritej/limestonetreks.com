@@ -1,6 +1,7 @@
-import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
 import Image from "next/image";
+import Link from "next/link";
+import BankDetailsCard from "../cards/payment-info-card";
 
 export default function Footer() {
   return (
@@ -26,6 +27,9 @@ export default function Footer() {
                 <p className="text-black">{siteConfig.phoneNumbers[0].tel}</p>
                 <p>{siteConfig.phoneNumbers[0].tel2}</p>
               </div>*/}
+            </div>
+            <div className="mt-4">
+              <BankDetailsCard />
             </div>
           </div>
           <div className="flex  flex-col sm:gap-4">
@@ -62,7 +66,7 @@ export default function Footer() {
         </div>
       </div>
 
-      {/*<div className="border-b border-slate-200 px-4 py-6 sm:px-6 sm:py-8"> <div className="flex flex-col md:flex-row gap-6 sm:gap-8 max-w-7xl mx-auto justify-between">
+      {/*<div className="border-b border-slate-200 px-4upy-6 sm:px-6 sm:py-8"> <div className="flex flex-col md:flex-row gap-6 sm:gap-8 max-w-7xl mx-auto justify-between">
           <div className="flex gap-2">
             <IconBrandFacebook />
             <IconBrandInstagram />
